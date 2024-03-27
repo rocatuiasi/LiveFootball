@@ -12,7 +12,13 @@
                 <Label Content="Content goes here..." />
             </TabItem>
             <TabItem Header="Fixtures" />
-            <TabItem Header="Standing" />
+            <TabItem Header="Standing">
+                <TabItem.ContentTemplate>
+                    <DataTemplate>
+                        <local:LeagueStandingView/>
+                    </DataTemplate>
+                </TabItem.ContentTemplate>
+            </TabItem>
         </TabControl>
     </Grid>
 </UserControl>
