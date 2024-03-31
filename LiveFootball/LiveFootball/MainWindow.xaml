@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LiveFootball"
         xmlns:views="clr-namespace:LiveFootball.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
-            <views:LeaguesView/>
+            <views:MenuView/>
         </Grid>
 
         <Grid Grid.Column="1">
