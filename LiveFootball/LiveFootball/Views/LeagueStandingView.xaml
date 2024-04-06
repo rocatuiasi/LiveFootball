@@ -12,34 +12,36 @@
         <viewModels:LeagueStandingViewModel/>
     </UserControl.DataContext>
 
-    <Grid>
-        <ListView ItemsSource="{Binding StandingTeams}">
+    <Border Style="{StaticResource StandingBorderStyle}">
+        <ListView ItemsSource="{Binding StandingTeams}"
+                ItemContainerStyle="{StaticResource StandingItemStyle}">
             <ListView.View>
-                <GridView>
+                <GridView AllowsColumnReorder="False"
+                          ColumnHeaderContainerStyle="{StaticResource StandingColumnHeaderStyle}">
                     <GridViewColumn Header="Position"
-                                    DisplayMemberBinding="{Binding Position}"/>
+                                        DisplayMemberBinding="{Binding Position}"/>
                     <GridViewColumn Header="Club"
-                                    DisplayMemberBinding="{Binding Club}"/>
+                                        DisplayMemberBinding="{Binding Club}"/>
                     <GridViewColumn Header="Played"
-                                    DisplayMemberBinding="{Binding MatchesPlayed}"/>
+                                        DisplayMemberBinding="{Binding MatchesPlayed}"/>
                     <GridViewColumn Header="Won"
-                                    DisplayMemberBinding="{Binding MatchesWon}"/>
+                                        DisplayMemberBinding="{Binding MatchesWon}"/>
                     <GridViewColumn Header="Drawn"
-                                    DisplayMemberBinding="{Binding MatchesDrawn}"/>
+                                        DisplayMemberBinding="{Binding MatchesDrawn}"/>
                     <GridViewColumn Header="Lost"
-                                    DisplayMemberBinding="{Binding MatchesLost}"/>
+                                        DisplayMemberBinding="{Binding MatchesLost}"/>
                     <GridViewColumn Header="GF"
-                                    DisplayMemberBinding="{Binding GoalsFor}"/>
+                                        DisplayMemberBinding="{Binding GoalsFor}"/>
                     <GridViewColumn Header="GA"
-                                    DisplayMemberBinding="{Binding GoalsAgainst}"/>
+                                        DisplayMemberBinding="{Binding GoalsAgainst}"/>
                     <GridViewColumn Header="GD"
-                                    DisplayMemberBinding="{Binding GoalDifference}"/>
-                    <GridViewColumn Header="Position"
-                                    DisplayMemberBinding="{Binding Points}"/>
+                                        DisplayMemberBinding="{Binding GoalDifference}"/>
+                    <GridViewColumn Header="Points"
+                                        DisplayMemberBinding="{Binding Points}"/>
                     <GridViewColumn Header="Form"
-                                    DisplayMemberBinding="{Binding Form}"/>
+                                        DisplayMemberBinding="{Binding Form}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-    </Grid>
+    </Border>
 </UserControl>
