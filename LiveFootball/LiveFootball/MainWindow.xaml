@@ -7,6 +7,7 @@
         xmlns:views="clr-namespace:LiveFootball.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="800">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
