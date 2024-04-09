@@ -11,13 +11,11 @@
             <TabItem Header="Results">
                 <Label Content="Content goes here..." />
             </TabItem>
-            <TabItem Header="Fixtures" />
+            <TabItem Header="Fixtures" >
+                <local:FixturesView/>
+            </TabItem>
             <TabItem Header="Standing">
-                <TabItem.ContentTemplate>
-                    <DataTemplate>
-                        <local:LeagueStandingView/>
-                    </DataTemplate>
-                </TabItem.ContentTemplate>
+                <local:LeagueStandingView/>
             </TabItem>
         </TabControl>
     </Grid>
