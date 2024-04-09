@@ -13,7 +13,8 @@
 
     <Border Style="{StaticResource StandingBorderStyle}">
         <ListView ItemsSource="{Binding StandingTeams}"
-                  ItemContainerStyle="{StaticResource StandingItemStyle}">
+                  ItemContainerStyle="{StaticResource StandingItemStyle}"
+                  Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
             <ListView.View>
                 <GridView AllowsColumnReorder="False"
                           ColumnHeaderContainerStyle="{StaticResource StandingColumnHeaderStyle}">

@@ -13,11 +13,7 @@
             </TabItem>
             <TabItem Header="Fixtures" />
             <TabItem Header="Standing">
-                <TabItem.ContentTemplate>
-                    <DataTemplate>
-                        <local:LeagueStandingView/>
-                    </DataTemplate>
-                </TabItem.ContentTemplate>
+                <local:LeagueStandingView/>
             </TabItem>
         </TabControl>
     </Grid>
