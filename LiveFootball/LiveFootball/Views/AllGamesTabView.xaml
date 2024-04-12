@@ -8,9 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <TabControl>
         <TabItem Header="Live Games" />
-        <TabItem Header="Results">
-            <Label Content="Content goes here..." />
-        </TabItem>
+        <TabItem Header="Results"/>
         <TabItem Header="Fixtures" />
     </TabControl>
 </UserControl>
