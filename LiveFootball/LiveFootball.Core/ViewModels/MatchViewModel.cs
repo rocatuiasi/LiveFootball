@@ -1,4 +1,4 @@
-﻿namespace LiveFootballWpf.ViewModels;
+﻿namespace LiveFootball.Core.ViewModels;
 
 public class MatchViewModel : ViewModelBase
 {

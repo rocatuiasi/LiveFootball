@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:viewModels="clr-namespace:LiveFootballWpf.ViewModels"
              xmlns:views="clr-namespace:LiveFootballWpf.Views"
+             xmlns:viewModels="clr-namespace:LiveFootball.Core.ViewModels;assembly=LiveFootball.Core"
+             xmlns:controls="clr-namespace:LiveFootballWpf.Controls"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -15,7 +16,7 @@
         <ItemsControl ItemsSource="{Binding LeagueExpanderCollection}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <views:LeagueExpanderView DataContext="{Binding }" />
+                    <controls:LeagueExpanderControl DataContext="{Binding }" />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

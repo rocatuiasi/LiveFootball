@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34601.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootballWpf", "LiveFootballWpf\LiveFootballWpf.csproj", "{486BEF87-42B1-4CDA-8066-11835FF6B099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveFootball.Core", "LiveFootball.Core\LiveFootball.Core.csproj", "{6DE48908-407A-4898-B163-EB396C575B8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootball.Core", "LiveFootball.Core\LiveFootball.Core.csproj", "{6DE48908-407A-4898-B163-EB396C575B8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

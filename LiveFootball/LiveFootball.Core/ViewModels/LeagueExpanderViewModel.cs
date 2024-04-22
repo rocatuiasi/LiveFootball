@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace LiveFootballWpf.ViewModels;
+namespace LiveFootball.Core.ViewModels;
 
 public class LeagueExpanderViewModel : ViewModelBase
 {

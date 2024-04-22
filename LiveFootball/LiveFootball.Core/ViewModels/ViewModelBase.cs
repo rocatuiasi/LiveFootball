@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace LiveFootballWpf.ViewModels;
+namespace LiveFootball.Core.ViewModels;
 
 public abstract class ViewModelBase : INotifyPropertyChanged, INotifyDataErrorInfo
 {

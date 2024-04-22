@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
-namespace LiveFootballWpf.ViewModels;
+namespace LiveFootball.Core.ViewModels;
 
 public class TeamViewModel : ViewModelBase
 {

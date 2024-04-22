@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
-using LiveFootballWpf.Models;
+using LiveFootball.Core.Models;
 
-namespace LiveFootballWpf.ViewModels;
+namespace LiveFootball.Core.ViewModels;
 
 public class LeagueStandingViewModel : ViewModelBase
 {

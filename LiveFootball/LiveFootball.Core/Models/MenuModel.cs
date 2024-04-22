@@ -1,4 +1,4 @@
-﻿namespace LiveFootballWpf.Models
+﻿namespace LiveFootball.Core.Models
 {
     public class MenuModel
     {
