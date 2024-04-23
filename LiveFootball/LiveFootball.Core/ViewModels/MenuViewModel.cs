@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+
 using CommunityToolkit.Mvvm.ComponentModel;
-using LiveFootball.Core.Models;
 
 namespace LiveFootball.Core.ViewModels;
 
@@ -8,16 +8,17 @@ public class MenuViewModel : ObservableObject
 {
     #region Properties
 
-    public ObservableCollection<MenuModel> Leagues { get; set; }
+    public ObservableCollection<MenuItemViewModel> Leagues { get; set; }
 
-    public ObservableCollection<MenuModel> Competitions {  get; set; } 
+    public ObservableCollection<MenuItemViewModel> Competitions { get; set; }
 
     #endregion
 
     #region Constructors
-    public MenuViewModel() 
+
+    public MenuViewModel()
     {
-        Leagues = new ObservableCollection<MenuModel>()
+        Leagues = new ObservableCollection<MenuItemViewModel>
         {
             new("Premier League"),
             new("La Liga"),
@@ -27,7 +28,7 @@ public class MenuViewModel : ObservableObject
             new("Liga 1 - Superliga")
         };
 
-        Competitions = new ObservableCollection<MenuModel>()
+        Competitions = new ObservableCollection<MenuItemViewModel>
         {
             new("Champions League"),
             new("Europa League"),

@@ -14,7 +14,9 @@
                 <ItemsControl ItemsSource="{Binding Leagues}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Button Content="{Binding Name}" Margin="3"/>
+                            <Button Content="{Binding Name}"
+                                    Command="{Binding FetchDataCommand}"
+                                    Margin="3"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
