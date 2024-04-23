@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
+using LiveFootball.Core.ViewModels;
+using System.Windows.Controls;
 
 namespace LiveFootballWpf.Views;
 
@@ -10,5 +12,7 @@ public partial class LeagueStandingView : UserControl
     public LeagueStandingView()
     {
         InitializeComponent();
+
+        DataContext = Ioc.Default.GetRequiredService<LeagueStandingViewModel>();
     }
 }

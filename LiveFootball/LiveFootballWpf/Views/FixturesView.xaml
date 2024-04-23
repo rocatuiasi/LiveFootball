@@ -8,10 +8,6 @@
              xmlns:controls="clr-namespace:LiveFootballWpf.Controls"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <viewModels:FixturesViewModel />
-    </UserControl.DataContext>
-
     <Grid>
         <ItemsControl ItemsSource="{Binding LeagueExpanderCollection}">
             <ItemsControl.ItemTemplate>

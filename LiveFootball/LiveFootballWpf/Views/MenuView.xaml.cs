@@ -1,4 +1,6 @@
 ﻿using System.Windows.Controls;
+using CommunityToolkit.Mvvm.DependencyInjection;
+using LiveFootball.Core.ViewModels;
 
 namespace LiveFootballWpf.Views
 {
@@ -10,6 +12,8 @@ namespace LiveFootballWpf.Views
         public MenuView()
         {
             InitializeComponent();
+
+            DataContext = Ioc.Default.GetRequiredService<MenuViewModel>();
         }
     }
 }
