@@ -1,6 +1,8 @@
-﻿namespace LiveFootball.Core.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class MatchViewModel : ViewModelBase
+namespace LiveFootball.Core.ViewModels;
+
+public class MatchViewModel : ObservableObject
 {
     public string Time { get; set; }
     public TeamViewModel HomeTeam { get; set; }

@@ -1,9 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Controls;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace LiveFootball.Core.ViewModels;
 
-public class TeamViewModel : ViewModelBase
+public class TeamViewModel : ObservableObject
 {
     public Image Logo { get; set; }
     public string Name { get; set; }

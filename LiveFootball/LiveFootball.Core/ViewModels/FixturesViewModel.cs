@@ -1,8 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace LiveFootball.Core.ViewModels;
 
-public class FixturesViewModel : ViewModelBase
+public class FixturesViewModel : ObservableObject
 {
     public ObservableCollection<LeagueExpanderViewModel> LeagueExpanderCollection { get; }
 

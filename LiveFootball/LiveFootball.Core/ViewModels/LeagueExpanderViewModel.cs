@@ -1,8 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace LiveFootball.Core.ViewModels;
 
-public class LeagueExpanderViewModel : ViewModelBase
+public class LeagueExpanderViewModel : ObservableObject
 {
     //TODO: Remove member initializing when view is completed
     public string Name { get; set; } = "Superliga";
