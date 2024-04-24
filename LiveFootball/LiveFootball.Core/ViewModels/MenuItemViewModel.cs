@@ -18,22 +18,30 @@ public class MenuItemViewModel
     #endregion
 
 
+    #region ICommand
+
     public ICommand FetchDataCommand => new AsyncRelayCommand(FetchData);
+
+    #endregion
 
 
     #region Constructors
 
-    public MenuItemViewModel(string name)
+    public MenuItemViewModel(string name, IFootballApiService? footballApiService = null)
     {
-        _footballService = Ioc.Default.GetRequiredService<IFootballApiService>();
+        _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
 
         Name = name;
     }
 
     #endregion
 
+    #region ICommand Execution 
+
     private async Task FetchData()
     {
         var data = await _footballService.GetStandingDataAsync();
     }
+
+    #endregion
 }

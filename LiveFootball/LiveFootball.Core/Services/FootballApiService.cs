@@ -2,7 +2,7 @@
 
 namespace LiveFootball.Core.Services;
 
-public class FootballApiService : IFootballApiService
+public sealed class FootballApiService : IFootballApiService
 {
     private readonly HttpClient _client;
 
