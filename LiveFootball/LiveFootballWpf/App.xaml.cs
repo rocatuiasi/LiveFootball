@@ -2,6 +2,8 @@
 using CommunityToolkit.Mvvm.DependencyInjection;
 using LiveFootball.Core.Services;
 using LiveFootball.Core.ViewModels;
+
+using LiveFootballWpf.Services;
 using LiveFootballWpf.Views;
 using Microsoft.Extensions.DependencyInjection;
 
