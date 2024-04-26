@@ -37,6 +37,7 @@ namespace LiveFootballWpf
             Ioc.Default.ConfigureServices(
                     new ServiceCollection()
                         .AddTransient<IFootballApiService, FootballApiService>() // Services
+                        .AddTransient<IDeserializeResponseDataService, DeserializeResponseDataService>() 
                         .AddSingleton<MenuViewModel>() // ViewModels
                         .AddSingleton<LeagueStandingViewModel>()
                         .AddSingleton<FixturesViewModel>()
