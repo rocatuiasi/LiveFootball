@@ -2,5 +2,5 @@
 
 public interface IFootballApiService
 {
-    Task<string> GetStandingDataAsync();
+    Task<string> GetStandingDataAsync(string seasonParam, string leagueParam);
 }
