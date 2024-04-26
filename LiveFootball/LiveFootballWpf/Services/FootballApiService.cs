@@ -20,7 +20,7 @@ public sealed class FootballApiService : IFootballApiService
         var request = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
-            RequestUri = new Uri($"{BaseRequestUri}standings/season={seasonParam}&league={leagueParam}"),
+            RequestUri = new Uri($"{BaseRequestUri}standings?season={seasonParam}&league={leagueParam}"),
             Headers =
             {
                 { "X-RapidAPI-Key", "2b12d424acmsh6a84ed754ea566fp1e5482jsn96ab0659b63b" },
