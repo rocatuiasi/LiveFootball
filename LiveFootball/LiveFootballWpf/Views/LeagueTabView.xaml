@@ -9,7 +9,7 @@
     <Grid>
         <TabControl>
             <TabItem Header="Results">
-                <views:ResultView/>
+                <views:ResultsView/>
             </TabItem>
             <TabItem Header="Fixtures" >
                 <views:FixturesView/>

@@ -6,15 +6,15 @@ using LiveFootball.ViewModels;
 namespace LiveFootballWpf.Views
 {
     /// <summary>
-    /// Interaction logic for ResultView.xaml
+    /// Interaction logic for ResultsView.xaml
     /// </summary>
-    public partial class ResultView : UserControl
+    public partial class ResultsView : UserControl
     {
-        public ResultView()
+        public ResultsView()
         {
             InitializeComponent();
 
-            DataContext = Ioc.Default.GetRequiredService<ResultViewModel>();
+            DataContext = Ioc.Default.GetRequiredService<ResultsViewModel>();
         }
     }
 }

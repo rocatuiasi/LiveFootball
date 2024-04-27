@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace LiveFootball.ViewModels
 {
-    public class ResultViewModel : ObservableObject
+    public class ResultsViewModel : ObservableObject
     {
         public ObservableCollection<LeagueExpanderViewModel> LeagueExpanderCollection { get; }
 
-        public ResultViewModel()
+        public ResultsViewModel()
         {
             LeagueExpanderCollection =
             [

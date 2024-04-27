@@ -2,8 +2,8 @@ using System.Windows;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using LiveFootball.Core.Services;
 using LiveFootball.Core.ViewModels;
+using LiveFootball.ViewModels;
 using LiveFootballWpf.Services;
-using LiveFootballWpf.Views;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LiveFootballWpf
@@ -35,16 +35,11 @@ namespace LiveFootballWpf
             // Register services
             Ioc.Default.ConfigureServices(
                     new ServiceCollection()
-                        .AddSingleton<IFootballApiService, FootballApiService>() // Services
-                        .AddTransient<MenuViewModel>() // ViewModels
-                        .AddTransient<LeagueStandingViewModel>()
-                        .AddTransient<ResultViewModel>()
-                        .AddTransient<FixturesViewModel>()
                         .AddTransient<IFootballApiService, FootballApiService>() // Services
                         .AddTransient<IDeserializeResponseDataService, DeserializeResponseDataService>() 
                         .AddSingleton<MenuViewModel>() // ViewModels
                         .AddSingleton<LeagueStandingViewModel>()
-                        .AddTransient<ResultViewModel>()
+                        .AddTransient<ResultsViewModel>()
                         .AddSingleton<FixturesViewModel>()
                         .BuildServiceProvider());
         }
