@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.DependencyInjection;
 using LiveFootball.Core.Services;
 using LiveFootball.Core.ViewModels;
+using LiveFootball.ViewModels;
 using LiveFootballWpf.Views;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -37,6 +38,7 @@ namespace LiveFootballWpf
                         .AddSingleton<IFootballApiService, FootballApiService>() // Services
                         .AddTransient<MenuViewModel>() // ViewModels
                         .AddTransient<LeagueStandingViewModel>()
+                        .AddTransient<ResultViewModel>()
                         .AddTransient<FixturesViewModel>()
                         .BuildServiceProvider());
         }
