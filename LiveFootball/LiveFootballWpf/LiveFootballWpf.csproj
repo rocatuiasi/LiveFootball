@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <Folder Include="Assets\Icon\" />
+    <Folder Include="Controls\" />
     <Folder Include="Converters\" />
   </ItemGroup>
 

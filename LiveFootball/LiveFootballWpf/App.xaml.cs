@@ -1,8 +1,9 @@
 using System.Windows;
 using CommunityToolkit.Mvvm.DependencyInjection;
+using LiveFootball.Core.Deserializers;
+using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
 using LiveFootball.Core.ViewModels;
-using LiveFootball.ViewModels;
 using LiveFootballWpf.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -30,17 +31,18 @@ namespace LiveFootballWpf
             base.OnStartup(e);
         }
 
-        protected void ConfigureServices()
+        private void ConfigureServices()
         {
             // Register services
             Ioc.Default.ConfigureServices(
                     new ServiceCollection()
                         .AddTransient<IFootballApiService, FootballApiService>() // Services
-                        .AddTransient<IDeserializeResponseDataService, DeserializeResponseDataService>() 
+                        .AddTransient<IDeserializationService, DeserializationService>() 
                         .AddSingleton<MenuViewModel>() // ViewModels
                         .AddSingleton<LeagueStandingViewModel>()
                         .AddTransient<ResultsViewModel>()
-                        .AddSingleton<FixturesViewModel>()
+                        .AddSingleton<FixturesViewModel>() 
+                        .AddTransient<IDeserializerFactory, DeserializerFactory>() // Deserializer
                         .BuildServiceProvider());
         }
     }
