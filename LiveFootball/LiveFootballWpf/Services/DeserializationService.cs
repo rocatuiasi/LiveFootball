@@ -1,12 +1,19 @@
-﻿using LiveFootball.Core.Models;
+﻿using LiveFootball.Core.Deserializers;
+using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
-
 using Newtonsoft.Json.Linq;
 
 namespace LiveFootballWpf.Services;
 
-internal class DeserializeResponseDataService : IDeserializeResponseDataService
+public class DeserializationService : IDeserializationService
 {
+    private readonly IDeserializerFactory _deserializerFactory;
+
+    public DeserializationService(IDeserializerFactory deserializerFactory)
+    {
+        _deserializerFactory = deserializerFactory;
+    }
+
     public List<LeagueStandingTeamModel> DeserializeStandingData(JObject jsonData)
     {
         var jsonStandingData = jsonData["response"]![0]!["league"]!["standings"]![0]![0];
@@ -14,7 +21,7 @@ internal class DeserializeResponseDataService : IDeserializeResponseDataService
 
         while (jsonStandingData != null)
         {
-            standingTeamModelList.Add(new LeagueStandingTeamModel()
+            standingTeamModelList.Add(new LeagueStandingTeamModel
             {
                 Position = int.Parse(jsonStandingData["rank"]!.ToString()),
                 Club = jsonStandingData["team"]!["name"]!.ToString(),
@@ -26,12 +33,18 @@ internal class DeserializeResponseDataService : IDeserializeResponseDataService
                 GoalsAgainst = int.Parse(jsonStandingData["all"]!["goals"]!["against"]!.ToString()),
                 GoalDifference = int.Parse(jsonStandingData["goalsDiff"]!.ToString()),
                 Points = int.Parse(jsonStandingData["points"]!.ToString()),
-                Form = jsonStandingData["form"]!.ToString(),
+                Form = jsonStandingData["form"]!.ToString()
             });
 
             jsonStandingData = jsonStandingData.Next;
         }
 
         return standingTeamModelList;
+    }
+
+    public async Task<List<MatchModel>> DeserializeFixturesData(JObject jsonData)
+    {
+        var jsonFixtureData = jsonData["response"]![0]!;
+        return await _deserializerFactory.CreateFixturesDeserializer().Deserialize(jsonFixtureData);
     }
 }

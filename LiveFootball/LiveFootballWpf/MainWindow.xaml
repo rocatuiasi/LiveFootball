@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:LiveFootballWpf.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="800">
+        Title="MainWindow" Height="650" Width="800"
+        >
+        <!-- Background="{DynamicResource MaterialDesign.Brush.Background}" -->
+        <!-- Foreground="{DynamicResource MaterialDesign.Brush.Foreground}" -->
 
     <Grid>
         <Grid.ColumnDefinitions>

@@ -1,11 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Windows.Input;
-
+﻿using System.Windows.Input;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
-
 using LiveFootball.Core.Services;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
 
@@ -14,7 +11,7 @@ public class MenuItemViewModel
     #region Backing Fields and Properties
 
     private readonly IFootballApiService _footballService;
-    private readonly IDeserializeResponseDataService _deserializeDataService;
+    private readonly IDeserializationService _deserializeDataService;
 
     public string Name { get; set; }
 
@@ -32,10 +29,12 @@ public class MenuItemViewModel
 
     #region Constructors
 
-    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null, IDeserializeResponseDataService? deserializeDataService = null)
+    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null,
+        IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
-        _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializeResponseDataService>();
+        _deserializeDataService =
+            deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
 
         Name = name;
         LeagueId = leagueId;
@@ -44,15 +43,25 @@ public class MenuItemViewModel
     #endregion
 
 
-    #region ICommand Execution 
+    #region ICommand Execution
 
     private async Task FetchData()
     {
-        var data = await _footballService.GetStandingDataAsync("2023", LeagueId);
+        // Set loading state to true
+        Ioc.Default.GetRequiredService<FixturesViewModel>().IsLoading = true;
+        
+        // Fetch Standing data
+        var standingData = await _footballService.GetStandingDataAsync("2023", LeagueId);
+        SetLeagueStanding(JObject.Parse(standingData));
 
-        SetLeagueStanding(JObject.Parse(data));
+        // Fetch Fixtures data
+        var fixturesData = await _footballService.GetFixturesDataAsync(LeagueId);
+        await RefreshFixtures(JObject.Parse(fixturesData));
 
-        // TODO: Fixtures and Results from API
+        // TODO: Results from API
+
+        // Set loading state to false
+        Ioc.Default.GetRequiredService<FixturesViewModel>().IsLoading = false;
     }
 
     #endregion
@@ -67,5 +76,19 @@ public class MenuItemViewModel
         {
             leagueStandingViewModel.StandingTeams.Add(standingTeam);
         }
+    }
+
+    private async Task RefreshFixtures(JObject jsonData)
+    {
+        var name = jsonData["response"]![0]!["league"]!["name"]!.ToString();
+        var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
+        var leagueFixtures = new LeagueExpanderViewModel
+        {
+            Name = $"{name}: {matchesCollection.Count}",
+            MatchesCollection = matchesCollection
+        };
+        
+        var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
+        fixturesViewModel.League = leagueFixtures;
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Windows.Controls;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using LiveFootball.Core.ViewModels;
-using LiveFootball.ViewModels;
 
 namespace LiveFootballWpf.Views
 {
