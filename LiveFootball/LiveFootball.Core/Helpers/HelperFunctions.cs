@@ -3,6 +3,10 @@ using System.Net;
 using System.Net.Http;
 using System.Windows.Media.Imaging;
 
+using CommunityToolkit.Mvvm.DependencyInjection;
+
+using LiveFootball.Core.ViewModels;
+
 namespace LiveFootball.Core.Helpers;
 
 public static class HelperFunctions
@@ -18,6 +22,7 @@ public static class HelperFunctions
         var bitmapImage = await GetImageFromInternet(url);
         if (bitmapImage != null)
             await WriteBitmapAsync(bitmapImage, filePath);
+
         return bitmapImage;
     }
 
@@ -38,12 +43,14 @@ public static class HelperFunctions
             bitmapImage.EndInit();
 
             Console.WriteLine($"Successfully fetched image from URL {url}");
+
             return bitmapImage;
         }
         catch (Exception ex)
         {
             // Handle any exceptions that occurred during the download or image creation
             Console.WriteLine($"Error fetching image from URL {url}: {ex.Message}");
+
             return null;
         }
     }
@@ -53,9 +60,11 @@ public static class HelperFunctions
         using var httpClient = new HttpClient();
 
         for (var retry = 1; retry <= retryCount; retry++)
+        {
             try
             {
                 var imageData = await httpClient.GetByteArrayAsync(url);
+
                 return imageData; // Return the image data if download is successful
             }
             catch (HttpRequestException e)
@@ -64,6 +73,7 @@ public static class HelperFunctions
                     // await Task.Delay(1000); // Wait 1 second before retrying
                     Console.WriteLine($"Error fetching image from URL {url}: retry {retry}");
             }
+        }
 
         throw new Exception($"Failed to download image after {retryCount} retries");
     }
@@ -79,6 +89,7 @@ public static class HelperFunctions
         bitmapImage.EndInit();
 
         Console.WriteLine($"Successfully fetched image from file: {filePath}");
+
         return bitmapImage;
     }
 
@@ -93,16 +104,23 @@ public static class HelperFunctions
         {
             // Save the encoded PNG data to the stream on a separate thread
             await Task.Run(() =>
-            {
-                using var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, true);
-                var encoder = new PngBitmapEncoder();
-                encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
-                encoder.Save(stream);
-            });
+                           {
+                               using var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write,
+                                   FileShare.None, 4096, true);
+                               var encoder = new PngBitmapEncoder();
+                               encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
+                               encoder.Save(stream);
+                           });
         }
         catch (Exception)
         {
             // ignored
         }
+    }
+
+    public static void SetLoadingProgressState(bool state)
+    {
+        Ioc.Default.GetRequiredService<FixturesViewModel>().IsLoading = state;
+        Ioc.Default.GetRequiredService<LeagueStandingViewModel>().IsLoading = state;
     }
 }

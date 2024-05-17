@@ -4,20 +4,15 @@ using LiveFootball.Core.Models;
 
 namespace LiveFootball.Core.ViewModels;
 
-public class LeagueStandingViewModel : ObservableObject
+public partial class LeagueStandingViewModel : ObservableObject
 {
     #region Properties
 
-    public ObservableCollection<LeagueStandingTeamModel> StandingTeams { get; set; }
+    [ObservableProperty]
+    private bool _isLoading;
 
-    #endregion
-
-    #region Constructors
-
-    public LeagueStandingViewModel()
-    {
-        StandingTeams = new ObservableCollection<LeagueStandingTeamModel>();
-    }
+    [ObservableProperty]
+    public List<LeagueStandingTeamModel> _standingTeams;
 
     #endregion
 }
