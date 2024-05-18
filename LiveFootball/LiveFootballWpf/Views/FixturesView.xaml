@@ -11,8 +11,9 @@
     </d:UserControl.DataContext>
 
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <ItemsControl ItemsSource="{Binding League.MatchesCollection}"
+        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                      HorizontalScrollBarVisibility="Hidden">
+            <ItemsControl ItemsSource="{Binding MatchesCollection}"
                           Padding="20 0"
                           ItemTemplate="{StaticResource FixturesItemTemplate}" />
         </ScrollViewer>

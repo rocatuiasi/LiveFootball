@@ -83,13 +83,8 @@ public class MenuItemViewModel
     {
         var name = jsonData["response"]![0]!["league"]!["name"]!.ToString();
         var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
-        var leagueFixtures = new LeagueExpanderViewModel
-        {
-            Name = $"{name}: {matchesCollection.Count}",
-            MatchesCollection = matchesCollection
-        };
 
         var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
-        fixturesViewModel.League = leagueFixtures;
+        fixturesViewModel.MatchesCollection = matchesCollection;
     }
 }
