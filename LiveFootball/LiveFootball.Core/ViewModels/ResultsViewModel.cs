@@ -1,15 +1,15 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
+using LiveFootball.Core.Models;
 
 namespace LiveFootball.Core.ViewModels
 {
-    public class ResultsViewModel : ObservableObject
+    public partial class ResultsViewModel : ObservableObject
     {
-        public ObservableCollection<LeagueExpanderViewModel> LeagueExpanderCollection { get; }
+        [ObservableProperty]
+        private List<ResultMatchModel> _matchesCollection = new();
 
-        public ResultsViewModel()
-        {
-            
-        }
+        [ObservableProperty]
+        private bool _isLoading;
     }
 }

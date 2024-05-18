@@ -144,7 +144,7 @@
 
     <!--#region Results View-->
 
-    <DataTemplate x:Key="ResultsItemTemplate">
+    <!--<DataTemplate x:Key="ResultsItemTemplate">
         <Border BorderBrush="#AAAA" BorderThickness="0 0 0 1"
                 Margin="10 0 0 0" Padding="5">
             <Grid>
@@ -224,6 +224,42 @@
                            Text="{Binding HomeTeam.Goals}" />
                 <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"
                            Text="{Binding AwayTeam.Goals}" />
+            </Grid>
+        </Border>
+    </DataTemplate>-->
+
+    <DataTemplate x:Key="ResultsItemTemplate">
+        <Border BorderBrush="#AAAA" BorderThickness="0 0 0 1"
+             Margin="10 0 0 0" Padding="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition MaxWidth="30" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                        VerticalAlignment="Center"
+                        Text="{Binding Date}" />
+
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="{Binding HomeTeam.Logo}" />
+                    <TextBlock Text="{Binding HomeTeam.Name}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="{Binding AwayTeam.Logo}" />
+                    <TextBlock Text="{Binding AwayTeam.Name}" />
+                </StackPanel>
+
+                <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"
+                        Text="{Binding HomeTeam.Goals}" />
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"
+                        Text="{Binding AwayTeam.Goals}" />
             </Grid>
         </Border>
     </DataTemplate>
