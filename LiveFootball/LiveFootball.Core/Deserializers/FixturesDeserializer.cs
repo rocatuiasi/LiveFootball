@@ -1,16 +1,18 @@
 ﻿using System.Globalization;
+
 using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Models;
+
 using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.Deserializers;
 
 public class FixturesDeserializer : IFixturesDeserializer
 {
-    public async Task<List<MatchModel>> Deserialize(JToken jsonData)
+    public async Task<List<FixtureMatchModel>> Deserialize(JToken jsonData)
     {
-        var matchesList = new List<MatchModel>();
-        var tasks = new List<Task<MatchModel>>();
+        var matchesList = new List<FixtureMatchModel>();
+        var tasks = new List<Task<FixtureMatchModel>>();
         var semaphore = new SemaphoreSlim(25); // Set the maximum concurrent tasks to 25
 
         while (jsonData != null)
@@ -24,7 +26,7 @@ public class FixturesDeserializer : IFixturesDeserializer
         return matchesList;
     }
 
-    private async Task<MatchModel> DeserializeMatchWithSemaphore(JToken jsonFixtureData, SemaphoreSlim semaphore)
+    private async Task<FixtureMatchModel> DeserializeMatchWithSemaphore(JToken jsonFixtureData, SemaphoreSlim semaphore)
     {
         await semaphore.WaitAsync(); // Wait for a slot to become available
         try
@@ -37,12 +39,12 @@ public class FixturesDeserializer : IFixturesDeserializer
         }
     }
 
-    private async Task<MatchModel> DeserializeMatch(JToken jsonFixtureData)
+    private async Task<FixtureMatchModel> DeserializeMatch(JToken jsonFixtureData)
     {
         var date = DateTime.TryParse(jsonFixtureData["fixture"]!["date"]!.ToString(), CultureInfo.CurrentCulture,
-            DateTimeStyles.None, out var dateTime)
-            ? dateTime.ToString("MMM d, HH:mm", CultureInfo.CurrentCulture)
-            : "NA";
+                       DateTimeStyles.None, out var dateTime)
+                       ? dateTime.ToString("MMM d, HH:mm", CultureInfo.CurrentCulture)
+                       : "NA";
 
 
         var homeLogo = await HelperFunctions.GetTeamLogoFromUrl(jsonFixtureData["teams"]!["home"]!["logo"]!.ToString());
@@ -59,7 +61,7 @@ public class FixturesDeserializer : IFixturesDeserializer
             Name = jsonFixtureData["teams"]!["away"]!["name"]!.ToString()
         };
 
-        return new MatchModel
+        return new FixtureMatchModel
         {
             Date = date,
             HomeTeam = homeTeam,

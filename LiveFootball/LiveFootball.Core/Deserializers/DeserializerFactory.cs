@@ -2,18 +2,9 @@
 
 public class DeserializerFactory : IDeserializerFactory
 {
-    public IStandingDeserializer CreateStandingDeserializer()
-    {
-        return new StandingDeserializer();
-    }
+    public IStandingDeserializer CreateStandingDeserializer() => new StandingDeserializer();
 
-    public IFixturesDeserializer CreateFixturesDeserializer()
-    {
-        return new FixturesDeserializer();
-    }
+    public IFixturesDeserializer CreateFixturesDeserializer() => new FixturesDeserializer();
 
-    public IResultsDeserializer CreateResultsDeserializer()
-    {
-        return new ResultsDeserializer();
-    }
+    public IResultsDeserializer CreateResultsDeserializer() => new ResultsDeserializer();
 }

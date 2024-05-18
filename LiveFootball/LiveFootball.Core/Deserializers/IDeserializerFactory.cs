@@ -3,6 +3,8 @@
 public interface IDeserializerFactory
 {
     IStandingDeserializer CreateStandingDeserializer();
+
     IFixturesDeserializer CreateFixturesDeserializer();
+
     IResultsDeserializer CreateResultsDeserializer();
 }

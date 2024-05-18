@@ -3,5 +3,8 @@
 public interface IFootballApiService
 {
     Task<string> GetStandingDataAsync(string seasonParam, string leagueParam);
+
     Task<string> GetFixturesDataAsync(string leagueParam);
+
+    Task<string> GetResultsDataAsync(string leagueParam);
 }

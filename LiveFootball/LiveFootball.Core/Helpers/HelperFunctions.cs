@@ -120,6 +120,7 @@ public static class HelperFunctions
 
     public static void SetLoadingProgressState(bool state)
     {
+        Ioc.Default.GetRequiredService<ResultsViewModel>().IsLoading = state;
         Ioc.Default.GetRequiredService<FixturesViewModel>().IsLoading = state;
         Ioc.Default.GetRequiredService<LeagueStandingViewModel>().IsLoading = state;
     }

@@ -11,5 +11,5 @@ public partial class LeagueExpanderViewModel : ObservableObject
     private string _name;
     
     [ObservableProperty] 
-    private List<MatchModel> _matchesCollection;
+    private List<FixtureMatchModel> _matchesCollection;
 }

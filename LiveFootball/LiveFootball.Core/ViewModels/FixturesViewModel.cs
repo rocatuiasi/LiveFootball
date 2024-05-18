@@ -6,8 +6,8 @@ namespace LiveFootball.Core.ViewModels;
 
 public partial class FixturesViewModel : ObservableObject
 {
-    [ObservableProperty]
-    private List<MatchModel> _matchesCollection = new();
+    [ObservableProperty] 
+    private List<FixtureMatchModel> _matchesCollection = new();
 
     [ObservableProperty] 
     private bool _isLoading;
