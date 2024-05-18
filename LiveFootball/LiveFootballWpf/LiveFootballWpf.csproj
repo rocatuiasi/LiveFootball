@@ -9,12 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controls\**" />
     <Compile Remove="Models\**" />
     <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Controls\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="Controls\**" />
     <None Remove="Models\**" />
     <None Remove="ViewModels\**" />
+    <Page Remove="Controls\**" />
     <Page Remove="Models\**" />
     <Page Remove="ViewModels\**" />
   </ItemGroup>
@@ -30,7 +34,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Icon\" />
-    <Folder Include="Controls\" />
     <Folder Include="Converters\" />
   </ItemGroup>
 

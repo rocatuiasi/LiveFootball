@@ -1,133 +1,34 @@
-﻿namespace LiveFootball.Core.Models
+﻿using System.Windows.Media.Imaging;
+
+namespace LiveFootball.Core.Models;
+
+public class LeagueStandingTeamModel
 {
-    public class LeagueStandingTeamModel
-    {
-        #region Backing Fields and Properties
+    #region Backing Fields and Properties
 
-        private int _position;
+    public int Position { get; init; }
 
-		public int Position
-		{
-			get => _position;
-            set => _position = value;
-        }
+    public BitmapSource Logo { get; init; }
 
-        private string _club;
+    public string Club { get; init; }
 
-        public string Club
-        {
-            get => _club;
-            set => _club = value;
-        }
+    public int MatchesPlayed { get; init; }
 
-        private int _matchesPlayed;
+    public int MatchesWon { get; init; }
 
-        public int MatchesPlayed
-        {
-            get => _matchesPlayed;
-            set => _matchesPlayed = value;
-        }
+    public int MatchesDrawn { get; init; }
 
-        private int _matchesWon;
+    public int MatchesLost { get; init; }
 
-        public int MatchesWon
-        {
-            get => _matchesWon;
-            set => _matchesWon = value;
-        }
+    public int GoalsFor { get; init; }
 
-        private int _matchesDrawn;
+    public int GoalsAgainst { get; init; }
 
-        public int MatchesDrawn
-        {
-            get => _matchesDrawn;
-            set => _matchesDrawn = value;
-        }
+    public int GoalDifference { get; init; }
 
-        private int _matchesLost;
+    public int Points { get; init; }
 
-        public int MatchesLost
-        {
-            get => _matchesLost;
-            set => _matchesLost = value;
-        }
+    public string Form { get; init; }
 
-        private int _goalsFor;
-
-        public int GoalsFor
-        {
-            get => _goalsFor;
-            set => _goalsFor = value;
-        }
-
-        private int _goalsAgainst;
-
-        public int GoalsAgainst
-        {
-            get => _goalsAgainst;
-            set => _goalsAgainst = value;
-        }
-
-        private int _goalDifference;
-
-        public int GoalDifference
-        {
-            get => _goalDifference;
-            set => _goalDifference = value;
-        }
-
-        private int _points;
-
-        public int Points
-        {
-            get => _points;
-            set => _points = value;
-        }
-
-        private string _form;
-
-        public string Form
-        {
-            get => _form;
-            set => _form = value;
-        }
-
-        #endregion
-
-        #region Constructors
-
-        public LeagueStandingTeamModel()
-        {
-            _position = 0;
-            _club = string.Empty;
-            _matchesPlayed = 0;
-            _matchesWon = 0;
-            _matchesDrawn = 0;
-            _matchesLost = 0;
-            _goalsFor = 0;
-            _goalsAgainst = 0;
-            _goalDifference = 0;
-            _points = 0;
-            _form = string.Empty;
-        }
-
-        public LeagueStandingTeamModel(int position, string club, int matchesPlayed, int matchesWon, int matchesDrawn,
-                                       int matchesLost, int goalsFor, int goalsAgainst, int goalDifference,
-                                       int points, string form)
-        {
-            _position = position;
-            _club = club;
-            _matchesPlayed = matchesPlayed;
-            _matchesWon = matchesWon;
-            _matchesDrawn = matchesDrawn;
-            _matchesLost = matchesLost;
-            _goalsFor = goalsFor;
-            _goalsAgainst = goalsAgainst;
-            _goalDifference = goalDifference;
-            _points = points;
-            _form = form;
-        }
-
-        #endregion
-    }
+    #endregion
 }
