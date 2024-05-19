@@ -12,18 +12,19 @@
     </d:UserControl.DataContext>
 
     <Grid>
-        <ItemsControl ItemsSource="{Binding LeagueExpanderCollection}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Expander Header="{Binding Name}"
-                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="15 5">
-                        <ItemsControl ItemsSource="{Binding MatchesCollection}"
-                                      ItemTemplate="{StaticResource ResultsItemTemplate}"
-                                      Padding="20 0" />
-                    </Expander>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                      HorizontalScrollBarVisibility="Hidden">
+            <ItemsControl ItemsSource="{Binding MatchesCollection}"
+                          Padding="20 0"
+                          ItemTemplate="{StaticResource ResultsItemTemplate}" />
+        </ScrollViewer>
+
+
+        <Grid Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
+              Background="#5000">
+            <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}"
+                         IsIndeterminate="True" />
+        </Grid>
     </Grid>
 
 </UserControl>

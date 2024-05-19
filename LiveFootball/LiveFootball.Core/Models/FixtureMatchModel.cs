@@ -1,6 +1,6 @@
 ﻿namespace LiveFootball.Core.Models;
 
-public class MatchModel
+public class FixtureMatchModel
 {
     public string Date { get; set; }
     public TeamModel HomeTeam { get; set; }

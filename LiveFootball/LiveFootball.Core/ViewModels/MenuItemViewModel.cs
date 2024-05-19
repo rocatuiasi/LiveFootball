@@ -62,7 +62,9 @@ public class MenuItemViewModel
         var fixturesData = await _footballService.GetFixturesDataAsync(LeagueId);
         await RefreshFixtures(JObject.Parse(fixturesData));
 
-        // TODO: Results from API
+        // Fetch Results data
+        var resultsData = await _footballService.GetResultsDataAsync(LeagueId);
+        await RefreshResults(JObject.Parse(resultsData));
 
         // Set loading state to false
         HelperFunctions.SetLoadingProgressState(false);
@@ -81,15 +83,17 @@ public class MenuItemViewModel
 
     private async Task RefreshFixtures(JObject jsonData)
     {
-        var name = jsonData["response"]![0]!["league"]!["name"]!.ToString();
         var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
-        var leagueFixtures = new LeagueExpanderViewModel
-        {
-            Name = $"{name}: {matchesCollection.Count}",
-            MatchesCollection = matchesCollection
-        };
 
         var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
-        fixturesViewModel.League = leagueFixtures;
+        fixturesViewModel.MatchesCollection = matchesCollection;
+    }
+
+    private async Task RefreshResults(JObject jsonData)
+    {
+        var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
+
+        var resultsViewModel = Ioc.Default.GetRequiredService<ResultsViewModel>();
+        resultsViewModel.MatchesCollection = matchesCollection;
     }
 }

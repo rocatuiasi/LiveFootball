@@ -8,5 +8,7 @@ public interface IDeserializationService
 {
     Task<List<LeagueStandingTeamModel>> DeserializeStandingData(JObject jsonData);
 
-    Task<List<MatchModel>> DeserializeFixturesData(JObject jsonData);
+    Task<List<FixtureMatchModel>> DeserializeFixturesData(JObject jsonData);
+
+    Task<List<ResultMatchModel>> DeserializeResultsData(JObject jsonData);
 }

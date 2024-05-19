@@ -22,10 +22,17 @@ public class DeserializationService : IDeserializationService
         return await _deserializerFactory.CreateStandingDeserializer().Deserialize(jsonStandingData);
     }
 
-    public async Task<List<MatchModel>> DeserializeFixturesData(JObject jsonData)
+    public async Task<List<FixtureMatchModel>> DeserializeFixturesData(JObject jsonData)
     {
         var jsonFixtureData = jsonData["response"]![0]!;
 
         return await _deserializerFactory.CreateFixturesDeserializer().Deserialize(jsonFixtureData);
+    }
+
+    public async Task<List<ResultMatchModel>> DeserializeResultsData(JObject jsonData)
+    {
+        var jsonResultsData = jsonData["response"]![0]!;
+
+        return await _deserializerFactory.CreateResultsDeserializer().Deserialize(jsonResultsData);
     }
 }

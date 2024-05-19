@@ -54,4 +54,24 @@ public sealed class FootballApiService : IFootballApiService
 
         return body;
     }
+
+    public async Task<string> GetResultsDataAsync(string leagueParam)
+    {
+        var request = new HttpRequestMessage
+        {
+            Method = HttpMethod.Get,
+            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?league={leagueParam}&last=30"),
+            Headers =
+            {
+                { "X-RapidAPI-Key", _apiKey },
+                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
+            }
+        };
+
+        using var response = await _client.SendAsync(request);
+        response.EnsureSuccessStatusCode();
+        var body = await response.Content.ReadAsStringAsync();
+
+        return body;
+    }
 }

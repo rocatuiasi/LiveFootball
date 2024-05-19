@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+
 using CommunityToolkit.Mvvm.ComponentModel;
+
 using LiveFootball.Core.Models;
 
 namespace LiveFootball.Core.ViewModels;
@@ -12,7 +14,7 @@ public partial class LeagueStandingViewModel : ObservableObject
     private bool _isLoading;
 
     [ObservableProperty]
-    public List<LeagueStandingTeamModel> _standingTeams;
+    private List<LeagueStandingTeamModel> _standingTeams = new();
 
     #endregion
 }
