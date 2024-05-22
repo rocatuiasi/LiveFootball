@@ -39,9 +39,11 @@ namespace LiveFootballWpf
                         .AddTransient<IFootballApiService, FootballApiService>() // Services
                         .AddTransient<IDeserializationService, DeserializationService>() 
                         .AddSingleton<MenuViewModel>() // ViewModels
-                        .AddSingleton<LeagueStandingViewModel>()
+                        .AddSingleton<AllGamesTabViewModel>()
+                        .AddSingleton<LiveGamesViewModel>()
                         .AddSingleton<ResultsViewModel>()
                         .AddSingleton<FixturesViewModel>() 
+                        .AddSingleton<LeagueStandingViewModel>()
                         .AddTransient<IDeserializerFactory, DeserializerFactory>() // Deserializer
                         .BuildServiceProvider());
         }

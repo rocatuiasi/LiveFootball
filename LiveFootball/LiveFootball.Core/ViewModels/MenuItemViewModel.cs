@@ -17,8 +17,6 @@ public class MenuItemViewModel
     private readonly IFootballApiService _footballService;
     private readonly IDeserializationService _deserializeDataService;
 
-    public string Name { get; set; }
-
     private string LeagueId { get; }
 
     #endregion
@@ -40,7 +38,6 @@ public class MenuItemViewModel
         _deserializeDataService =
             deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
 
-        Name = name;
         LeagueId = leagueId;
     }
 
@@ -52,22 +49,22 @@ public class MenuItemViewModel
     private async Task FetchData()
     {
         // Set loading state to true
-        HelperFunctions.SetLoadingProgressState(true);
-
-        // Fetch Standing data
-        var standingData = await _footballService.GetStandingDataAsync("2023", LeagueId);
-        await RefreshLeagueStanding(JObject.Parse(standingData));
-
-        // Fetch Fixtures data
-        var fixturesData = await _footballService.GetFixturesDataAsync(LeagueId);
-        await RefreshFixtures(JObject.Parse(fixturesData));
+        HelperFunctions.SetLeagueLoadingProgressState(true);
 
         // Fetch Results data
         var resultsData = await _footballService.GetResultsDataAsync(LeagueId);
         await RefreshResults(JObject.Parse(resultsData));
 
+        // Fetch Fixtures data
+        var fixturesData = await _footballService.GetFixturesDataAsync(LeagueId);
+        await RefreshFixtures(JObject.Parse(fixturesData));
+
+        // Fetch Standing data
+        var standingData = await _footballService.GetStandingDataAsync("2023", LeagueId);
+        await RefreshLeagueStanding(JObject.Parse(standingData));
+
         // Set loading state to false
-        HelperFunctions.SetLoadingProgressState(false);
+        HelperFunctions.SetLeagueLoadingProgressState(false);
     }
 
     #endregion
