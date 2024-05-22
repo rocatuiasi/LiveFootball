@@ -15,11 +15,18 @@ public class DeserializationService : IDeserializationService
         _deserializerFactory = deserializerFactory;
     }
 
-    public async Task<List<LeagueStandingTeamModel>> DeserializeStandingData(JObject jsonData)
+    public async Task<List<LiveMatchModel>> DeserializeLiveGamesData(JObject jsonData)
     {
-        var jsonStandingData = jsonData["response"]![0]!["league"]!["standings"]![0]![0]!;
+        var jsonLiveGamesData = jsonData["response"]![0]!;
 
-        return await _deserializerFactory.CreateStandingDeserializer().Deserialize(jsonStandingData);
+        return await _deserializerFactory.CreateLiveGamesDeserializer().Deserialize(jsonLiveGamesData);
+    }
+
+    public async Task<List<ResultMatchModel>> DeserializeResultsData(JObject jsonData)
+    {
+        var jsonResultsData = jsonData["response"]![0]!;
+
+        return await _deserializerFactory.CreateResultsDeserializer().Deserialize(jsonResultsData);
     }
 
     public async Task<List<FixtureMatchModel>> DeserializeFixturesData(JObject jsonData)
@@ -29,10 +36,10 @@ public class DeserializationService : IDeserializationService
         return await _deserializerFactory.CreateFixturesDeserializer().Deserialize(jsonFixtureData);
     }
 
-    public async Task<List<ResultMatchModel>> DeserializeResultsData(JObject jsonData)
+    public async Task<List<LeagueStandingTeamModel>> DeserializeStandingData(JObject jsonData)
     {
-        var jsonResultsData = jsonData["response"]![0]!;
+        var jsonStandingData = jsonData["response"]![0]!["league"]!["standings"]![0]![0]!;
 
-        return await _deserializerFactory.CreateResultsDeserializer().Deserialize(jsonResultsData);
+        return await _deserializerFactory.CreateStandingDeserializer().Deserialize(jsonStandingData);
     }
 }

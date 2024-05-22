@@ -21,7 +21,8 @@
         </Grid>
 
         <Grid Grid.Column="1">
-            <views:LeagueTabView/>
+            <!--<views:LeagueTabView/>-->
+            <views:AllGamesTabView/>
         </Grid>
     </Grid>
 </Window>

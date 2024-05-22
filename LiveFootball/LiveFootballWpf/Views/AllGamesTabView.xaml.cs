@@ -1,5 +1,8 @@
 ﻿using System.Windows.Controls;
 
+using CommunityToolkit.Mvvm.DependencyInjection;
+using LiveFootball.Core.ViewModels;
+
 namespace LiveFootballWpf.Views
 {
     /// <summary>
@@ -10,6 +13,8 @@ namespace LiveFootballWpf.Views
         public AllGamesTabView()
         {
             InitializeComponent();
+
+            DataContext = Ioc.Default.GetRequiredService<AllGamesTabViewModel>();
         }
     }
 }

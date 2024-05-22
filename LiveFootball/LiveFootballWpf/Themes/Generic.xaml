@@ -47,6 +47,59 @@
 
     <!--#endregion Logo -->
 
+    <!--#region Live Games View-->
+
+    <DataTemplate x:Key="LiveGamesItemTemplate">
+        <Border BorderBrush="#AAAA" 
+             BorderThickness="0 0 0 1"
+             Margin="10 0 0 0"
+             Padding="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition MaxWidth="30" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                           VerticalAlignment="Center"
+                           Text="{Binding Status}"
+                           Foreground="Red"/>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" 
+                         Orientation="Horizontal">
+                    <Image Source="{Binding HomeTeam.Logo}"
+                        Style="{StaticResource TeamsLogoStyle}"
+                        Margin="0 0 5 5" />
+                    <TextBlock Text="{Binding HomeTeam.Name}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" 
+                         Orientation="Horizontal">
+                    <Image Source="{Binding AwayTeam.Logo}"
+                        Style="{StaticResource TeamsLogoStyle}"
+                        Margin="0 0 5 0" />
+                    <TextBlock Text="{Binding AwayTeam.Name}" />
+                </StackPanel>
+
+                <TextBlock Grid.Row="0" Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        Text="{Binding HomeTeam.Goals}"
+                        Foreground="Red"/>
+                <TextBlock Grid.Row="1" Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        Text="{Binding AwayTeam.Goals}"
+                        Foreground="Red"/>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <!--#endregion-->
+
     <!--#region League Standing View-->
 
     <Style x:Key="StandingBorderStyle" TargetType="Border">

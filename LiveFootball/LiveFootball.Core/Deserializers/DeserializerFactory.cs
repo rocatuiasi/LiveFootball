@@ -2,9 +2,11 @@
 
 public class DeserializerFactory : IDeserializerFactory
 {
-    public IStandingDeserializer CreateStandingDeserializer() => new StandingDeserializer();
+    public ILiveGamesDeserializer CreateLiveGamesDeserializer() => new LiveGamesDeserializer();
+
+    public IResultsDeserializer CreateResultsDeserializer() => new ResultsDeserializer();
 
     public IFixturesDeserializer CreateFixturesDeserializer() => new FixturesDeserializer();
 
-    public IResultsDeserializer CreateResultsDeserializer() => new ResultsDeserializer();
+    public IStandingDeserializer CreateStandingDeserializer() => new StandingDeserializer();
 }

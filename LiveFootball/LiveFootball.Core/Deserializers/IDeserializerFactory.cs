@@ -2,9 +2,11 @@
 
 public interface IDeserializerFactory
 {
-    IStandingDeserializer CreateStandingDeserializer();
+    ILiveGamesDeserializer CreateLiveGamesDeserializer();
+
+    IResultsDeserializer CreateResultsDeserializer();
 
     IFixturesDeserializer CreateFixturesDeserializer();
 
-    IResultsDeserializer CreateResultsDeserializer();
+    IStandingDeserializer CreateStandingDeserializer();
 }
