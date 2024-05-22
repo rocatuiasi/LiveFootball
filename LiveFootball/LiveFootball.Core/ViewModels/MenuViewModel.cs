@@ -86,7 +86,7 @@ public partial class MenuViewModel : ObservableObject
                 // The operation was canceled, exit the method
                 return;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // ignored
             }

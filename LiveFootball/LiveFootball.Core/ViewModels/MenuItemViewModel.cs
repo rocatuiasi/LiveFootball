@@ -17,6 +17,7 @@ public class MenuItemViewModel
     private readonly IFootballApiService _footballService;
     private readonly IDeserializationService _deserializeDataService;
 
+    public string Name { get; set; }
     private string LeagueId { get; }
 
     #endregion
@@ -35,9 +36,9 @@ public class MenuItemViewModel
                              IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
-        _deserializeDataService =
-            deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
+        _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
 
+        Name = name;
         LeagueId = leagueId;
     }
 
