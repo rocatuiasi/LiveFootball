@@ -4,25 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:LiveFootballWpf.Views"
+        xmlns:viewModels="clr-namespace:LiveFootball.Core.ViewModels;assembly=LiveFootball.Core"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="800"
-        >
-        <!-- Background="{DynamicResource MaterialDesign.Brush.Background}" -->
-        <!-- Foreground="{DynamicResource MaterialDesign.Brush.Foreground}" -->
-
+        Title="MainWindow" Height="650" Width="1000"
+        d:DataContext="{d:DesignInstance viewModels:MainViewModel}">
+    <!-- Background="{DynamicResource MaterialDesign.Brush.Background}" -->
+    <!-- Foreground="{DynamicResource MaterialDesign.Brush.Foreground}" -->
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            <views:MenuView/>
-        </Grid>
+        <views:MenuView Grid.Column="0" />
 
-        <Grid Grid.Column="1">
-            <!--<views:LeagueTabView/>-->
-            <views:AllGamesTabView/>
-        </Grid>
+        <ContentControl Grid.Column="1" Content="{Binding CurrentTabView}" />
     </Grid>
 </Window>

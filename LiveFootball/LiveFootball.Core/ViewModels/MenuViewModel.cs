@@ -57,6 +57,9 @@ public partial class MenuViewModel : ObservableObject
 
     private async Task AllGamesFetchData()
     {
+        // Switch current TabView to AllGamesTabView
+        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<AllGamesTabViewModel>();
+
         await StartFetchingLiveGamesData();
 
         // TODO: Results and Fixtures

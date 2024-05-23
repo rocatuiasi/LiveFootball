@@ -32,8 +32,7 @@ public class MenuItemViewModel
 
     #region Constructors
 
-    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null,
-                             IDeserializationService? deserializeDataService = null)
+    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
@@ -49,6 +48,9 @@ public class MenuItemViewModel
 
     private async Task FetchData()
     {
+        // Switch current TabView to LeagueTabView
+        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
+
         // Set loading state to true
         HelperFunctions.SetLeagueLoadingProgressState(true);
 
