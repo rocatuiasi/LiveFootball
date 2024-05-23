@@ -34,6 +34,17 @@
         <Setter Property="FontFamily" Value="Montserrat"/>
     </Style>-->
 
+    <!--#region Generic Styles -->
+    
+    <Style x:Key="TabStatusMessageStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    
+    <!--#endregion Generic Styles --> 
 
     <!--#region Logo -->
 

@@ -87,6 +87,7 @@ public class MenuItemViewModel
 
         var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
         fixturesViewModel.MatchesCollection = matchesCollection;
+        fixturesViewModel.StatusMessage = matchesCollection.Count == 0 ? "No more matches..." : string.Empty;
     }
 
     private async Task RefreshResults(JObject jsonData)
