@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="clr-namespace:LiveFootball.Core.ViewModels;assembly=LiveFootball.Core"
+                    xmlns:views="clr-namespace:LiveFootballWpf.Views">
+    <DataTemplate DataType="{x:Type viewModels:AllGamesTabViewModel}">
+        <views:AllGamesTabView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModels:LeagueTabViewModel}">
+        <views:LeagueTabView />
+    </DataTemplate>
+</ResourceDictionary>

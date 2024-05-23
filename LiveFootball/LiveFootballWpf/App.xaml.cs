@@ -1,7 +1,6 @@
 using System.Windows;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using LiveFootball.Core.Deserializers;
-using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
 using LiveFootball.Core.ViewModels;
 using LiveFootballWpf.Services;
@@ -38,7 +37,9 @@ namespace LiveFootballWpf
                     new ServiceCollection()
                         .AddTransient<IFootballApiService, FootballApiService>() // Services
                         .AddTransient<IDeserializationService, DeserializationService>() 
-                        .AddSingleton<MenuViewModel>() // ViewModels
+                        .AddSingleton<MainViewModel>() // ViewModels
+                        .AddSingleton<MenuViewModel>()
+                        .AddSingleton<LeagueTabViewModel>()
                         .AddSingleton<AllGamesTabViewModel>()
                         .AddSingleton<LiveGamesViewModel>()
                         .AddSingleton<ResultsViewModel>()

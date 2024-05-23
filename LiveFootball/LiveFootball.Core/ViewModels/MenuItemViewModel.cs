@@ -32,8 +32,7 @@ public class MenuItemViewModel
 
     #region Constructors
 
-    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null,
-                             IDeserializationService? deserializeDataService = null)
+    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
