@@ -20,7 +20,7 @@ public partial class MenuViewModel : ObservableObject
 
     private CancellationTokenSource _fetchLiveGamesDataCancellationTokenSource = null!;
 
-    [ObservableProperty] 
+    [ObservableProperty]
     private List<MenuItemViewModel> _leagues;
 
     #endregion
@@ -32,7 +32,7 @@ public partial class MenuViewModel : ObservableObject
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService =
-            deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>(); 
+            deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
 
         Leagues = new List<MenuItemViewModel>
         {
@@ -58,11 +58,24 @@ public partial class MenuViewModel : ObservableObject
     private async Task AllGamesFetchData()
     {
         // Switch current TabView to AllGamesTabView
-        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<AllGamesTabViewModel>();
+        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
+            Ioc.Default.GetRequiredService<AllGamesTabViewModel>();
 
         await StartFetchingLiveGamesData();
 
-        // TODO: Results and Fixtures
+        // Set loading state to true
+        HelperFunctions.SetAllGamesLoadingProgressState(true);
+
+        // Fetch Results data
+        var resultsData = await _footballService.GetAllGamesResultsDataAsync();
+        await RefreshResults(JObject.Parse(resultsData));
+
+        // Fetch Fixtures data
+        var fixturesData = await _footballService.GetAllGamesFixturesDataAsync();
+        await RefreshFixtures(JObject.Parse(fixturesData));
+
+        // Set loading state to false
+        HelperFunctions.SetAllGamesLoadingProgressState(false);
     }
 
     private async Task FetchLiveGamesDataAsync(CancellationToken cancellationToken)
@@ -102,6 +115,22 @@ public partial class MenuViewModel : ObservableObject
 
         var liveGamesViewModel = Ioc.Default.GetRequiredService<LiveGamesViewModel>();
         liveGamesViewModel.MatchesCollection = matchesCollection;
+    }
+
+    private async Task RefreshFixtures(JObject jsonData)
+    {
+        var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
+
+        var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
+        fixturesViewModel.MatchesCollection = matchesCollection;
+    }
+
+    private async Task RefreshResults(JObject jsonData)
+    {
+        var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
+
+        var resultsViewModel = Ioc.Default.GetRequiredService<ResultsViewModel>();
+        resultsViewModel.MatchesCollection = matchesCollection;
     }
 
     #endregion

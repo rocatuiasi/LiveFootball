@@ -32,7 +32,8 @@ public class MenuItemViewModel
 
     #region Constructors
 
-    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
+    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null,
+                             IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
@@ -49,21 +50,22 @@ public class MenuItemViewModel
     private async Task FetchData()
     {
         // Switch current TabView to LeagueTabView
-        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
+        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
+            Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 
         // Set loading state to true
         HelperFunctions.SetLeagueLoadingProgressState(true);
 
         // Fetch Results data
-        var resultsData = await _footballService.GetResultsDataAsync(LeagueId);
+        var resultsData = await _footballService.GetLeagueResultsDataAsync(LeagueId);
         await RefreshResults(JObject.Parse(resultsData));
 
         // Fetch Fixtures data
-        var fixturesData = await _footballService.GetFixturesDataAsync(LeagueId);
+        var fixturesData = await _footballService.GetLeagueFixturesDataAsync(LeagueId);
         await RefreshFixtures(JObject.Parse(fixturesData));
 
         // Fetch Standing data
-        var standingData = await _footballService.GetStandingDataAsync("2023", LeagueId);
+        var standingData = await _footballService.GetLeagueStandingDataAsync(LeagueId);
         await RefreshLeagueStanding(JObject.Parse(standingData));
 
         // Set loading state to false
