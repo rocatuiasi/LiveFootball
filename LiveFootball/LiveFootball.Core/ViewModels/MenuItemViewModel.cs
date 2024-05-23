@@ -48,6 +48,9 @@ public class MenuItemViewModel
 
     private async Task FetchData()
     {
+        // Switch current TabView to LeagueTabView
+        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
+
         // Set loading state to true
         HelperFunctions.SetLeagueLoadingProgressState(true);
 
