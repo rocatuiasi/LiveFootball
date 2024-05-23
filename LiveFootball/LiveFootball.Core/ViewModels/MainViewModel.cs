@@ -6,10 +6,10 @@ namespace LiveFootball.Core.ViewModels;
 public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty] 
-    private object _currentTabView;
+    private object _currentTabView = null!;
 
-    public MainViewModel()
+    public void InitializeApp()
     {
-        CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
+        Ioc.Default.GetRequiredService<MenuViewModel>().AllGamesCommand.Execute(null);
     }
 }

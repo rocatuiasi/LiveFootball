@@ -25,9 +25,10 @@ namespace LiveFootballWpf
         /// <inheritdoc/>
         protected override void OnStartup(StartupEventArgs e)
         {
-            ConfigureServices();
-
             base.OnStartup(e);
+
+            ConfigureServices();
+            Ioc.Default.GetRequiredService<MainViewModel>().InitializeApp();
         }
 
         private void ConfigureServices()
