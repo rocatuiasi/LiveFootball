@@ -25,7 +25,7 @@ public class DeserializationService : IDeserializationService
         }
         catch (Exception)
         {
-            return [];
+            throw new DeserializationException();
         }
     }
 
@@ -39,7 +39,7 @@ public class DeserializationService : IDeserializationService
         }
         catch (Exception)
         {
-            return [];
+            throw new DeserializationException();
         }
     }
 
@@ -53,7 +53,7 @@ public class DeserializationService : IDeserializationService
         }
         catch (Exception)
         {
-            return [];
+            throw new DeserializationException();
         }
     }
 
@@ -67,7 +67,7 @@ public class DeserializationService : IDeserializationService
         }
         catch (Exception)
         {
-            return [];
+            throw new DeserializationException();
         }
     }
 }

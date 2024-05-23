@@ -1,11 +1,10 @@
-﻿using System.Windows.Input;
-
+﻿using System.Net.Http;
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
-
+using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Services;
-
 using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
@@ -17,7 +16,7 @@ public class MenuItemViewModel
     private readonly IFootballApiService _footballService;
     private readonly IDeserializationService _deserializeDataService;
 
-    public string Name { get; set; }
+    public string Name { get; }
     private string LeagueId { get; }
 
     #endregion
@@ -32,7 +31,8 @@ public class MenuItemViewModel
 
     #region Constructors
 
-    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
+    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null,
+        IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
@@ -49,22 +49,16 @@ public class MenuItemViewModel
     private async Task FetchData()
     {
         // Switch current TabView to LeagueTabView
-        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
+        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
+            Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 
         // Set loading state to true
         HelperFunctions.SetLeagueLoadingProgressState(true);
-
-        // Fetch Results data
-        var resultsData = await _footballService.GetResultsDataAsync(LeagueId);
-        await RefreshResults(JObject.Parse(resultsData));
-
-        // Fetch Fixtures data
-        var fixturesData = await _footballService.GetFixturesDataAsync(LeagueId);
-        await RefreshFixtures(JObject.Parse(fixturesData));
-
-        // Fetch Standing data
-        var standingData = await _footballService.GetStandingDataAsync("2023", LeagueId);
-        await RefreshLeagueStanding(JObject.Parse(standingData));
+        
+        // Fetch and Deserialize data
+        await RefreshResults();
+        await RefreshFixtures();
+        await RefreshLeagueStanding();
 
         // Set loading state to false
         HelperFunctions.SetLeagueLoadingProgressState(false);
@@ -73,28 +67,84 @@ public class MenuItemViewModel
     #endregion
 
 
-    private async Task RefreshLeagueStanding(JObject jsonData)
+    private async Task RefreshLeagueStanding()
     {
-        var leagueStandingCollection = await _deserializeDataService.DeserializeStandingData(jsonData);
-
         var leagueStandingViewModel = Ioc.Default.GetRequiredService<LeagueStandingViewModel>();
-        leagueStandingViewModel.StandingTeams = leagueStandingCollection;
+        try
+        {
+            // Fetch Standing data
+            var standingData = await _footballService.GetStandingDataAsync("2023", LeagueId);
+            var jsonData = JObject.Parse(standingData);
+            // Deserialize Standing data
+            var leagueStandingCollection = await _deserializeDataService.DeserializeStandingData(jsonData);
+
+            leagueStandingViewModel.StandingTeams = leagueStandingCollection;
+        }
+        catch (DeserializationException)
+        {
+            leagueStandingViewModel.StatusMessage = "No standing data available...";
+        }
+        catch (HttpRequestException)
+        {
+            leagueStandingViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
+        }
+        catch (Exception)
+        {
+            leagueStandingViewModel.StatusMessage = "Oops, something went wrong";
+        }
     }
 
-    private async Task RefreshFixtures(JObject jsonData)
+    private async Task RefreshFixtures()
     {
-        var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
-
         var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
-        fixturesViewModel.MatchesCollection = matchesCollection;
-        fixturesViewModel.StatusMessage = matchesCollection.Count == 0 ? "No more matches..." : string.Empty;
+        try
+        {
+            // Fetch Fixtures data
+            var fixturesData = await _footballService.GetFixturesDataAsync(LeagueId);
+            var jsonData = JObject.Parse(fixturesData);
+            // Deserialize Fixtures data
+            var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
+
+            fixturesViewModel.MatchesCollection = matchesCollection;
+        }
+        catch (DeserializationException)
+        {
+            fixturesViewModel.StatusMessage = "No more fixtures this season...";
+        }
+        catch (HttpRequestException)
+        {
+            fixturesViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
+        }
+        catch (Exception)
+        {
+            fixturesViewModel.StatusMessage = "Oops, something went wrong";
+        }
     }
 
-    private async Task RefreshResults(JObject jsonData)
+    private async Task RefreshResults()
     {
-        var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
-
         var resultsViewModel = Ioc.Default.GetRequiredService<ResultsViewModel>();
-        resultsViewModel.MatchesCollection = matchesCollection;
+        try
+        {
+            // Fetch Results data
+            var resultsData = await _footballService.GetResultsDataAsync(LeagueId);
+            var jsonData = JObject.Parse(resultsData);
+            // Deserialize Results data
+            var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
+
+            resultsViewModel.MatchesCollection = matchesCollection;
+        }
+        catch (DeserializationException)
+        {
+            resultsViewModel.StatusMessage = "No results data available...";
+        }
+        catch (HttpRequestException)
+        {
+            resultsViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
+        }
+        catch (Exception)
+        {
+            resultsViewModel.StatusMessage = "Oops, something went wrong";
+        }
     }
 }

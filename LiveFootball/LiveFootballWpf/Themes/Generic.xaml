@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:models="clr-namespace:LiveFootball.Core.Models;assembly=LiveFootball.Core">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary
             Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
@@ -60,7 +61,7 @@
 
     <!--#region Live Games View-->
 
-    <DataTemplate x:Key="LiveGamesItemTemplate">
+    <DataTemplate x:Key="LiveGamesItemTemplate" DataType="{x:Type models:LiveMatchModel}">
         <Border BorderBrush="#AAAA" 
              BorderThickness="0 0 0 1"
              Margin="10 0 0 0"
@@ -158,7 +159,7 @@
         </Setter>
     </Style>
 
-    <DataTemplate x:Key="ClubGridViewColumnTemplate">
+    <DataTemplate x:Key="ClubGridViewColumnTemplate" DataType="{x:Type models:LeagueStandingTeamModel}">
         <StackPanel Orientation="Horizontal">
             <Image Source="{Binding Logo}"
                    Style="{StaticResource TeamsLogoStyle}"
@@ -172,7 +173,7 @@
 
     <!--#region Fixtures View-->
 
-    <DataTemplate x:Key="FixturesItemTemplate">
+    <DataTemplate x:Key="FixturesItemTemplate" DataType="{x:Type models:FixtureMatchModel}">
         <Border BorderBrush="#AAAA" 
                 BorderThickness="0 0 0 1"
                 Margin="10 0 0 0" Padding="5">
@@ -218,7 +219,7 @@
 
     <!--#region Results View-->
 
-    <DataTemplate x:Key="ResultsItemTemplate">
+    <DataTemplate x:Key="ResultsItemTemplate" DataType="{x:Type models:ResultMatchModel}">
         <Border BorderBrush="#AAAA" 
                 BorderThickness="0 0 0 1"
                 Margin="10 0 0 0"
