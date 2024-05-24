@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
-
+using System.Windows.Media.Imaging;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 
@@ -10,12 +11,19 @@ using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
 
-public class MenuItemViewModel
+public class MenuItemViewModel : ObservableObject
 {
     #region Backing Fields and Properties
 
     private readonly IFootballApiService _footballService;
     private readonly IDeserializationService _deserializeDataService;
+    private BitmapSource _logo;
+
+    public BitmapSource Logo
+    {
+        get => _logo;
+        set { _logo = value; OnPropertyChanged();}
+    }
 
     public string Name { get; set; }
     private string LeagueId { get; }

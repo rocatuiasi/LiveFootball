@@ -4,19 +4,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:views="clr-namespace:LiveFootballWpf.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TabControl>
-            <TabItem Header="Results">
-                <views:ResultsView />
-            </TabItem>
-            <TabItem Header="Fixtures">
-                <views:FixturesView />
-            </TabItem>
-            <TabItem Header="Standing">
-                <views:LeagueStandingView />
-            </TabItem>
-        </TabControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid Margin="10 0" Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Football Matches" VerticalAlignment="Center" 
+                       FontSize="18" FontWeight="Bold" Foreground="DimGray" />
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <materialDesign:PackIcon Kind="CalendarMonthOutline" Foreground="SlateGray" 
+                                         Height="18" Width="18" VerticalAlignment="Center"
+                                         Margin="0 2 2 0"/>
+                <TextBlock Text="May 24, 2024" FontSize="14" FontWeight="DemiBold" Foreground="DimGray" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        
+        <materialDesign:Card Grid.Row="1" UniformCornerRadius="10">
+            <TabControl Style="{StaticResource MaterialDesignFilledTabControl}"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                <TabItem Header="Results">
+                    <views:ResultsView />
+                </TabItem>
+                <TabItem Header="Fixtures">
+                    <views:FixturesView />
+                </TabItem>
+                <TabItem Header="Standing">
+                    <views:LeagueStandingView />
+                </TabItem>
+            </TabControl>
+        </materialDesign:Card>
     </Grid>
 </UserControl>
