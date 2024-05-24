@@ -4,7 +4,7 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
-
+using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Services;
 
@@ -22,10 +22,13 @@ public partial class MenuViewModel : ObservableObject
     private CancellationTokenSource _fetchLiveGamesDataCancellationTokenSource = null!;
 
     [ObservableProperty] 
-    private List<MenuItemViewModel> _leagues = null!;
+    private List<MenuItemViewModel> _leagues;
     
     [ObservableProperty] 
     private bool _isLoading;
+
+    [ObservableProperty]
+    private string _statusMessage = string.Empty;
 
     #endregion
 
@@ -36,7 +39,8 @@ public partial class MenuViewModel : ObservableObject
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
-
+        _leagues = new();
+        
         LoadLeagues();
     }
 
@@ -111,20 +115,20 @@ public partial class MenuViewModel : ObservableObject
             var jsonData = JObject.Parse(leaguesData);
             Leagues = await _deserializeDataService.DeserializeLeaguesData(jsonData);
         }
-        /*TODO: Update needed after merge
-        using LiveFootball.Core.Exceptions;
         catch (DeserializationException)
         {
             StatusMessage = "No standing data available...";
+            Leagues = [];
         } 
-        */
         catch (HttpRequestException)
         {
-            // StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
+            StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
+            Leagues = [];
         }
         catch (Exception)
         {
-            // StatusMessage = "Oops, something went wrong";
+            StatusMessage = "Oops, something went wrong";
+            Leagues = [];
         }
     }
 

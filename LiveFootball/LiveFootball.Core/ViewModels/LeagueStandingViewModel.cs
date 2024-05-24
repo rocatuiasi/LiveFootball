@@ -16,5 +16,8 @@ public partial class LeagueStandingViewModel : ObservableObject
     [ObservableProperty]
     private List<LeagueStandingTeamModel> _standingTeams = new();
 
+    [ObservableProperty]
+    private string _statusMessage = string.Empty;
+
     #endregion
 }

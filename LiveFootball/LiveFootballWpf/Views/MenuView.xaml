@@ -76,7 +76,6 @@
                                 VerticalAlignment="Center" HorizontalAlignment="Right" />
                     </Grid>
 
-
                     <Grid Background="{StaticResource MaterialDesign.Brush.Primary}">
                         <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_TextChanged"
                                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -98,6 +97,8 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
+                
+                <TextBlock Grid.Row="1" Text="{Binding StatusMessage}" Style="{StaticResource TabStatusMessageStyle}" />
                 
                 <Grid Grid.Row="1"
                       Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"

@@ -20,36 +20,33 @@ public sealed class FootballApiService : IFootballApiService
 
     public string GetLeaguesData()
     {
-        var jsonData = string.Empty;
-        if (File.Exists(GetLeaguesFileName))
+        string jsonData;
+        try
         {
-            try
+            // Read from file
+            jsonData = File.ReadAllText(GetLeaguesFileName);
+            Console.WriteLine($"Successfully read from file {GetLeaguesFileName}");
+        }
+        catch (Exception)
+        {
+            // If file is corrupted, fetch from API
+            var request = new HttpRequestMessage
             {
-                // Read from file
-                jsonData = File.ReadAllText(GetLeaguesFileName);
-                Console.WriteLine($"Success in reading from file: {GetLeaguesFileName}");
-            }
-            catch (Exception)
-            {
-                // If file is corrupted, fetch from API
-                var request = new HttpRequestMessage
+                Method = HttpMethod.Get,
+                RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/leagues?season={_currentSeason}"),
+                Headers =
                 {
-                    Method = HttpMethod.Get,
-                    RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/leagues?season={_currentSeason}"),
-                    Headers =
-                    {
-                        { "X-RapidAPI-Key", _apiKey },
-                        { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
-                    }
-                };
+                    { "X-RapidAPI-Key", _apiKey },
+                    { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
+                }
+            };
 
-                using var response = _client.Send(request);
-                response.EnsureSuccessStatusCode();
-                jsonData = response.Content.ReadAsStringAsync().Result;
+            using var response = _client.Send(request);
+            response.EnsureSuccessStatusCode();
+            jsonData = response.Content.ReadAsStringAsync().Result;
 
-                // Write to file for future use to avoid API calls
-                File.WriteAllText(GetLeaguesFileName, jsonData);
-            }
+            // Write to file for future use to avoid API calls
+            File.WriteAllText(GetLeaguesFileName, jsonData);
         }
 
         return jsonData;
