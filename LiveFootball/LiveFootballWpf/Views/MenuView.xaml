@@ -77,7 +77,8 @@
                     </Grid>
 
                     <Grid Background="{StaticResource MaterialDesign.Brush.Primary}">
-                        <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_TextChanged"
+                        <TextBox x:Name="SearchTextBox" 
+                                 Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
                                  materialDesign:TextFieldAssist.UnderlineBrush="{StaticResource MaterialDesign.Brush.Primary.Dark}"
                                  VerticalAlignment="Center" Visibility="Collapsed"
@@ -87,7 +88,7 @@
                 </StackPanel>
 
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
-                    <ItemsControl x:Name="LeaguesItemsControl" ItemsSource="{Binding Leagues}">
+                    <ItemsControl ItemsSource="{Binding FilteredLeagues}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Button Command="{Binding FetchDataCommand}"
