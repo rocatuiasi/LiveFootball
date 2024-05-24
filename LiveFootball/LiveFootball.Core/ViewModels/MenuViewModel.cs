@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Net.Http;
+using System.Windows.Input;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
@@ -21,7 +22,7 @@ public partial class MenuViewModel : ObservableObject
     private CancellationTokenSource _fetchLiveGamesDataCancellationTokenSource = null!;
 
     [ObservableProperty] 
-    private List<MenuItemViewModel> _leagues;
+    private List<MenuItemViewModel> _leagues = null!;
     
     [ObservableProperty] 
     private bool _isLoading;
@@ -36,26 +37,7 @@ public partial class MenuViewModel : ObservableObject
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
 
-        Leagues = new List<MenuItemViewModel>
-        {
-            new("World Cup", "1"),
-            new("Euro Championship", "4"),
-            new("UEFA Champions League", "2"),
-            new("UEFA Europa League", "3"),
-            new("Premier League", "39"),
-            new("Championship", "40"),
-            new("La Liga", "140"),
-            new("Bundesliga", "78"),
-            new("Ligue 1", "61"),
-            new("Serie A", "135"),
-            new("Liga I - Superliga", "283"),
-            new("Eredivisie", "88"),
-            new("Campeonato Brasileiro Série A", "71"),
-            new("Primeira Liga", "94"),
-
-        };
-        
-        LoadLeaguesLogosAsync();
+        LoadLeagues();
     }
 
     #endregion
@@ -119,6 +101,33 @@ public partial class MenuViewModel : ObservableObject
 
     #endregion
 
+    private async void LoadLeagues()
+    {
+        try
+        {
+            // Fetch Leagues data
+            var leaguesData = _footballService.GetLeaguesData();
+            // Deserialize Leagues data
+            var jsonData = JObject.Parse(leaguesData);
+            Leagues = await _deserializeDataService.DeserializeLeaguesData(jsonData);
+        }
+        /*TODO: Update needed after merge
+        using LiveFootball.Core.Exceptions;
+        catch (DeserializationException)
+        {
+            StatusMessage = "No standing data available...";
+        } 
+        */
+        catch (HttpRequestException)
+        {
+            // StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
+        }
+        catch (Exception)
+        {
+            // StatusMessage = "Oops, something went wrong";
+        }
+    }
+
     public async Task StartFetchingLiveGamesData()
     {
         _fetchLiveGamesDataCancellationTokenSource = new CancellationTokenSource();
@@ -129,17 +138,5 @@ public partial class MenuViewModel : ObservableObject
     public void StopFetchingLiveGamesData()
     {
         _fetchLiveGamesDataCancellationTokenSource?.Cancel();
-    }
-    
-    private async void LoadLeaguesLogosAsync()
-    {
-        var tasks = new List<Task>();
-        var semaphore = new SemaphoreSlim(25);
-        foreach (var menuItemViewModel in Leagues)
-        {
-            tasks.Add(menuItemViewModel.LoadLogoWithSemaphore(semaphore));
-        }
-    
-        await Task.WhenAll(tasks);
     }
 }

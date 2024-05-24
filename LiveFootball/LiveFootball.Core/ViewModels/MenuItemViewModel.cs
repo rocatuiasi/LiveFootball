@@ -17,16 +17,10 @@ public class MenuItemViewModel : ObservableObject
 
     private readonly IFootballApiService _footballService;
     private readonly IDeserializationService _deserializeDataService;
-    private BitmapSource _logo;
-
-    public BitmapSource Logo
-    {
-        get => _logo;
-        set { _logo = value; OnPropertyChanged();}
-    }
-
+    
+    public BitmapSource Logo { get; set; }
     public string Name { get; set; }
-    private string LeagueId { get; }
+    public string LeagueId { get; set; }
 
     #endregion
 
@@ -40,13 +34,14 @@ public class MenuItemViewModel : ObservableObject
 
     #region Constructors
 
-    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
+    public MenuItemViewModel(string name, string leagueId, BitmapSource logo, IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
 
         Name = name;
         LeagueId = leagueId;
+        Logo = logo;
     }
 
     #endregion
@@ -102,23 +97,5 @@ public class MenuItemViewModel : ObservableObject
 
         var resultsViewModel = Ioc.Default.GetRequiredService<ResultsViewModel>();
         resultsViewModel.MatchesCollection = matchesCollection;
-    }
-
-    public async Task LoadLogoWithSemaphore(SemaphoreSlim semaphore)
-    {
-        await semaphore.WaitAsync(); // Wait for a slot to become available
-        try
-        {
-            await LoadLogoAsync();
-        }
-        finally
-        {
-            semaphore.Release(); // Release the slot when the task is completed
-        }
-    }
-
-    private async Task LoadLogoAsync()
-    {
-        Logo = await HelperFunctions.GetLeagueLogoFromUrl($"https://media.api-sports.io/football/leagues/{LeagueId}.png");
     }
 }

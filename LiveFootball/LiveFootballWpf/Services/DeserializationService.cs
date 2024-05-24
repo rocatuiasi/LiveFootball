@@ -1,7 +1,7 @@
 ﻿using LiveFootball.Core.Deserializers;
 using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
-
+using LiveFootball.Core.ViewModels;
 using Newtonsoft.Json.Linq;
 
 namespace LiveFootballWpf.Services;
@@ -41,5 +41,12 @@ public class DeserializationService : IDeserializationService
         var jsonStandingData = jsonData["response"]![0]!["league"]!["standings"]![0]![0]!;
 
         return await _deserializerFactory.CreateStandingDeserializer().Deserialize(jsonStandingData);
+    }
+
+    public async Task<List<MenuItemViewModel>> DeserializeLeaguesData(JObject jsonData)
+    {
+        // var jsonLeaguesData = jsonData["response"]![0]!;
+        
+        return await _deserializerFactory.CreateLeaguesDeserializer().Deserialize(jsonData);
     }
 }
