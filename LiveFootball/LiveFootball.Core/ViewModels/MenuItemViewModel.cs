@@ -80,7 +80,6 @@ public class MenuItemViewModel : ObservableObject
 
     #endregion
 
-
     private async Task RefreshLeagueStanding(JObject jsonData)
     {
         var leagueStandingCollection = await _deserializeDataService.DeserializeStandingData(jsonData);
@@ -103,5 +102,23 @@ public class MenuItemViewModel : ObservableObject
 
         var resultsViewModel = Ioc.Default.GetRequiredService<ResultsViewModel>();
         resultsViewModel.MatchesCollection = matchesCollection;
+    }
+
+    public async Task LoadLogoWithSemaphore(SemaphoreSlim semaphore)
+    {
+        await semaphore.WaitAsync(); // Wait for a slot to become available
+        try
+        {
+            await LoadLogoAsync();
+        }
+        finally
+        {
+            semaphore.Release(); // Release the slot when the task is completed
+        }
+    }
+
+    private async Task LoadLogoAsync()
+    {
+        Logo = await HelperFunctions.GetLeagueLogoFromUrl($"https://media.api-sports.io/football/leagues/{LeagueId}.png");
     }
 }
