@@ -9,4 +9,6 @@ public interface IDeserializerFactory
     IFixturesDeserializer CreateFixturesDeserializer();
 
     IStandingDeserializer CreateStandingDeserializer();
+
+    ILeaguesDeserializer CreateLeaguesDeserializer();
 }

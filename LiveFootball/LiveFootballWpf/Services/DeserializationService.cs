@@ -2,6 +2,7 @@
 using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
+using LiveFootball.Core.ViewModels;
 using Newtonsoft.Json.Linq;
 
 namespace LiveFootballWpf.Services;
@@ -69,5 +70,12 @@ public class DeserializationService : IDeserializationService
         {
             throw new DeserializationException();
         }
+    }
+
+    public async Task<List<MenuItemViewModel>> DeserializeLeaguesData(JObject jsonData)
+    {
+        // var jsonLeaguesData = jsonData["response"]![0]!;
+        
+        return await _deserializerFactory.CreateLeaguesDeserializer().Deserialize(jsonData);
     }
 }

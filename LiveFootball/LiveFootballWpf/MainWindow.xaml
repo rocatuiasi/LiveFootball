@@ -6,18 +6,18 @@
         xmlns:views="clr-namespace:LiveFootballWpf.Views"
         xmlns:viewModels="clr-namespace:LiveFootball.Core.ViewModels;assembly=LiveFootball.Core"
         mc:Ignorable="d"
-        Title="LiveFootball" Height="650" Width="1000"
+        Title="LiveFootball" Height="650" Width="1000" MinWidth="600"
         d:DataContext="{d:DesignInstance viewModels:MainViewModel}">
     <!-- Background="{DynamicResource MaterialDesign.Brush.Background}" -->
     <!-- Foreground="{DynamicResource MaterialDesign.Brush.Foreground}" -->
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" MinWidth="150" MaxWidth="500"/>
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
-        <views:MenuView Grid.Column="0" />
-
-        <ContentControl Grid.Column="1" Content="{Binding CurrentTabView}" />
+        <views:MenuView Grid.Column="0" Margin="20 20 20 20" />
+        <GridSplitter Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="6" Margin="0 0 8 0" />
+        <ContentControl Grid.Column="1" Content="{Binding CurrentTabView}" Margin="0 0 20 20" />
     </Grid>
 </Window>

@@ -1,9 +1,10 @@
-﻿using System.Windows.Input;
+﻿using System.Net.Http;
+using System.Windows.Input;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
-
+using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Services;
 
@@ -22,6 +23,12 @@ public partial class MenuViewModel : ObservableObject
 
     [ObservableProperty] 
     private List<MenuItemViewModel> _leagues;
+    
+    [ObservableProperty] 
+    private bool _isLoading;
+
+    [ObservableProperty]
+    private string _statusMessage = string.Empty;
 
     #endregion
 
@@ -31,18 +38,10 @@ public partial class MenuViewModel : ObservableObject
                          IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
-        _deserializeDataService =
-            deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>(); 
-
-        Leagues = new List<MenuItemViewModel>
-        {
-            new("Premier League", "39"),
-            new("La Liga", "140"),
-            new("Bundesliga", "78"),
-            new("Ligue 1", "61"),
-            new("Serie A", "135"),
-            new("Liga 1 - Superliga", "283")
-        };
+        _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
+        _leagues = new();
+        
+        LoadLeagues();
     }
 
     #endregion
@@ -105,6 +104,33 @@ public partial class MenuViewModel : ObservableObject
     }
 
     #endregion
+
+    private async void LoadLeagues()
+    {
+        try
+        {
+            // Fetch Leagues data
+            var leaguesData = _footballService.GetLeaguesData();
+            // Deserialize Leagues data
+            var jsonData = JObject.Parse(leaguesData);
+            Leagues = await _deserializeDataService.DeserializeLeaguesData(jsonData);
+        }
+        catch (DeserializationException)
+        {
+            StatusMessage = "No standing data available...";
+            Leagues = [];
+        } 
+        catch (HttpRequestException)
+        {
+            StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
+            Leagues = [];
+        }
+        catch (Exception)
+        {
+            StatusMessage = "Oops, something went wrong";
+            Leagues = [];
+        }
+    }
 
     public async Task StartFetchingLiveGamesData()
     {

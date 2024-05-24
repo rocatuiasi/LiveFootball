@@ -1,5 +1,7 @@
 ﻿using System.Net.Http;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 using LiveFootball.Core.Exceptions;
@@ -9,15 +11,16 @@ using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
 
-public class MenuItemViewModel
+public class MenuItemViewModel : ObservableObject
 {
     #region Backing Fields and Properties
 
     private readonly IFootballApiService _footballService;
     private readonly IDeserializationService _deserializeDataService;
-
+    
+    public BitmapSource Logo { get; set; }
     public string Name { get; }
-    private string LeagueId { get; }
+    public string LeagueId { get; set; }
 
     #endregion
 
@@ -31,14 +34,14 @@ public class MenuItemViewModel
 
     #region Constructors
 
-    public MenuItemViewModel(string name, string leagueId, IFootballApiService? footballApiService = null,
-        IDeserializationService? deserializeDataService = null)
+    public MenuItemViewModel(string name, string leagueId, BitmapSource logo, IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
 
         Name = name;
         LeagueId = leagueId;
+        Logo = logo;
     }
 
     #endregion
@@ -49,8 +52,7 @@ public class MenuItemViewModel
     private async Task FetchData()
     {
         // Switch current TabView to LeagueTabView
-        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
-            Ioc.Default.GetRequiredService<LeagueTabViewModel>();
+        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 
         // Set loading state to true
         HelperFunctions.SetLeagueLoadingProgressState(true);
@@ -65,7 +67,6 @@ public class MenuItemViewModel
     }
 
     #endregion
-
 
     private async Task RefreshLeagueStanding()
     {
