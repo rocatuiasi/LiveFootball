@@ -6,10 +6,8 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:viewModels="clr-namespace:LiveFootball.Core.ViewModels;assembly=LiveFootball.Core"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
-    <d:UserControl.DataContext>
-        <viewModels:ResultsViewModel />
-    </d:UserControl.DataContext>
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance viewModels:ResultsViewModel}">
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" 
@@ -18,7 +16,8 @@
                           Padding="20 0"
                           ItemTemplate="{StaticResource ResultsItemTemplate}" />
         </ScrollViewer>
-
+        
+        <TextBlock Text="{Binding StatusMessage}" Style="{StaticResource TabStatusMessageStyle}" />
 
         <Grid Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
               Background="#5000">

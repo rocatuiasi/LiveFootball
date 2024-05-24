@@ -17,6 +17,8 @@
                           ItemTemplate="{StaticResource LiveGamesItemTemplate}" />
         </ScrollViewer>
 
+        <TextBlock Text="{Binding StatusMessage}" Style="{StaticResource TabStatusMessageStyle}" />
+
         <Grid Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
               Background="#5000">
             <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}"

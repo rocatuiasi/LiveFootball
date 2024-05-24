@@ -11,4 +11,7 @@ public partial class FixturesViewModel : ObservableObject
 
     [ObservableProperty] 
     private bool _isLoading;
+
+    [ObservableProperty]
+    private string _statusMessage = string.Empty;
 }

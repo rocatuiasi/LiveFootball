@@ -1,7 +1,7 @@
 ﻿using LiveFootball.Core.Deserializers;
+using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
-
 using Newtonsoft.Json.Linq;
 
 namespace LiveFootballWpf.Services;
@@ -17,29 +17,57 @@ public class DeserializationService : IDeserializationService
 
     public async Task<List<LiveMatchModel>> DeserializeLiveGamesData(JObject jsonData)
     {
-        var jsonLiveGamesData = jsonData["response"]![0]!;
+        try
+        {
+            var jsonLiveGamesData = jsonData["response"]![0]!;
 
-        return await _deserializerFactory.CreateLiveGamesDeserializer().Deserialize(jsonLiveGamesData);
+            return await _deserializerFactory.CreateLiveGamesDeserializer().Deserialize(jsonLiveGamesData);
+        }
+        catch (Exception)
+        {
+            throw new DeserializationException();
+        }
     }
 
     public async Task<List<ResultMatchModel>> DeserializeResultsData(JObject jsonData)
     {
-        var jsonResultsData = jsonData["response"]![0]!;
+        try
+        {
+            var jsonResultsData = jsonData["response"]![0]!;
 
-        return await _deserializerFactory.CreateResultsDeserializer().Deserialize(jsonResultsData);
+            return await _deserializerFactory.CreateResultsDeserializer().Deserialize(jsonResultsData);
+        }
+        catch (Exception)
+        {
+            throw new DeserializationException();
+        }
     }
 
     public async Task<List<FixtureMatchModel>> DeserializeFixturesData(JObject jsonData)
     {
-        var jsonFixtureData = jsonData["response"]![0]!;
+        try
+        {
+            var jsonFixtureData = jsonData["response"]![0]!;
 
-        return await _deserializerFactory.CreateFixturesDeserializer().Deserialize(jsonFixtureData);
+            return await _deserializerFactory.CreateFixturesDeserializer().Deserialize(jsonFixtureData);
+        }
+        catch (Exception)
+        {
+            throw new DeserializationException();
+        }
     }
 
     public async Task<List<LeagueStandingTeamModel>> DeserializeStandingData(JObject jsonData)
     {
-        var jsonStandingData = jsonData["response"]![0]!["league"]!["standings"]![0]![0]!;
+        try
+        {
+            var jsonStandingData = jsonData["response"]![0]!["league"]!["standings"]![0]![0]!;
 
-        return await _deserializerFactory.CreateStandingDeserializer().Deserialize(jsonStandingData);
+            return await _deserializerFactory.CreateStandingDeserializer().Deserialize(jsonStandingData);
+        }
+        catch (Exception)
+        {
+            throw new DeserializationException();
+        }
     }
 }
