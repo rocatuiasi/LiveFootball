@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiFootballDeserializer\ApiFootballDeserializer.csproj" />
     <ProjectReference Include="..\LiveFootball.Core\LiveFootball.Core.csproj" />
   </ItemGroup>
 

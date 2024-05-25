@@ -1,4 +1,4 @@
-﻿namespace LiveFootball.Core.Deserializers;
+﻿namespace ApiFootballDeserializer;
 
 public interface IDeserializerFactory
 {

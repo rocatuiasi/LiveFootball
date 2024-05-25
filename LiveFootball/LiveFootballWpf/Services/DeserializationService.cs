@@ -1,4 +1,4 @@
-﻿using LiveFootball.Core.Deserializers;
+﻿using ApiFootballDeserializer;
 using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;

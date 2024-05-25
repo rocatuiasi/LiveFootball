@@ -2,7 +2,7 @@
 using LiveFootball.Core.ViewModels;
 using Newtonsoft.Json.Linq;
 
-namespace LiveFootball.Core.Deserializers;
+namespace ApiFootballDeserializer;
 
 public class LeaguesDeserializer : ILeaguesDeserializer
 {
