@@ -10,7 +10,7 @@ public sealed class FootballApiService : IFootballApiService
     private const string ApiGetLeaguesFileName = "get-leagues.json";
 
     private readonly HttpClient _client;
-    private string _apiKey = "46b11dfc43msh7b2750b66a95a81p112f79jsne701175ae260";
+    private string _apiKey = "bug";
     private int _currentSeason = 2023;
 
     public FootballApiService()
