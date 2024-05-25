@@ -11,7 +11,7 @@ using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
 
-public class MenuItemViewModel : ObservableObject
+public partial class MenuItemViewModel : ObservableObject
 {
     #region Backing Fields and Properties
 
@@ -27,6 +27,23 @@ public class MenuItemViewModel : ObservableObject
     #region ICommand
 
     public ICommand FetchDataCommand => new AsyncRelayCommand(FetchData);
+    
+    [RelayCommand]
+    private void AddFavorite(string leagueId)
+    {
+        var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
+        if(menuViewModel.FavoriteLeagues.Any(x => x.LeagueId == leagueId))
+            return;
+        menuViewModel.FavoriteLeagues.Add(menuViewModel.Leagues.First(x => x.LeagueId == leagueId));
+    }
+    
+    [RelayCommand]
+    private void RemoveFavorite(string leagueId)
+    {
+        var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
+        var leagueToRemove = menuViewModel.FavoriteLeagues.First(x => x.LeagueId == leagueId);
+        menuViewModel.FavoriteLeagues.Remove(leagueToRemove);
+    }
 
     #endregion
 
@@ -78,6 +95,7 @@ public class MenuItemViewModel : ObservableObject
             var leagueStandingCollection = await _deserializeDataService.DeserializeStandingData(jsonData);
 
             leagueStandingViewModel.StandingTeams = leagueStandingCollection;
+            leagueStandingViewModel.StatusMessage = string.Empty;
         }
         catch (DeserializationException)
         {
@@ -108,6 +126,7 @@ public class MenuItemViewModel : ObservableObject
             var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
 
             fixturesViewModel.MatchesCollection = matchesCollection;
+            fixturesViewModel.StatusMessage = string.Empty;
         }
         catch (DeserializationException)
         {
@@ -138,6 +157,7 @@ public class MenuItemViewModel : ObservableObject
             var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
 
             resultsViewModel.MatchesCollection = matchesCollection;
+            resultsViewModel.StatusMessage = string.Empty;
         }
         catch (DeserializationException)
         {

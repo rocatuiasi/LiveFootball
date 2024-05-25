@@ -11,15 +11,6 @@
     <UserControl.Resources>
         <ControlTemplate x:Key="LeagueButtonControlTemplate" d:DataContext="{d:DesignInstance viewModels:MenuItemViewModel}">
             <Grid>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
-                            Margin="15 10">
-                    <Image Source="{Binding Logo}"
-                           Style="{StaticResource TeamsLogoStyle}"
-                           Margin="0 0 5 0"
-                           VerticalAlignment="Center" />
-                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
-                </StackPanel>
-
                 <Grid.Style>
                     <Style TargetType="Grid">
                         <Setter Property="Background"
@@ -27,11 +18,68 @@
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background"
-                                        Value="{DynamicResource MaterialDesign.Brush.Primary.Dark}" />
+                                        Value="{DynamicResource MaterialDesign.Brush.Primary.Light}" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>                    
                 </Grid.Style>
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch"
+                            Margin="15 10">
+                    <Image Source="{Binding Logo}"
+                           Style="{StaticResource TeamsLogoStyle}"
+                           Margin="0 0 5 0"
+                           VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center" FontSize="12"/>
+                </StackPanel>
+
+                <Button Command="{Binding AddFavoriteCommand}" CommandParameter="{Binding LeagueId}"
+                        Visibility="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Style="{StaticResource FavoriteButtonStyle}"
+                        HorizontalAlignment="Right" Margin="0 0 10 0"
+                        Background="#A000">
+                    <Button.Content>
+                        <materialDesign:PackIcon Kind="StarOutline" Height="22" Width="22"
+                                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </ControlTemplate>
+        
+        <ControlTemplate x:Key="FavoriteLeagueButtonControlTemplate" d:DataContext="{d:DesignInstance viewModels:MenuItemViewModel}">
+            <Grid>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Background"
+                                Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background"
+                                        Value="{DynamicResource MaterialDesign.Brush.Secondary.Light}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>                    
+                </Grid.Style>
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch"
+                            Margin="15 10">
+                    <Image Source="{Binding Logo}"
+                           Style="{StaticResource TeamsLogoStyle}"
+                           Margin="0 0 5 0"
+                           VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center" FontSize="12" />
+                </StackPanel>
+
+                <Button Command="{Binding RemoveFavoriteCommand}" CommandParameter="{Binding LeagueId}"
+                        Visibility="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Style="{StaticResource FavoriteButtonStyle}"
+                        HorizontalAlignment="Right" Margin="0 0 10 0"
+                        Background="#A000">
+                    <Button.Content>
+                        <materialDesign:PackIcon Kind="Star" Height="22" Width="22"
+                                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    </Button.Content>
+                </Button>
             </Grid>
         </ControlTemplate>
     
@@ -67,7 +115,7 @@
                         <TextBlock Text="Leagues" TextAlignment="Center" Padding="10"
                                    FontSize="16" FontWeight="DemiBold"
                                    Foreground="White"
-                                   Background="{DynamicResource MaterialDesign.Brush.Primary.Light}" />
+                                   Background="{DynamicResource MaterialDesign.Brush.Primary.Dark}" />
                         
                         <Button x:Name="SearchButton" Click="SearchButton_OnClick" 
                                 Style="{StaticResource SearchButton}"
@@ -88,15 +136,45 @@
                 </StackPanel>
 
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
-                    <ItemsControl ItemsSource="{Binding FilteredLeagues}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button Command="{Binding FetchDataCommand}"
-                                        Template="{StaticResource LeagueButtonControlTemplate}"
-                                        Height="40" Margin="0 0 0 1" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                    <StackPanel>
+                        <Expander Foreground="White" FontWeight="DemiBold" IsExpanded="True"
+                                  materialDesign:ExpanderAssist.HorizontalHeaderPadding="10 5"
+                                  materialDesign:ExpanderAssist.HeaderBackground="{StaticResource MaterialDesign.Brush.Secondary.Dark}">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Star" Height="20" Width="20" Foreground="Yellow"
+                                                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                                    <TextBlock Text="Favorite Leagues" FontSize="14" 
+                                               VerticalAlignment="Center" Margin="5 0 0 0"/>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel>
+                                <ItemsControl ItemsSource="{Binding FavoriteLeagues}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Button Command="{Binding FetchDataCommand}"
+                                                    Template="{StaticResource FavoriteLeagueButtonControlTemplate}"
+                                                    Cursor="Arrow"
+                                                    Height="40" Margin="0 0 0 1" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <Separator Style="{StaticResource MaterialDesignDarkSeparator}" 
+                                           Background="{DynamicResource MaterialDesign.Brush.Secondary.Dark}"
+                                           Height="5"/>
+                            </StackPanel>
+                        </Expander>
+                        <ItemsControl ItemsSource="{Binding FilteredLeagues}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Command="{Binding FetchDataCommand}"
+                                            Template="{StaticResource LeagueButtonControlTemplate}"
+                                            Cursor="Arrow"
+                                            Height="40" Margin="0 0 0 1" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
                 </ScrollViewer>
                 
                 <TextBlock Grid.Row="1" Text="{Binding StatusMessage}" Style="{StaticResource TabStatusMessageStyle}" />
