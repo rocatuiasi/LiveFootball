@@ -37,18 +37,27 @@
     </Style>-->
 
     <!--#region Generic Styles -->
-    
+
     <Style x:Key="TabStatusMessageStyle" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="Gray"/>
-        <Setter Property="FontSize" Value="16"/>
-        <Setter Property="FontWeight" Value="DemiBold"/>
-        <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="TextAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="DemiBold" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
     </Style>
-    
-    <!--#endregion Generic Styles --> 
+
+    <Style x:Key="BaseIconButtonStyle" TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+    <!--#endregion Generic Styles -->
 
     <!--#region Logo -->
 
@@ -59,7 +68,7 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
     </Style>
-    
+
     <materialDesign:PackIcon x:Key="FavouriteFilledIcon" Kind="Star"
                              Height="24" Width="24"
                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
@@ -67,14 +76,30 @@
                              Height="24" Width="24"
                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
-    <Style x:Key="BaseIconButtonStyle" TargetType="Button">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Padding" Value="0" />
-        <Setter Property="Margin" Value="0" />
-        <Setter Property="Cursor" Value="Hand" />
+    <Style x:Key="FavouriteButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseIconButtonStyle}">
+        <Setter Property="Foreground" Value="Yellow" />
+        <Setter Property="Content" Value="{StaticResource FavouriteOutlineIcon}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            VerticalAlignment="Center" HorizontalAlignment="Center"
+                            CornerRadius="20" Padding="3">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="Orange" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
+
+    <!--#endregion Logo -->
+
+    <!--#region Menu View-->
 
     <Style x:Key="SearchButton" TargetType="Button" BasedOn="{StaticResource BaseIconButtonStyle}">
         <Setter Property="Foreground" Value="White" />
@@ -94,34 +119,89 @@
         </Setter>
     </Style>
 
-    <Style x:Key="FavouriteButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseIconButtonStyle}">
-        <Setter Property="Foreground" Value="Yellow" />
-        <Setter Property="Content" Value="{StaticResource FavouriteOutlineIcon}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" CornerRadius="20" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="3">
-                        <ContentPresenter />
-                    </Border>
-                    <ControlTemplate.Triggers>
+    <ControlTemplate x:Key="LeagueButtonControlTemplate">
+        <Grid>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Background"
+                            Value="{DynamicResource MaterialDesign.Brush.Primary}" />
+                    <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="Orange" />
+                            <Setter Property="Background"
+                                    Value="{DynamicResource MaterialDesign.Brush.Primary.Light}" />
                         </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    <!--#endregion Logo -->
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch"
+                        Margin="15 10">
+                <Image Source="{Binding Logo}"
+                       Style="{StaticResource TeamsLogoStyle}"
+                       Margin="0 0 5 0"
+                       VerticalAlignment="Center" />
+                <TextBlock Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center" FontSize="12" />
+            </StackPanel>
+
+            <Button Command="{Binding AddFavouriteCommand}" CommandParameter="{Binding LeagueId}"
+                    Visibility="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Style="{StaticResource FavouriteButtonStyle}"
+                    HorizontalAlignment="Right" Margin="0 0 10 0"
+                    Background="#A000">
+                <Button.Content>
+                    <materialDesign:PackIcon Kind="StarOutline" Height="22" Width="22"
+                                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </Button.Content>
+            </Button>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="FavouriteLeagueButtonControlTemplate">
+        <Grid>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Background"
+                            Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background"
+                                    Value="{DynamicResource MaterialDesign.Brush.Secondary.Light}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch"
+                        Margin="15 10">
+                <Image Source="{Binding Logo}"
+                       Style="{StaticResource TeamsLogoStyle}"
+                       Margin="0 0 5 0"
+                       VerticalAlignment="Center" />
+                <TextBlock Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center" FontSize="12" />
+            </StackPanel>
+
+            <Button Command="{Binding RemoveFavouriteCommand}" CommandParameter="{Binding LeagueId}"
+                    Visibility="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Style="{StaticResource FavouriteButtonStyle}"
+                    HorizontalAlignment="Right" Margin="0 0 10 0"
+                    Background="#A000">
+                <Button.Content>
+                    <materialDesign:PackIcon Kind="Star" Height="22" Width="22"
+                                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </Button.Content>
+            </Button>
+        </Grid>
+    </ControlTemplate>
+
+    <!--#endregion-->
 
     <!--#region Live Games View-->
 
     <DataTemplate x:Key="LiveGamesItemTemplate" DataType="{x:Type models:LiveMatchModel}">
-        <Border BorderBrush="#AAAA" 
-             BorderThickness="0 0 0 1"
-             Margin="10 0 0 0"
-             Padding="5">
+        <Border BorderBrush="#AAAA"
+                BorderThickness="0 0 0 1"
+                Margin="10 0 0 0"
+                Padding="5">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -136,32 +216,32 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
                            VerticalAlignment="Center"
                            Text="{Binding Status}"
-                           Foreground="Red"/>
+                           Foreground="Red" />
 
-                <StackPanel Grid.Row="0" Grid.Column="1" 
-                         Orientation="Horizontal">
+                <StackPanel Grid.Row="0" Grid.Column="1"
+                            Orientation="Horizontal">
                     <Image Source="{Binding HomeTeam.Logo}"
-                        Style="{StaticResource TeamsLogoStyle}"
-                        Margin="0 0 5 5" />
+                           Style="{StaticResource TeamsLogoStyle}"
+                           Margin="0 0 5 5" />
                     <TextBlock Text="{Binding HomeTeam.Name}" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="1" Grid.Column="1" 
-                         Orientation="Horizontal">
+                <StackPanel Grid.Row="1" Grid.Column="1"
+                            Orientation="Horizontal">
                     <Image Source="{Binding AwayTeam.Logo}"
-                        Style="{StaticResource TeamsLogoStyle}"
-                        Margin="0 0 5 0" />
+                           Style="{StaticResource TeamsLogoStyle}"
+                           Margin="0 0 5 0" />
                     <TextBlock Text="{Binding AwayTeam.Name}" />
                 </StackPanel>
 
                 <TextBlock Grid.Row="0" Grid.Column="2"
-                        HorizontalAlignment="Center"
-                        Text="{Binding HomeTeam.Goals}"
-                        Foreground="Red"/>
+                           HorizontalAlignment="Center"
+                           Text="{Binding HomeTeam.Goals}"
+                           Foreground="Red" />
                 <TextBlock Grid.Row="1" Grid.Column="2"
-                        HorizontalAlignment="Center"
-                        Text="{Binding AwayTeam.Goals}"
-                        Foreground="Red"/>
+                           HorizontalAlignment="Center"
+                           Text="{Binding AwayTeam.Goals}"
+                           Foreground="Red" />
             </Grid>
         </Border>
     </DataTemplate>
@@ -228,16 +308,9 @@
     <!--#endregion-->
 
     <!--#region Fixtures View-->
-    <!-- <Style x:Key="TeamsLogoStyle" TargetType="{x:Type Image}"> -->
-    <!--     <Setter Property="Width" Value="18" /> -->
-    <!--     <Setter Property="Height" Value="18" /> -->
-    <!--     <Setter Property="Stretch" Value="Uniform" /> -->
-    <!--     <Setter Property="HorizontalAlignment" Value="Left" /> -->
-    <!--     <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" /> -->
-    <!-- </Style> -->
 
     <DataTemplate x:Key="FixturesItemTemplate" DataType="{x:Type models:FixtureMatchModel}">
-        <Border BorderBrush="#AAAA" 
+        <Border BorderBrush="#AAAA"
                 BorderThickness="0 0 0 1"
                 Margin="10 0 0 0" Padding="5">
             <Border.Resources>
@@ -258,10 +331,9 @@
                 <TextBlock Grid.Column="0" VerticalAlignment="Center"
                            Text="{Binding Date}" />
 
-                <StackPanel Grid.Column="1" 
-                            Orientation="Horizontal" 
-                            HorizontalAlignment="Left">
-                    <Border Background="LightGray" CornerRadius="20" Margin="0 0 5 0" Padding="7" VerticalAlignment="Center">
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Border Background="LightGray" CornerRadius="20" Padding="7"
+                            VerticalAlignment="Center" Margin="0 0 5 0">
                         <Image Source="{Binding HomeTeam.Logo}"
                                Style="{StaticResource TeamsLogoStyle}" />
                     </Border>
@@ -269,7 +341,7 @@
                                VerticalAlignment="Center" />
                 </StackPanel>
 
-                <Border Grid.Column="2" Background="LightGray" CornerRadius="20" 
+                <Border Grid.Column="2" Background="LightGray" CornerRadius="20"
                         Padding="7 3 7 5" Margin="10 0" VerticalAlignment="Center">
                     <TextBlock Text="vs" VerticalAlignment="Center" HorizontalAlignment="Center" />
                 </Border>
@@ -279,7 +351,8 @@
                             HorizontalAlignment="Right">
                     <TextBlock Text="{Binding AwayTeam.Name}"
                                VerticalAlignment="Center" />
-                    <Border Background="LightGray" CornerRadius="20" Margin="5 0 0 0" Padding="7" VerticalAlignment="Center">
+                    <Border Background="LightGray" CornerRadius="20" Padding="7"
+                            VerticalAlignment="Center" Margin="5 0 0 0">
                         <Image Source="{Binding AwayTeam.Logo}"
                                Style="{StaticResource TeamsLogoStyle}" />
                     </Border>
@@ -293,7 +366,7 @@
     <!--#region Results View-->
 
     <DataTemplate x:Key="ResultsItemTemplate" DataType="{x:Type models:ResultMatchModel}">
-        <Border BorderBrush="#AAAA" 
+        <Border BorderBrush="#AAAA"
                 BorderThickness="0 0 0 1"
                 Margin="10 0 0 0"
                 Padding="5">
@@ -312,7 +385,7 @@
                            VerticalAlignment="Center"
                            Text="{Binding Date}" />
 
-                <StackPanel Grid.Row="0" Grid.Column="1" 
+                <StackPanel Grid.Row="0" Grid.Column="1"
                             Orientation="Horizontal">
                     <Image Source="{Binding HomeTeam.Logo}"
                            Style="{StaticResource TeamsLogoStyle}"
@@ -320,7 +393,7 @@
                     <TextBlock Text="{Binding HomeTeam.Name}" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="1" Grid.Column="1" 
+                <StackPanel Grid.Row="1" Grid.Column="1"
                             Orientation="Horizontal">
                     <Image Source="{Binding AwayTeam.Logo}"
                            Style="{StaticResource TeamsLogoStyle}"
