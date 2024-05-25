@@ -85,18 +85,18 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         }
         catch (DeserializationException)
         {
-            StatusMessage = "No standing data available...";
             Leagues = [];
+            StatusMessage = "No standing data available...";
         } 
         catch (HttpRequestException)
         {
-            StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
             Leagues = [];
+            StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
-            StatusMessage = "Oops, something went wrong";
             Leagues = [];
+            StatusMessage = "Oops, something went wrong";
         }
     }
 

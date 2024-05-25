@@ -24,13 +24,11 @@ public class MenuItemViewModel : ObservableObject
 
     #endregion
 
-
     #region ICommand
 
     public ICommand FetchDataCommand => new AsyncRelayCommand(FetchData);
 
     #endregion
-
 
     #region Constructors
 
@@ -46,12 +44,12 @@ public class MenuItemViewModel : ObservableObject
 
     #endregion
 
-
     #region ICommand Execution
 
     private async Task FetchData()
     {
         // Switch current TabView to LeagueTabView
+        Ioc.Default.GetRequiredService<LeagueTabViewModel>().Title = $"{Name} - Football matches";
         Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 
         // Set loading state to true
@@ -83,14 +81,17 @@ public class MenuItemViewModel : ObservableObject
         }
         catch (DeserializationException)
         {
+            leagueStandingViewModel.StandingTeams = [];
             leagueStandingViewModel.StatusMessage = "No standing data available...";
         }
         catch (HttpRequestException)
         {
+            leagueStandingViewModel.StandingTeams = [];
             leagueStandingViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
+            leagueStandingViewModel.StandingTeams = [];
             leagueStandingViewModel.StatusMessage = "Oops, something went wrong";
         }
     }
@@ -110,14 +111,17 @@ public class MenuItemViewModel : ObservableObject
         }
         catch (DeserializationException)
         {
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "No more fixtures this season...";
         }
         catch (HttpRequestException)
         {
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "Oops, something went wrong";
         }
     }
@@ -137,14 +141,17 @@ public class MenuItemViewModel : ObservableObject
         }
         catch (DeserializationException)
         {
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "No results data available...";
         }
         catch (HttpRequestException)
         {
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "Oops, something went wrong";
         }
     }
