@@ -33,7 +33,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     [ObservableProperty]
     private ObservableCollection<MenuItemViewModel> _filteredLeagues;
 
-    public ObservableCollection<MenuItemViewModel> FavoriteLeagues { get; }
+    public ObservableCollection<MenuItemViewModel> FavouriteLeagues { get; }
     
     [ObservableProperty] 
     private bool _isLoading;
@@ -54,8 +54,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
 
     #region Constructors
 
-    public MenuViewModel(IFootballApiService? footballApiService = null,
-                         IDeserializationService? deserializeDataService = null)
+    public MenuViewModel(IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
@@ -63,14 +62,13 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         _filteringCancellationTokenSource = new CancellationTokenSource();
         _leagues = new List<MenuItemViewModel>();
         _filteredLeagues = new ObservableCollection<MenuItemViewModel>();
-        FavoriteLeagues = new ObservableCollection<MenuItemViewModel>();
+        FavouriteLeagues = new ObservableCollection<MenuItemViewModel>();
         _statusMessage = string.Empty;
         _searchText = string.Empty;
        
         PropertyChanged += OnPropertyChanged;
-        FavoriteLeagues.CollectionChanged += FavoriteLeaguesOnCollectionChanged;
+        FavouriteLeagues.CollectionChanged += FavouriteLeaguesOnCollectionChanged;
         
-        IsLoading = true;
         InitializeComponentAsync();
     }
 
@@ -81,6 +79,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     /// </summary>
     private async void InitializeComponentAsync()
     {
+        IsLoading = true;
         try
         {
             // Fetch Leagues data
@@ -89,9 +88,8 @@ public partial class MenuViewModel : ObservableObject, IDisposable
             var jsonData = JObject.Parse(leaguesData);
             
             Leagues = await _deserializeDataService.DeserializeLeaguesData(jsonData);
-            StatusMessage = string.Empty;
 
-            await ReadFavoritesLeaguesDataAsync();
+            await ReadFavouritesLeaguesDataAsync();
         }
         catch (DeserializationException)
         {
@@ -110,6 +108,8 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         }
     }
 
+    #region IDisposable Method Implementation
+    
     public void Dispose()
     {
         Dispose(true);
@@ -121,9 +121,13 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         if (disposing)
         {
             _filteringCancellationTokenSource?.Dispose();
+            _fetchLiveGamesDataCancellationTokenSource?.Dispose();
         }
     }
 
+    #endregion
+
+    #region Event Handlers
     private void OnPropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
         if(e.PropertyName == nameof(SearchText))
@@ -150,14 +154,16 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     }
 
     /// <summary>
-    ///   Saves the favorite leagues data when the FavoriteLeagues collection changes
+    ///   Saves the favourite leagues data when the FavouriteLeagues collection changes
     /// </summary>
-    private async void FavoriteLeaguesOnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+    private async void FavouriteLeaguesOnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
     {
-        // Convert the FavoriteLeagues collection to a new collection with only Name and LeagueId properties
-        var favoriteLeaguesData = FavoriteLeagues.Select(league => new { league.Name, league.LeagueId });
-        await SaveFavoritesLeaguesData(favoriteLeaguesData);
+        // Convert the FavouriteLeagues collection to a new collection with only Name and LeagueId properties
+        var favouriteLeaguesData = FavouriteLeagues.Select(league => new { league.Name, league.LeagueId });
+        await SaveFavouritesLeaguesData(favouriteLeaguesData);
     }
+    
+    #endregion
 
     #region Commands Execution
 
@@ -224,47 +230,47 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         _fetchLiveGamesDataCancellationTokenSource?.Cancel();
     }
 
-    #region Favorite Leagues Reading/Writing
+    #region Favourite Leagues Reading/Writing
 
     /// <summary>
-    ///  Saves the favorite leagues data asynchronously
+    ///  Saves the favourite leagues data asynchronously
     /// </summary>
-    /// <param name="favoriteLeaguesData">The favorite leagues data to save</param>
+    /// <param name="favouriteLeaguesData">The favourite leagues data to save</param>
     /// <returns>A task that represents the asynchronous save operation</returns>
-    private async Task SaveFavoritesLeaguesData(object favoriteLeaguesData)
+    private async Task SaveFavouritesLeaguesData(object favouriteLeaguesData)
     {
         // Convert the new collection to JSON
-        var json = JsonConvert.SerializeObject(favoriteLeaguesData);
+        var json = JsonConvert.SerializeObject(favouriteLeaguesData);
 
         // Write the JSON to the file asynchronously
-        await File.WriteAllTextAsync("favorites-leagues.json", json);
+        await File.WriteAllTextAsync("favourites-leagues.json", json);
     }
 
     /// <summary>
-    ///   Reads the favorite leagues data asynchronously
+    ///   Reads the favourite leagues data asynchronously
     /// </summary>
     /// <returns>A task that represents the asynchronous read operation</returns>
-    private async Task ReadFavoritesLeaguesDataAsync()
+    private async Task ReadFavouritesLeaguesDataAsync()
     {
         try
         {
             // Read the JSON from the file asynchronously
-            var json = await File.ReadAllTextAsync("favorites-leagues.json");
+            var json = await File.ReadAllTextAsync("favourites-leagues.json");
 
             // Deserialize the JSON to the new collection
-            var favoriteLeaguesData = JsonConvert.DeserializeObject<List<MenuItemViewModel>>(json);
+            var favouriteLeaguesData = JsonConvert.DeserializeObject<List<MenuItemViewModel>>(json);
 
-            if (favoriteLeaguesData != null)
+            if (favouriteLeaguesData != null)
             {
-                // Clear the existing favorite leagues collection
-                FavoriteLeagues.Clear();
+                // Clear the existing favourite leagues collection
+                FavouriteLeagues.Clear();
 
-                // Add the deserialized favorite leagues to the collection
-                foreach (var leagueData in favoriteLeaguesData)
+                // Add the deserialized favourite leagues to the collection
+                foreach (var leagueData in favouriteLeaguesData)
                 {
                     var item = Leagues.FirstOrDefault(x => x.LeagueId == leagueData.LeagueId);
                     if (item != null)
-                        FavoriteLeagues.Add(item);
+                        FavouriteLeagues.Add(item);
                 }
             }
         }

@@ -33,9 +33,9 @@
                     <TextBlock Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center" FontSize="12"/>
                 </StackPanel>
 
-                <Button Command="{Binding AddFavoriteCommand}" CommandParameter="{Binding LeagueId}"
+                <Button Command="{Binding AddFavouriteCommand}" CommandParameter="{Binding LeagueId}"
                         Visibility="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                        Style="{StaticResource FavoriteButtonStyle}"
+                        Style="{StaticResource FavouriteButtonStyle}"
                         HorizontalAlignment="Right" Margin="0 0 10 0"
                         Background="#A000">
                     <Button.Content>
@@ -46,7 +46,7 @@
             </Grid>
         </ControlTemplate>
         
-        <ControlTemplate x:Key="FavoriteLeagueButtonControlTemplate" d:DataContext="{d:DesignInstance viewModels:MenuItemViewModel}">
+        <ControlTemplate x:Key="FavouriteLeagueButtonControlTemplate" d:DataContext="{d:DesignInstance viewModels:MenuItemViewModel}">
             <Grid>
                 <Grid.Style>
                     <Style TargetType="Grid">
@@ -70,9 +70,9 @@
                     <TextBlock Text="{Binding Name}" TextAlignment="Left" VerticalAlignment="Center" FontSize="12" />
                 </StackPanel>
 
-                <Button Command="{Binding RemoveFavoriteCommand}" CommandParameter="{Binding LeagueId}"
+                <Button Command="{Binding RemoveFavouriteCommand}" CommandParameter="{Binding LeagueId}"
                         Visibility="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                        Style="{StaticResource FavoriteButtonStyle}"
+                        Style="{StaticResource FavouriteButtonStyle}"
                         HorizontalAlignment="Right" Margin="0 0 10 0"
                         Background="#A000">
                     <Button.Content>
@@ -144,16 +144,16 @@
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="Star" Height="20" Width="20" Foreground="Yellow"
                                                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-                                    <TextBlock Text="Favorite Leagues" FontSize="14" 
+                                    <TextBlock Text="Favourite Leagues" FontSize="14" 
                                                VerticalAlignment="Center" Margin="5 0 0 0"/>
                                 </StackPanel>
                             </Expander.Header>
                             <StackPanel>
-                                <ItemsControl ItemsSource="{Binding FavoriteLeagues}">
+                                <ItemsControl ItemsSource="{Binding FavouriteLeagues}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
                                             <Button Command="{Binding FetchDataCommand}"
-                                                    Template="{StaticResource FavoriteLeagueButtonControlTemplate}"
+                                                    Template="{StaticResource FavouriteLeagueButtonControlTemplate}"
                                                     Cursor="Arrow"
                                                     Height="40" Margin="0 0 0 1" />
                                         </DataTemplate>

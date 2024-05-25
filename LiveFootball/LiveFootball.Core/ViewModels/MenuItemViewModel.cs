@@ -24,26 +24,11 @@ public partial class MenuItemViewModel : ObservableObject
 
     #endregion
 
-    #region ICommand
+    #region Commands
 
     public ICommand FetchDataCommand => new AsyncRelayCommand(FetchData);
-    
-    [RelayCommand]
-    private void AddFavorite(string leagueId)
-    {
-        var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
-        if(menuViewModel.FavoriteLeagues.Any(x => x.LeagueId == leagueId))
-            return;
-        menuViewModel.FavoriteLeagues.Add(menuViewModel.Leagues.First(x => x.LeagueId == leagueId));
-    }
-    
-    [RelayCommand]
-    private void RemoveFavorite(string leagueId)
-    {
-        var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
-        var leagueToRemove = menuViewModel.FavoriteLeagues.First(x => x.LeagueId == leagueId);
-        menuViewModel.FavoriteLeagues.Remove(leagueToRemove);
-    }
+    public ICommand AddFavouriteCommand => new RelayCommand<string>(AddFavourite);
+    public ICommand RemoveFavouriteCommand => new RelayCommand<string>(RemoveFavourite);
 
     #endregion
 
@@ -61,7 +46,7 @@ public partial class MenuItemViewModel : ObservableObject
 
     #endregion
 
-    #region ICommand Execution
+    #region Commands Execution
 
     private async Task FetchData()
     {
@@ -79,6 +64,27 @@ public partial class MenuItemViewModel : ObservableObject
 
         // Set loading state to false
         HelperFunctions.SetLeagueLoadingProgressState(false);
+    }
+
+    private void AddFavourite(string? leagueId)
+    {
+        if (leagueId == null) return;
+        
+        var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
+        if(menuViewModel.FavouriteLeagues.All(x => x.LeagueId != leagueId))
+        {
+            var leagueToAdd = menuViewModel.Leagues.First(x => x.LeagueId == leagueId);
+            menuViewModel.FavouriteLeagues.Add(leagueToAdd);
+        }
+    }
+
+    private void RemoveFavourite(string? leagueId)
+    {
+        if (leagueId == null) return;
+
+        var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
+        var leagueToRemove = menuViewModel.FavouriteLeagues.First(x => x.LeagueId == leagueId);
+        menuViewModel.FavouriteLeagues.Remove(leagueToRemove);
     }
 
     #endregion

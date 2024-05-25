@@ -60,10 +60,10 @@
         <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
     </Style>
     
-    <materialDesign:PackIcon x:Key="FavoriteFilledIcon" Kind="Star"
+    <materialDesign:PackIcon x:Key="FavouriteFilledIcon" Kind="Star"
                              Height="24" Width="24"
                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-    <materialDesign:PackIcon x:Key="FavoriteOutlineIcon" Kind="StarOutline"
+    <materialDesign:PackIcon x:Key="FavouriteOutlineIcon" Kind="StarOutline"
                              Height="24" Width="24"
                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
@@ -94,9 +94,9 @@
         </Setter>
     </Style>
 
-    <Style x:Key="FavoriteButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseIconButtonStyle}">
+    <Style x:Key="FavouriteButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseIconButtonStyle}">
         <Setter Property="Foreground" Value="Yellow" />
-        <Setter Property="Content" Value="{StaticResource FavoriteOutlineIcon}"/>
+        <Setter Property="Content" Value="{StaticResource FavouriteOutlineIcon}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
