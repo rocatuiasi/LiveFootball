@@ -3,38 +3,41 @@
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                     xmlns:models="clr-namespace:LiveFootball.Core.Models;assembly=LiveFootball.Core">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
 
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Purple.xaml" />
+        <!-- base theme -->
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
 
-        <!-- <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Teal" SecondaryColor="Purple" /> -->
-        <!-- <materialDesign:BundledTheme BaseTheme="Dark" PrimaryColor="DeepPurple" SecondaryColor="DeepOrange" /> -->
+        <!-- secondary colour -->
+        <ResourceDictionary>
+            <!-- secondary pallette -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Indigo.Primary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Light" Color="{StaticResource Primary400}" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Light.Foreground" Color="{StaticResource Primary400Foreground}" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary" Color="{StaticResource Primary500}" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Foreground" Color="{StaticResource Primary500Foreground}" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Dark" Color="{StaticResource Primary700}" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Dark.Foreground" Color="{StaticResource Primary700Foreground}" />
+        </ResourceDictionary>
+
+        <!-- primary color -->
+        <ResourceDictionary>
+            <!-- primary palette -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Grey.Primary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Light" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Light.Foreground" Color="{StaticResource Primary700Foreground}"/>
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary" Color="{StaticResource Primary800}"/>
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Foreground" Color="{StaticResource Primary800Foreground}"/>
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Dark" Color="{StaticResource Primary900}"/>
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Dark.Foreground" Color="{StaticResource Primary900Foreground}"/>
+        </ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
-
-    <!-- primary -->
-    <!--<SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#FF9E00"/>
-	<SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="Black"/>
-    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF8500"/>
-	<SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="White"/>
-    <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF6D00"/>
-	<SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="White"/>-->
-
-    <!-- secondary -->
-    <!--<SolidColorBrush x:Key="SecondaryBrush" Color="#5A189A"/>
-    <SolidColorBrush x:Key="SecondaryForegroundBrush" Color="Black"/>-->
-
-    <!--<Style TargetType="{x:Type Control}">
-        <Setter Property="FontFamily" Value="Montserrat"/>
-    </Style>
-    <Style TargetType="{x:Type Window}">
-        <Setter Property="FontFamily" Value="Montserrat"/>
-    </Style>-->
 
     <!--#region Generic Styles -->
 
@@ -111,7 +114,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Secondary}" />
+                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
