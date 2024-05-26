@@ -1,9 +1,8 @@
 ﻿/**************************************************************************
  *                                                                        * 
- *  File:        ExtendedTeamModel.cs                                     *
- *  Description: LiveFootball.Core.Models Library                         *
- *               Represents an extended team model including additional   *
- *               properties such as the number of goals scored.           *
+ *  File:        LeagueExpanderViewModel.cs                               *
+ *  Description: LiveFootball.Core.ViewModels Library                     *
+ *               View model for managing league expander data.            *
  *  Copyright:   (c) 2024, LiveFootball Team                              *
  *                                                                        *
  *  This code and information is provided "as is" without warranty of     *
@@ -13,15 +12,18 @@
  *  applications as long as the original copyright notice is included.    *
  *                                                                        *
  **************************************************************************/
-namespace LiveFootball.Core.Models;
+using CommunityToolkit.Mvvm.ComponentModel;
+using LiveFootball.Core.Models;
 
-/// <summary>
-/// Represents an extended team model including additional properties like goals.
-/// </summary>
-public class ExtendedTeamModel: TeamModel
+namespace LiveFootball.Core.ViewModels;
+
+
+// TODO : For the future expansions of All Games tabs
+public partial class LeagueExpanderViewModel : ObservableObject
 {
-    /// <summary>
-    /// Gets or sets the number of goals scored by the team.
-    /// </summary>
-    public int Goals { get; set; }
+    [ObservableProperty] 
+    private string _name;
+    
+    [ObservableProperty] 
+    private List<FixtureMatchModel> _matchesCollection;
 }
