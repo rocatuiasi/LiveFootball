@@ -1,4 +1,5 @@
 ﻿using LiveFootball.Core.Helpers;
+using LiveFootball.Core.Models;
 using LiveFootball.Core.ViewModels;
 using Newtonsoft.Json.Linq;
 
@@ -6,10 +7,10 @@ namespace ApiFootballDeserializer;
 
 public class LeaguesDeserializer : ILeaguesDeserializer
 {
-    public async Task<List<MenuItemViewModel>> Deserialize(JToken jsonData)
+    public async Task<List<MenuItemModel>> Deserialize(JToken jsonData)
     {
-        var leagues = new List<MenuItemViewModel>();
-        var tasks = new List<Task<MenuItemViewModel>>();
+        var leagues = new List<MenuItemModel>();
+        var tasks = new List<Task<MenuItemModel>>();
         var semaphore = new SemaphoreSlim(25); // Set the maximum concurrent tasks to 25
      
         foreach (var item in jsonData["response"]!)
@@ -22,7 +23,7 @@ public class LeaguesDeserializer : ILeaguesDeserializer
         return leagues;
     }
 
-    private async Task<MenuItemViewModel> DeserializeLeagueWithSemaphore(JToken item, SemaphoreSlim semaphore)
+    private async Task<MenuItemModel> DeserializeLeagueWithSemaphore(JToken item, SemaphoreSlim semaphore)
     {
         await semaphore.WaitAsync(); // Wait for a slot to become available
         try
@@ -35,7 +36,7 @@ public class LeaguesDeserializer : ILeaguesDeserializer
         }
     }
     
-    private async Task<MenuItemViewModel> DeserializeLeague(JToken item)
+    private async Task<MenuItemModel> DeserializeLeague(JToken item)
     {
         var leagueId = item["league"]!["id"]!.ToString();
         var leagueName = item["league"]!["name"]!.ToString();
@@ -48,6 +49,6 @@ public class LeaguesDeserializer : ILeaguesDeserializer
         
         var leagueLogo = await HelperFunctions.GetLeagueLogoFromUrl(leagueLogoUrl);
             
-        return new MenuItemViewModel(leagueName, leagueId, leagueLogo);
+        return new MenuItemModel(leagueName, leagueId, leagueLogo);
     }
 }

@@ -72,7 +72,7 @@ public class DeserializationService : IDeserializationService
         }
     }
 
-    public async Task<List<MenuItemViewModel>> DeserializeLeaguesData(JObject jsonData)
+    public async Task<List<MenuItemModel>> DeserializeLeaguesData(JObject jsonData)
     {
         // var jsonLeaguesData = jsonData["response"]![0]!;
         

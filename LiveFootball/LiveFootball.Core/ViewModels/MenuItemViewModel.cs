@@ -6,6 +6,7 @@ using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Helpers;
+using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
 using Newtonsoft.Json.Linq;
 
@@ -42,6 +43,14 @@ public partial class MenuItemViewModel : ObservableObject
         Name = name;
         LeagueId = leagueId;
         Logo = logo;
+    }
+
+    public MenuItemViewModel(MenuItemModel menuItemModel) : this(menuItemModel.Name, menuItemModel.LeagueId, menuItemModel.Logo)
+    {
+    }
+
+    public MenuItemViewModel() : this(null, null, null)
+    {
     }
 
     #endregion

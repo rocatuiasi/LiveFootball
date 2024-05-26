@@ -84,11 +84,19 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         {
             // Fetch Leagues data
             var leaguesData = await _footballService.GetLeaguesDataAsync();
+
             // Deserialize Leagues data
             var jsonData = JObject.Parse(leaguesData);
+            var leaguesModel = await _deserializeDataService.DeserializeLeaguesData(jsonData);
             
-            Leagues = await _deserializeDataService.DeserializeLeaguesData(jsonData);
+            // Create MenuItemViewModel instances from the deserialized data
+            var leagues = new List<MenuItemViewModel>();
+            foreach (var model in leaguesModel)
+                leagues.Add(new MenuItemViewModel(model));
+            // Add the leagues to the Leagues collection
+            Leagues = leagues;
 
+            // Read the favourite leagues data
             await ReadFavouritesLeaguesDataAsync();
         }
         catch (DeserializationException)
@@ -243,7 +251,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         var json = JsonConvert.SerializeObject(favouriteLeaguesData);
 
         // Write the JSON to the file asynchronously
-        await File.WriteAllTextAsync("favourites-leagues.json", json);
+        await File.WriteAllTextAsync("favourite-leagues.json", json);
     }
 
     /// <summary>
@@ -255,7 +263,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         try
         {
             // Read the JSON from the file asynchronously
-            var json = await File.ReadAllTextAsync("favourites-leagues.json");
+            var json = await File.ReadAllTextAsync("favourite-leagues.json");
 
             // Deserialize the JSON to the new collection
             var favouriteLeaguesData = JsonConvert.DeserializeObject<List<MenuItemViewModel>>(json);
