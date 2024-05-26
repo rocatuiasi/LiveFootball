@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System.Globalization;
+using System.IO;
 using System.Net.Http;
+
 using LiveFootball.Core.Services;
 
 namespace LiveFootballWpf.Services;
@@ -10,7 +12,7 @@ public sealed class FootballApiService : IFootballApiService
     private const string ApiGetLeaguesFileName = "get-leagues.json";
 
     private readonly HttpClient _client;
-    private string _apiKey = "bug";
+    private string _apiKey = "daa3074446mshfbd2b9311fcfc28p11f586jsn7f03347fcef0";
     private int _currentSeason = 2023;
 
     public FootballApiService()
@@ -57,7 +59,7 @@ public sealed class FootballApiService : IFootballApiService
         var request = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
-            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all"),
+            RequestUri = new Uri("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all"),
             Headers =
             {
                 { "X-RapidAPI-Key", _apiKey },
@@ -71,8 +73,51 @@ public sealed class FootballApiService : IFootballApiService
 
         return body;
     }
-    
-    public async Task<string> GetResultsDataAsync(string leagueParam)
+    public async Task<string> GetAllGamesResultsDataAsync()
+    {
+        var currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+        var request = new HttpRequestMessage
+        {
+            Method = HttpMethod.Get,
+            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?date={currentDate}&status=FT"),
+            Headers =
+            {
+                { "X-RapidAPI-Key", _apiKey },
+                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
+            }
+        };
+
+        using var response = await _client.SendAsync(request);
+        response.EnsureSuccessStatusCode();
+        var body = await response.Content.ReadAsStringAsync();
+
+        return body;
+    }
+
+    public async Task<string> GetAllGamesFixturesDataAsync()
+    {
+        var currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+        var request = new HttpRequestMessage
+        {
+            Method = HttpMethod.Get,
+            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?date={currentDate}&status=NS"),
+            Headers =
+            {
+                { "X-RapidAPI-Key", _apiKey },
+                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
+            }
+        };
+
+        using var response = await _client.SendAsync(request);
+        response.EnsureSuccessStatusCode();
+        var body = await response.Content.ReadAsStringAsync();
+
+        return body;
+    }
+
+    public async Task<string> GetLeagueResultsDataAsync(string leagueParam)
     {
         var request = new HttpRequestMessage
         {
@@ -92,7 +137,7 @@ public sealed class FootballApiService : IFootballApiService
         return body;
     }
 
-    public async Task<string> GetFixturesDataAsync(string leagueParam)
+    public async Task<string> GetLeagueFixturesDataAsync(string leagueParam)
     {
         var request = new HttpRequestMessage
         {
@@ -112,12 +157,12 @@ public sealed class FootballApiService : IFootballApiService
         return body;
     }
 
-    public async Task<string> GetStandingDataAsync(string seasonParam, string leagueParam)
+    public async Task<string> GetLeagueStandingDataAsync(string leagueParam)
     {
         var request = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
-            RequestUri = new Uri($"{BaseRequestUri}standings?season={seasonParam}&league={leagueParam}"),
+            RequestUri = new Uri($"{BaseRequestUri}standings?season={_currentSeason}&league={leagueParam}"),
             Headers =
             {
                 { "X-RapidAPI-Key", _apiKey },

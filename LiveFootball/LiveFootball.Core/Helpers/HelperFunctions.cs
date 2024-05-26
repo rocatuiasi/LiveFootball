@@ -140,9 +140,13 @@ public static class HelperFunctions
         Ioc.Default.GetRequiredService<LeagueStandingViewModel>().IsLoading = state;
     }
 
-    public static void SetAllGamesLoadingProgressState(bool state)
+    public static void SetLiveGamesLoadingProgressState(bool state)
     {
         Ioc.Default.GetRequiredService<LiveGamesViewModel>().IsLoading = state;
+    }
+
+    public static void SetAllGamesLoadingProgressState(bool state)
+    {
         Ioc.Default.GetRequiredService<ResultsViewModel>().IsLoading = state;
         Ioc.Default.GetRequiredService<FixturesViewModel>().IsLoading = state;
     }

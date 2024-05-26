@@ -1,24 +1,26 @@
 ﻿using System.Net.Http;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using CommunityToolkit.Mvvm.ComponentModel;
+
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
+
 using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
+
 using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
 
-public partial class MenuItemViewModel : ObservableObject
+public class MenuItemViewModel
 {
     #region Backing Fields and Properties
 
     private readonly IFootballApiService _footballService;
     private readonly IDeserializationService _deserializeDataService;
-    
+
     public BitmapSource Logo { get; set; }
     public string Name { get; }
     public string LeagueId { get; set; }
@@ -35,7 +37,9 @@ public partial class MenuItemViewModel : ObservableObject
 
     #region Constructors
 
-    public MenuItemViewModel(string name, string leagueId, BitmapSource logo, IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
+    public MenuItemViewModel(string name, string leagueId, BitmapSource logo,
+                             IFootballApiService? footballApiService = null,
+                             IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
@@ -45,13 +49,10 @@ public partial class MenuItemViewModel : ObservableObject
         Logo = logo;
     }
 
-    public MenuItemViewModel(MenuItemModel menuItemModel) : this(menuItemModel.Name, menuItemModel.LeagueId, menuItemModel.Logo)
-    {
-    }
+    public MenuItemViewModel(MenuItemModel menuItemModel) : this(menuItemModel.Name, menuItemModel.LeagueId,
+        menuItemModel.Logo) { }
 
-    public MenuItemViewModel() : this(null, null, null)
-    {
-    }
+    public MenuItemViewModel() : this(null, null, null) { }
 
     #endregion
 
@@ -59,13 +60,16 @@ public partial class MenuItemViewModel : ObservableObject
 
     private async Task FetchData()
     {
+        Ioc.Default.GetRequiredService<MenuViewModel>().StopFetchingLiveGamesData();
+
         // Switch current TabView to LeagueTabView
         Ioc.Default.GetRequiredService<MainViewModel>().Title = $"{Name} - Football matches";
-        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
+        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
+            Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 
         // Set loading state to true
         HelperFunctions.SetLeagueLoadingProgressState(true);
-        
+
         // Fetch and Deserialize data
         await RefreshResults();
         await RefreshFixtures();
@@ -78,9 +82,9 @@ public partial class MenuItemViewModel : ObservableObject
     private void AddFavourite(string? leagueId)
     {
         if (leagueId == null) return;
-        
+
         var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
-        if(menuViewModel.FavouriteLeagues.All(x => x.LeagueId != leagueId))
+        if (menuViewModel.FavouriteLeagues.All(x => x.LeagueId != leagueId))
         {
             var leagueToAdd = menuViewModel.Leagues.First(x => x.LeagueId == leagueId);
             menuViewModel.FavouriteLeagues.Add(leagueToAdd);
@@ -104,8 +108,9 @@ public partial class MenuItemViewModel : ObservableObject
         try
         {
             // Fetch Standing data
-            var standingData = await _footballService.GetStandingDataAsync("2023", LeagueId);
+            var standingData = await _footballService.GetLeagueStandingDataAsync(LeagueId);
             var jsonData = JObject.Parse(standingData);
+
             // Deserialize Standing data
             var leagueStandingCollection = await _deserializeDataService.DeserializeStandingData(jsonData);
 
@@ -135,7 +140,7 @@ public partial class MenuItemViewModel : ObservableObject
         try
         {
             // Fetch Fixtures data
-            var fixturesData = await _footballService.GetFixturesDataAsync(LeagueId);
+            var fixturesData = await _footballService.GetLeagueFixturesDataAsync(LeagueId);
             var jsonData = JObject.Parse(fixturesData);
             // Deserialize Fixtures data
             var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
@@ -166,7 +171,7 @@ public partial class MenuItemViewModel : ObservableObject
         try
         {
             // Fetch Results data
-            var resultsData = await _footballService.GetResultsDataAsync(LeagueId);
+            var resultsData = await _footballService.GetLeagueResultsDataAsync(LeagueId);
             var jsonData = JObject.Parse(resultsData);
             // Deserialize Results data
             var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
