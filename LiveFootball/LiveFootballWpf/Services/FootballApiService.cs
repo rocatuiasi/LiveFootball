@@ -2,7 +2,7 @@
  *                                                                        * 
  *  File:        FootballApiService.cs                                    *
  *  Description: LiveFootballWpf.Services Library                         *
- *               Service for interacting with the football API.            *
+ *               Service for interacting with the football API.           *
  *  Copyright:   (c) 2024, LiveFootball Team                              *
  *                                                                        *
  *  This code and information is provided "as is" without warranty of     *

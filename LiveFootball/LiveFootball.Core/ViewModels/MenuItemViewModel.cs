@@ -1,8 +1,8 @@
 ﻿/**************************************************************************
  *                                                                        * 
  *  File:        MenuItemViewModel.cs                                     *
- *  Description: LiveFootball.Core.ViewModels Library                      *
- *               View model for managing the menu items in the application.*
+ *  Description: LiveFootball.Core.ViewModels Library                     *
+ *              View model for managing the menu items in the application.*
  *  Copyright:   (c) 2024, LiveFootball Team                              *
  *                                                                        *
  *  This code and information is provided "as is" without warranty of     *

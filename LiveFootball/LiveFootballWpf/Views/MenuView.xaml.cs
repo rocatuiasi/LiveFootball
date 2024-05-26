@@ -1,8 +1,8 @@
 ﻿/**************************************************************************
  *                                                                        * 
- *  File:        MenuView.xaml.cs                                          *
+ *  File:        MenuView.xaml.cs                                         *
  *  Description: LiveFootballWpf Library                                  *
- *               Code-behind file for the menu view in the application.    *
+ *               Code-behind file for the menu view in the application.   *
  *  Copyright:   (c) 2024, LiveFootball Team                              *
  *                                                                        *
  *  This code and information is provided "as is" without warranty of     *

@@ -1,8 +1,8 @@
 ﻿/**************************************************************************
  *                                                                        * 
  *  File:        LeagueStandingViewModel.cs                               *
- *  Description: LiveFootball.Core.ViewModels Library                      *
- *               View model for managing league standing data.             *
+ *  Description: LiveFootball.Core.ViewModels Library                     *
+ *               View model for managing league standing data.            *
  *  Copyright:   (c) 2024, LiveFootball Team                              *
  *                                                                        *
  *  This code and information is provided "as is" without warranty of     *
