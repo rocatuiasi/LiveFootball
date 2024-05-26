@@ -67,8 +67,10 @@ public class FixturesDeserializer : IFixturesDeserializer
     private async Task<FixtureMatchModel> DeserializeMatch(JToken jsonFixtureData)
     {
         var date = DateTime.TryParse(jsonFixtureData["fixture"]!["date"]!.ToString(), CultureInfo.CurrentCulture,
-
-
+            DateTimeStyles.None, out var dateTime)
+            ? dateTime.ToString("MMM d, HH:mm", CultureInfo.CurrentCulture)
+            : "NA";
+            
         var homeLogo = await HelperFunctions.GetTeamLogoFromUrl(jsonFixtureData["teams"]!["home"]!["logo"]!.ToString());
         var awayLogo = await HelperFunctions.GetTeamLogoFromUrl(jsonFixtureData["teams"]!["away"]!["logo"]!.ToString());
 
