@@ -47,18 +47,21 @@ public partial class MainWindow : Window
 
     private async void MenuHelpButton_OnClick(object sender, RoutedEventArgs e)
     {   
-        var chmFilePath = @"LiveFootball.chm";
+        var chmFilePath = "Assets/Docs/LiveFootball.chm";
+        var sampleMessageDialog = new SampleMessageDialog { Message = { Text = "An error occured at help file opening" } };
+        
+        if (!System.IO.File.Exists(chmFilePath))
+        {
+            await DialogHost.Show(sampleMessageDialog, "RootDialog");
+            return;
+        }
+            
         try
         {
             Process.Start("hh.exe", chmFilePath);
         }
         catch (Exception)
         {
-            var sampleMessageDialog = new SampleMessageDialog
-            {
-                Message = { Text = "An error occured at help file opening" }
-            };
-
             await DialogHost.Show(sampleMessageDialog, "RootDialog");
         }
     }
