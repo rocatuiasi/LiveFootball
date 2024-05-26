@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootball.Core", "LiveFo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiFootballDeserializer", "ApiFootballDeserializer\ApiFootballDeserializer.csproj", "{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveFootballUnitTests", "LiveFootballUnitTests\LiveFootballUnitTests.csproj", "{5389AB44-ED25-464D-B47A-AC7E7E6E9BEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5389AB44-ED25-464D-B47A-AC7E7E6E9BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5389AB44-ED25-464D-B47A-AC7E7E6E9BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5389AB44-ED25-464D-B47A-AC7E7E6E9BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5389AB44-ED25-464D-B47A-AC7E7E6E9BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
