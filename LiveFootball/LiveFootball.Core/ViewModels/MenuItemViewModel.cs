@@ -12,6 +12,7 @@
  *  applications as long as the original copyright notice is included.    *
  *                                                                        *
  **************************************************************************/
+
 using System.Net.Http;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
@@ -28,6 +29,9 @@ using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
 
+/// <summary>
+/// View model for managing the menu items in the application.
+/// </summary>
 public class MenuItemViewModel
 {
     #region Backing Fields and Properties
@@ -35,22 +39,47 @@ public class MenuItemViewModel
     private readonly IFootballApiService _footballService;
     private readonly IDeserializationService _deserializeDataService;
 
+    /// <summary>
+    /// The logo of the menu item.
+    /// </summary>
     public BitmapSource Logo { get; set; }
+
+    /// <summary>
+    /// The name of the menu item.
+    /// </summary>
     public string Name { get; }
+
+    /// <summary>
+    /// The ID of the league associated with the menu item.
+    /// </summary>
     public string LeagueId { get; set; }
 
     #endregion
 
     #region Commands
 
+    /// <summary>
+    /// Command to fetch data associated with the menu item.
+    /// </summary>
     public ICommand FetchDataCommand => new AsyncRelayCommand(FetchData);
+
+    /// <summary>
+    /// Command to add the league associated with the menu item to favorites.
+    /// </summary>
     public ICommand AddFavouriteCommand => new RelayCommand<string>(AddFavourite);
+
+    /// <summary>
+    /// Command to remove the league associated with the menu item from favorites.
+    /// </summary>
     public ICommand RemoveFavouriteCommand => new RelayCommand<string>(RemoveFavourite);
 
     #endregion
 
     #region Constructors
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MenuItemViewModel"/> class.
+    /// </summary>
     public MenuItemViewModel(string name, string leagueId, BitmapSource logo,
                              IFootballApiService? footballApiService = null,
                              IDeserializationService? deserializeDataService = null)
@@ -63,9 +92,16 @@ public class MenuItemViewModel
         Logo = logo;
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MenuItemViewModel"/> class.
+    /// </summary>
     public MenuItemViewModel(MenuItemModel menuItemModel) : this(menuItemModel.Name, menuItemModel.LeagueId,
-        menuItemModel.Logo) { }
+        menuItemModel.Logo)
+    { }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MenuItemViewModel"/> class.
+    /// </summary>
     public MenuItemViewModel() : this(null, null, null) { }
 
     #endregion

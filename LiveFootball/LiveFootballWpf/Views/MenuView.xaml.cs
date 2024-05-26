@@ -24,23 +24,35 @@ namespace LiveFootballWpf.Views;
 /// </summary>
 public partial class MenuView : UserControl
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MenuView"/> class.
+    /// </summary>
     public MenuView()
     {
         InitializeComponent();
 
+        // Set the DataContext to the MenuViewModel
         DataContext = Ioc.Default.GetRequiredService<MenuViewModel>();
     }
 
+    /// <summary>
+    /// Handles the Click event of the SearchButton control.
+    /// Toggles the visibility of the search text box and updates the button content accordingly.
+    /// </summary>
+    /// <param name="sender">The sender of the event.</param>
+    /// <param name="e">The event arguments.</param>
     private void SearchButton_OnClick(object sender, RoutedEventArgs e)
     {
         if (SearchTextBox.Visibility == Visibility.Visible)
         {
+            // Hide the search text box
             SearchTextBox.Visibility = Visibility.Collapsed;
             SearchTextBox.Text = string.Empty;
             SearchButton.Content = Resources["SearchIcon"];
         }
         else
         {
+            // Show the search text box
             SearchTextBox.Visibility = Visibility.Visible;
             SearchButton.Content = Resources["CloseIcon"];
             SearchTextBox.Focus();

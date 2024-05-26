@@ -18,7 +18,9 @@ using Newtonsoft.Json.Linq;
 
 namespace ApiFootballDeserializer;
 
-/// <inheridoc/>
+/// <summary>
+/// Class for deserializing standing data from JSON.
+/// </summary>
 public class StandingDeserializer : IStandingDeserializer
 {
     /// <inheridoc/>

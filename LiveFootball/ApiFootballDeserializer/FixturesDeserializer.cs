@@ -19,7 +19,9 @@ using Newtonsoft.Json.Linq;
 
 namespace ApiFootballDeserializer;
 
-/// <inheridoc/>
+/// <summary>
+/// Class for deserializing fixture data from JSON.
+/// </summary>
 public class FixturesDeserializer : IFixturesDeserializer
 {
     /// <inheridoc/>

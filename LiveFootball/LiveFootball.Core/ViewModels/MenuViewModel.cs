@@ -13,6 +13,7 @@
  *  applications as long as the original copyright notice is included.    *
  *                                                                        *
  **************************************************************************/
+
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -35,6 +36,9 @@ using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
 
+/// <summary>
+/// View model for managing the menu items and fetching live games data in the application.
+/// </summary>
 public partial class MenuViewModel : ObservableObject, IDisposable
 {
     #region Properties and Fields
@@ -45,20 +49,38 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     private CancellationTokenSource _fetchLiveGamesDataCancellationTokenSource;
     private CancellationTokenSource _filteringCancellationTokenSource;
 
-    [ObservableProperty] 
+    /// <summary>
+    /// The list of leagues.
+    /// </summary>
+    [ObservableProperty]
     private List<MenuItemViewModel> _leagues;
 
-    [ObservableProperty] 
+    /// <summary>
+    /// The filtered list of leagues based on the search text.
+    /// </summary>
+    [ObservableProperty]
     private ObservableCollection<MenuItemViewModel> _filteredLeagues;
 
+    /// <summary>
+    /// The collection of favourite leagues.
+    /// </summary>
     public ObservableCollection<MenuItemViewModel> FavouriteLeagues { get; }
 
+    /// <summary>
+    /// Indicates whether data is loading.
+    /// </summary>
     [ObservableProperty]
     private bool _isLoading;
 
-    [ObservableProperty] 
+    /// <summary>
+    /// The status message.
+    /// </summary>
+    [ObservableProperty]
     private string _statusMessage;
 
+    /// <summary>
+    /// The search text.
+    /// </summary>
     [ObservableProperty]
     private string _searchText;
 
@@ -66,12 +88,18 @@ public partial class MenuViewModel : ObservableObject, IDisposable
 
     #region Commands
 
+    /// <summary>
+    /// Command to fetch all games.
+    /// </summary>
     public ICommand AllGamesCommand => new AsyncRelayCommand(AllGamesFetchData);
 
     #endregion
 
     #region Constructors
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MenuViewModel"/> class.
+    /// </summary>
     public MenuViewModel(IFootballApiService? footballApiService = null,
                          IDeserializationService? deserializeDataService = null)
     {
@@ -94,7 +122,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     #endregion
 
     /// <summary>
-    ///     Initializes the component asynchronously by fetching and deserializing the leagues data
+    /// Initializes the component asynchronously by fetching and deserializing the leagues data.
     /// </summary>
     private async void InitializeComponentAsync()
     {
@@ -121,23 +149,26 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         }
         catch (DeserializationException)
         {
-            Leagues =  [];
+            Leagues = [];
             StatusMessage = "No standing data available...";
         }
         catch (HttpRequestException)
         {
-            Leagues =  [];
+            Leagues = [];
             StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
-            Leagues =  [];
+            Leagues = [];
             StatusMessage = "Oops, something went wrong";
         }
     }
 
     #region IDisposable Method Implementation
 
+    /// <summary>
+    /// Disposes the object.
+    /// </summary>
     public void Dispose()
     {
         Dispose(true);

@@ -20,7 +20,9 @@ using Newtonsoft.Json.Linq;
 
 namespace ApiFootballDeserializer;
 
-/// <inheridoc/>
+/// <summary>
+/// Class for deserializing result data from JSON.
+/// </summary>
 public class ResultsDeserializer : IResultsDeserializer
 {
     /// <inheridoc/>

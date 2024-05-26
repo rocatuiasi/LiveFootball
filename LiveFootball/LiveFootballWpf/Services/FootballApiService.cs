@@ -19,7 +19,9 @@ using System.Net.Http;
 using LiveFootball.Core.Services;
 
 namespace LiveFootballWpf.Services;
-
+/// <summary>
+/// Represents a service for interacting with a football API to retrieve data.
+/// </summary>
 public sealed class FootballApiService : IFootballApiService
 {
     private const string BaseRequestUri = "https://api-football-v1.p.rapidapi.com/v3/";
@@ -29,11 +31,15 @@ public sealed class FootballApiService : IFootballApiService
     private string _apiKey = "daa3074446mshfbd2b9311fcfc28p11f586jsn7f03347fcef0";
     private int _currentSeason = 2023;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="FootballApiService"/> class.
+    /// </summary>
     public FootballApiService()
     {
         _client = new HttpClient();
     }
-    
+
+    /// <inheritdoc/>
     public async Task<string> GetLeaguesDataAsync()
     {
         string jsonData;
@@ -68,6 +74,7 @@ public sealed class FootballApiService : IFootballApiService
         return jsonData;
     }
 
+    /// <inheritdoc/>
     public async Task<string> GetLiveGamesDataAsync()
     {
         var request = new HttpRequestMessage
@@ -87,6 +94,8 @@ public sealed class FootballApiService : IFootballApiService
 
         return body;
     }
+
+    /// <inheritdoc/>
     public async Task<string> GetAllGamesResultsDataAsync()
     {
         var currentDate = DateTime.Now.ToString("yyyy-MM-dd");
@@ -109,6 +118,7 @@ public sealed class FootballApiService : IFootballApiService
         return body;
     }
 
+    /// <inheritdoc/>
     public async Task<string> GetAllGamesFixturesDataAsync()
     {
         var currentDate = DateTime.Now.ToString("yyyy-MM-dd");
@@ -131,6 +141,7 @@ public sealed class FootballApiService : IFootballApiService
         return body;
     }
 
+    /// <inheritdoc/>
     public async Task<string> GetLeagueResultsDataAsync(string leagueParam)
     {
         var request = new HttpRequestMessage
@@ -151,6 +162,7 @@ public sealed class FootballApiService : IFootballApiService
         return body;
     }
 
+    /// <inheritdoc/>
     public async Task<string> GetLeagueFixturesDataAsync(string leagueParam)
     {
         var request = new HttpRequestMessage
@@ -171,6 +183,7 @@ public sealed class FootballApiService : IFootballApiService
         return body;
     }
 
+    /// <inheritdoc/>
     public async Task<string> GetLeagueStandingDataAsync(string leagueParam)
     {
         var request = new HttpRequestMessage
