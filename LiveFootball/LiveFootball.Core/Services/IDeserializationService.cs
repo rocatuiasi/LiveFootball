@@ -14,5 +14,5 @@ public interface IDeserializationService
 
     Task<List<LeagueStandingTeamModel>> DeserializeStandingData(JObject jsonData);
     
-    Task<List<MenuItemViewModel>> DeserializeLeaguesData(JObject jsonData);
+    Task<List<MenuItemModel>> DeserializeLeaguesData(JObject jsonData);
 }

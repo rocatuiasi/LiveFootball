@@ -1,6 +1,6 @@
 using System.Windows;
+using ApiFootballDeserializer;
 using CommunityToolkit.Mvvm.DependencyInjection;
-using LiveFootball.Core.Deserializers;
 using LiveFootball.Core.Services;
 using LiveFootball.Core.ViewModels;
 using LiveFootballWpf.Services;

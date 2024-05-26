@@ -9,32 +9,6 @@
              d:DesignHeight="450" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance viewModels:MenuViewModel}">
     <UserControl.Resources>
-        <ControlTemplate x:Key="LeagueButtonControlTemplate" d:DataContext="{d:DesignInstance viewModels:MenuItemViewModel}">
-            <Grid>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
-                            Margin="15 10">
-                    <Image Source="{Binding Logo}"
-                           Style="{StaticResource TeamsLogoStyle}"
-                           Margin="0 0 5 0"
-                           VerticalAlignment="Center" />
-                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
-                </StackPanel>
-
-                <Grid.Style>
-                    <Style TargetType="Grid">
-                        <Setter Property="Background"
-                                Value="{DynamicResource MaterialDesign.Brush.Primary}" />
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background"
-                                        Value="{DynamicResource MaterialDesign.Brush.Primary.Dark}" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>                    
-                </Grid.Style>
-            </Grid>
-        </ControlTemplate>
-    
         <materialDesign:PackIcon x:Key="SearchIcon" Kind="Search"
                                  Height="24" Width="24"
                                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
@@ -67,7 +41,7 @@
                         <TextBlock Text="Leagues" TextAlignment="Center" Padding="10"
                                    FontSize="16" FontWeight="DemiBold"
                                    Foreground="White"
-                                   Background="{DynamicResource MaterialDesign.Brush.Primary.Light}" />
+                                   Background="{DynamicResource MaterialDesign.Brush.Primary.Dark}" />
                         
                         <Button x:Name="SearchButton" Click="SearchButton_OnClick" 
                                 Style="{StaticResource SearchButton}"
@@ -76,10 +50,11 @@
                                 VerticalAlignment="Center" HorizontalAlignment="Right" />
                     </Grid>
 
-                    <Grid Background="{StaticResource MaterialDesign.Brush.Primary}">
-                        <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_TextChanged"
+                    <Grid Background="{DynamicResource MaterialDesign.Brush.Primary}">
+                        <TextBox x:Name="SearchTextBox" 
+                                 Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                 materialDesign:TextFieldAssist.UnderlineBrush="{StaticResource MaterialDesign.Brush.Primary.Dark}"
+                                 materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource MaterialDesign.Brush.Primary.Dark}"
                                  VerticalAlignment="Center" Visibility="Collapsed"
                                  Background="White" Padding="5 5" Margin="10">
                         </TextBox>
@@ -87,15 +62,45 @@
                 </StackPanel>
 
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
-                    <ItemsControl x:Name="LeaguesItemsControl" ItemsSource="{Binding Leagues}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button Command="{Binding FetchDataCommand}"
-                                        Template="{StaticResource LeagueButtonControlTemplate}"
-                                        Height="40" Margin="0 0 0 1" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                    <StackPanel>
+                        <Expander Foreground="White" FontWeight="DemiBold" IsExpanded="True"
+                                  materialDesign:ExpanderAssist.HorizontalHeaderPadding="10 5"
+                                  materialDesign:ExpanderAssist.HeaderBackground="{DynamicResource MaterialDesign.Brush.Secondary.Dark}">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Star" Height="20" Width="20" Foreground="Yellow"
+                                                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                                    <TextBlock Text="Favourite Leagues" FontSize="14" 
+                                               VerticalAlignment="Center" Margin="5 0 0 0"/>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel>
+                                <ItemsControl ItemsSource="{Binding FavouriteLeagues}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Button Command="{Binding FetchDataCommand}"
+                                                    Template="{StaticResource FavouriteLeagueButtonControlTemplate}"
+                                                    Cursor="Arrow"
+                                                    Height="40" Margin="0 0 0 1" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <Separator Style="{StaticResource MaterialDesignDarkSeparator}" 
+                                           Background="{DynamicResource MaterialDesign.Brush.Secondary.Dark}"
+                                           Height="5"/>
+                            </StackPanel>
+                        </Expander>
+                        <ItemsControl ItemsSource="{Binding FilteredLeagues}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Command="{Binding FetchDataCommand}"
+                                            Template="{StaticResource LeagueButtonControlTemplate}"
+                                            Cursor="Arrow"
+                                            Height="40" Margin="0 0 0 1" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
                 </ScrollViewer>
                 
                 <TextBlock Grid.Row="1" Text="{Binding StatusMessage}" Style="{StaticResource TabStatusMessageStyle}" />

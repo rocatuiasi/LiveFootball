@@ -1,11 +1,9 @@
 ﻿using System.Globalization;
-
 using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Models;
-
 using Newtonsoft.Json.Linq;
 
-namespace LiveFootball.Core.Deserializers;
+namespace ApiFootballDeserializer;
 
 public class ResultsDeserializer : IResultsDeserializer
 {

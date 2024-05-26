@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootballWpf", "LiveFoot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootball.Core", "LiveFootball.Core\LiveFootball.Core.csproj", "{6DE48908-407A-4898-B163-EB396C575B8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiFootballDeserializer", "ApiFootballDeserializer\ApiFootballDeserializer.csproj", "{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6DE48908-407A-4898-B163-EB396C575B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DE48908-407A-4898-B163-EB396C575B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DE48908-407A-4898-B163-EB396C575B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3697D00D-E514-4B9A-AEF4-2421A06DF7D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

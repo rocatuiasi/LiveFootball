@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:LiveFootballWpf.Views"
         xmlns:viewModels="clr-namespace:LiveFootball.Core.ViewModels;assembly=LiveFootball.Core"
-        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="LiveFootball" Height="650" Width="1000" MinWidth="600"
-        d:DataContext="{d:DesignInstance viewModels:MainViewModel}">
-    <!-- Background="{DynamicResource MaterialDesign.Brush.Background}" -->
-    <!-- Foreground="{DynamicResource MaterialDesign.Brush.Foreground}" -->
+        Style="{StaticResource MaterialDesignWindow}"
+        d:DataContext="{d:DesignInstance viewModels:MainViewModel}"
+        mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" MinWidth="150" MaxWidth="500"/>

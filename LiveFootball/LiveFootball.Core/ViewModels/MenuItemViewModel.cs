@@ -6,12 +6,13 @@ using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Helpers;
+using LiveFootball.Core.Models;
 using LiveFootball.Core.Services;
 using Newtonsoft.Json.Linq;
 
 namespace LiveFootball.Core.ViewModels;
 
-public class MenuItemViewModel : ObservableObject
+public partial class MenuItemViewModel : ObservableObject
 {
     #region Backing Fields and Properties
 
@@ -24,13 +25,13 @@ public class MenuItemViewModel : ObservableObject
 
     #endregion
 
-
-    #region ICommand
+    #region Commands
 
     public ICommand FetchDataCommand => new AsyncRelayCommand(FetchData);
+    public ICommand AddFavouriteCommand => new RelayCommand<string>(AddFavourite);
+    public ICommand RemoveFavouriteCommand => new RelayCommand<string>(RemoveFavourite);
 
     #endregion
-
 
     #region Constructors
 
@@ -44,14 +45,22 @@ public class MenuItemViewModel : ObservableObject
         Logo = logo;
     }
 
+    public MenuItemViewModel(MenuItemModel menuItemModel) : this(menuItemModel.Name, menuItemModel.LeagueId, menuItemModel.Logo)
+    {
+    }
+
+    public MenuItemViewModel() : this(null, null, null)
+    {
+    }
+
     #endregion
 
-
-    #region ICommand Execution
+    #region Commands Execution
 
     private async Task FetchData()
     {
         // Switch current TabView to LeagueTabView
+        Ioc.Default.GetRequiredService<LeagueTabViewModel>().Title = $"{Name} - Football matches";
         Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 
         // Set loading state to true
@@ -64,6 +73,27 @@ public class MenuItemViewModel : ObservableObject
 
         // Set loading state to false
         HelperFunctions.SetLeagueLoadingProgressState(false);
+    }
+
+    private void AddFavourite(string? leagueId)
+    {
+        if (leagueId == null) return;
+        
+        var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
+        if(menuViewModel.FavouriteLeagues.All(x => x.LeagueId != leagueId))
+        {
+            var leagueToAdd = menuViewModel.Leagues.First(x => x.LeagueId == leagueId);
+            menuViewModel.FavouriteLeagues.Add(leagueToAdd);
+        }
+    }
+
+    private void RemoveFavourite(string? leagueId)
+    {
+        if (leagueId == null) return;
+
+        var menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
+        var leagueToRemove = menuViewModel.FavouriteLeagues.First(x => x.LeagueId == leagueId);
+        menuViewModel.FavouriteLeagues.Remove(leagueToRemove);
     }
 
     #endregion
@@ -80,17 +110,21 @@ public class MenuItemViewModel : ObservableObject
             var leagueStandingCollection = await _deserializeDataService.DeserializeStandingData(jsonData);
 
             leagueStandingViewModel.StandingTeams = leagueStandingCollection;
+            leagueStandingViewModel.StatusMessage = string.Empty;
         }
         catch (DeserializationException)
         {
+            leagueStandingViewModel.StandingTeams = [];
             leagueStandingViewModel.StatusMessage = "No standing data available...";
         }
         catch (HttpRequestException)
         {
+            leagueStandingViewModel.StandingTeams = [];
             leagueStandingViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
+            leagueStandingViewModel.StandingTeams = [];
             leagueStandingViewModel.StatusMessage = "Oops, something went wrong";
         }
     }
@@ -107,17 +141,21 @@ public class MenuItemViewModel : ObservableObject
             var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
 
             fixturesViewModel.MatchesCollection = matchesCollection;
+            fixturesViewModel.StatusMessage = string.Empty;
         }
         catch (DeserializationException)
         {
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "No more fixtures this season...";
         }
         catch (HttpRequestException)
         {
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "Oops, something went wrong";
         }
     }
@@ -134,17 +172,21 @@ public class MenuItemViewModel : ObservableObject
             var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
 
             resultsViewModel.MatchesCollection = matchesCollection;
+            resultsViewModel.StatusMessage = string.Empty;
         }
         catch (DeserializationException)
         {
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "No results data available...";
         }
         catch (HttpRequestException)
         {
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "Oops, something went wrong";
         }
     }
