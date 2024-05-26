@@ -1,5 +1,5 @@
 ﻿/**************************************************************************
- *                                                                        * 
+ *                                                                        *
  *  File:        ResultsViewModel.cs                                      *
  *  Description: LiveFootball.Core.ViewModels Library                     *
  *               View model for managing the results view in the          *
@@ -19,14 +19,23 @@ using LiveFootball.Core.Models;
 
 namespace LiveFootball.Core.ViewModels;
 
+/// <summary>
+/// View model for managing the results view in the application.
+/// </summary>
 public partial class ResultsViewModel : ObservableObject
 {
-    [ObservableProperty] 
+    [ObservableProperty]
     private List<ResultMatchModel> _matchesCollection = new();
 
-    [ObservableProperty] 
+    /// <summary>
+    /// The collection of matches.
+    /// </summary>
+    [ObservableProperty]
     private bool _isLoading;
 
+    /// <summary>
+    /// Indicates whether data is loading.
+    /// </summary>
     [ObservableProperty]
     private string _statusMessage = string.Empty;
 }

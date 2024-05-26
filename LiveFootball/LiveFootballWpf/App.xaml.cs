@@ -31,6 +31,9 @@ namespace LiveFootballWpf
             Ioc.Default.GetRequiredService<MainViewModel>().InitializeApp();
         }
 
+        /// <summary>
+        /// Configures services using Microsoft.Extensions.DependencyInjection.
+        /// </summary>
         private void ConfigureServices()
         {
             // Register services

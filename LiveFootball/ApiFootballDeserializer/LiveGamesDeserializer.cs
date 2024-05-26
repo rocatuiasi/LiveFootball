@@ -18,7 +18,9 @@ using Newtonsoft.Json.Linq;
 
 namespace ApiFootballDeserializer;
 
-/// <inheridoc/>
+/// <summary>
+/// Class for deserializing live game data from JSON.
+/// </summary>
 public class LiveGamesDeserializer : ILiveGamesDeserializer
 {
     /// <inheridoc/>
