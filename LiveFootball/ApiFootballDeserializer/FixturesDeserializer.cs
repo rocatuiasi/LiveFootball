@@ -5,8 +5,10 @@ using Newtonsoft.Json.Linq;
 
 namespace ApiFootballDeserializer;
 
+/// <inheridoc/>
 public class FixturesDeserializer : IFixturesDeserializer
 {
+    /// <inheridoc/>
     public async Task<List<FixtureMatchModel>> Deserialize(JToken jsonData)
     {
         var matchesList = new List<FixtureMatchModel>();
@@ -24,6 +26,12 @@ public class FixturesDeserializer : IFixturesDeserializer
         return matchesList;
     }
 
+    /// <summary>
+    /// Deserializes a single match JSON token with semaphore control.
+    /// </summary>
+    /// <param name="jsonFixtureData">The JSON data of a single fixture.</param>
+    /// <param name="semaphore">Semaphore to control concurrency.</param>
+    /// <returns>A task representing the asynchronous operation, with a <see cref="FixtureMatchModel"/> as the result.</returns>
     private async Task<FixtureMatchModel> DeserializeMatchWithSemaphore(JToken jsonFixtureData, SemaphoreSlim semaphore)
     {
         await semaphore.WaitAsync(); // Wait for a slot to become available
@@ -37,12 +45,14 @@ public class FixturesDeserializer : IFixturesDeserializer
         }
     }
 
+    /// <summary>
+    /// Deserializes a single match JSON token.
+    /// </summary>
+    /// <param name="jsonFixtureData">The JSON data of a single fixture.</param>
+    /// <returns>A task representing the asynchronous operation, with a <see cref="FixtureMatchModel"/> as the result.</returns>
     private async Task<FixtureMatchModel> DeserializeMatch(JToken jsonFixtureData)
     {
         var date = DateTime.TryParse(jsonFixtureData["fixture"]!["date"]!.ToString(), CultureInfo.CurrentCulture,
-                       DateTimeStyles.None, out var dateTime)
-                       ? dateTime.ToString("MMM d, HH:mm", CultureInfo.CurrentCulture)
-                       : "NA";
 
 
         var homeLogo = await HelperFunctions.GetTeamLogoFromUrl(jsonFixtureData["teams"]!["home"]!["logo"]!.ToString());

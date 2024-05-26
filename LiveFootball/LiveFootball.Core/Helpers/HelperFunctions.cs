@@ -9,8 +9,16 @@ using LiveFootball.Core.ViewModels;
 
 namespace LiveFootball.Core.Helpers;
 
+/// <summary>
+/// Helper class providing various utility methods for handling images, loading progress states, etc.
+/// </summary>
 public static class HelperFunctions
 {
+    // <summary>
+    /// Gets the team logo image from the specified URL, with caching support.
+    /// </summary>
+    /// <param name="url">The URL of the team logo image.</param>
+    /// <returns>A <see cref="BitmapImage"/> representing the team logo.</returns>
     public static async Task<BitmapImage> GetTeamLogoFromUrl(string url)
     {
         var fileName = Path.GetFileName(url);
@@ -26,6 +34,11 @@ public static class HelperFunctions
         return bitmapImage;
     }
     
+    // <summary>
+    /// Gets the league logo image from the specified URL, with caching support.
+    /// </summary>
+    /// <param name="url">The URL of the league logo image.</param>
+    /// <returns>A <see cref="BitmapImage"/> representing the league logo.</returns>
     public static async Task<BitmapImage> GetLeagueLogoFromUrl(string url)
     {
         var fileName = Path.GetFileName(url);
@@ -41,6 +54,11 @@ public static class HelperFunctions
         return bitmapImage;
     }
 
+    /// <summary>
+    /// Downloads an image from the internet using the specified URL.
+    /// </summary>
+    /// <param name="url">The URL of the image to download.</param>
+    /// <returns>A <see cref="BitmapImage"/> representing the downloaded image.</returns>
     private static async Task<BitmapImage?> GetImageFromInternet(string url)
     {
         using var httpClient = new HttpClient();
@@ -70,6 +88,12 @@ public static class HelperFunctions
         }
     }
 
+    /// <summary>
+    /// Downloads an image from the internet with retry logic.
+    /// </summary>
+    /// <param name="url">The URL of the image to download.</param>
+    /// <param name="retryCount">The number of retries in case of failure.</param>
+    /// <returns>The byte array representing the downloaded image.</returns>
     private static async Task<byte[]> DownloadImageWithRetry(string url, int retryCount = 10)
     {
         using var httpClient = new HttpClient();
@@ -86,13 +110,17 @@ public static class HelperFunctions
             {
                 if (e.StatusCode == HttpStatusCode.TooManyRequests)
                     await Task.Delay(300); // Wait 300ms before retrying
-                    // Console.WriteLine($"Error fetching image from URL {url}: retry {retry}");
             }
         }
 
         throw new Exception($"Failed to download image after {retryCount} retries");
     }
 
+    /// <summary>
+    /// Reads a bitmap image from the specified file path.
+    /// </summary>
+    /// <param name="filePath">The path of the image file to read.</param>
+    /// <returns>A <see cref="BitmapImage"/> representing the image read from file.</returns>
     private static async Task<BitmapImage> ReadBitmap(string filePath)
     {
         var bitmapImage = new BitmapImage();
@@ -103,11 +131,14 @@ public static class HelperFunctions
         bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
         bitmapImage.EndInit();
 
-        // Console.WriteLine($"Successfully fetched image from file: {filePath}");
-
         return bitmapImage;
     }
 
+    /// <summary>
+    /// Writes the specified bitmap image to the file system.
+    /// </summary>
+    /// <param name="bitmapImage">The bitmap image to write.</param>
+    /// <param name="filePath">The file path where the image will be written.</param>
     private static async Task WriteBitmapAsync(BitmapImage bitmapImage, string filePath)
     {
         // Ensure the parent directory exists, create it if it doesn't
@@ -133,6 +164,10 @@ public static class HelperFunctions
         }
     }
 
+    /// <summary>
+    /// Sets the loading progress state for league-related views.
+    /// </summary>
+    /// <param name="state">The loading state to set.</param>
     public static void SetLeagueLoadingProgressState(bool state)
     {
         Ioc.Default.GetRequiredService<ResultsViewModel>().IsLoading = state;
@@ -140,11 +175,19 @@ public static class HelperFunctions
         Ioc.Default.GetRequiredService<LeagueStandingViewModel>().IsLoading = state;
     }
 
+    /// <summary>
+    /// Sets the loading progress state for live games view.
+    /// </summary>
+    /// <param name="state">The loading state to set.</param>
     public static void SetLiveGamesLoadingProgressState(bool state)
     {
         Ioc.Default.GetRequiredService<LiveGamesViewModel>().IsLoading = state;
     }
 
+    /// <summary>
+    /// Sets the loading progress state for all games-related views.
+    /// </summary>
+    /// <param name="state">The loading state to set.</param>
     public static void SetAllGamesLoadingProgressState(bool state)
     {
         Ioc.Default.GetRequiredService<ResultsViewModel>().IsLoading = state;
