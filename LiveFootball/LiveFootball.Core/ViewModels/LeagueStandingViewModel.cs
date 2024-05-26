@@ -12,14 +12,15 @@
  *  applications as long as the original copyright notice is included.    *
  *                                                                        *
  **************************************************************************/
-using System.Collections.ObjectModel;
-
 using CommunityToolkit.Mvvm.ComponentModel;
 
 using LiveFootball.Core.Models;
 
 namespace LiveFootball.Core.ViewModels;
 
+/// <summary>
+/// ViewModel for managing league standing data and related functionality.
+/// </summary>
 public partial class LeagueStandingViewModel : ObservableObject
 {
     #region Properties

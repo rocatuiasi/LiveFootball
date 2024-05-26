@@ -15,9 +15,13 @@
  **************************************************************************/
 namespace LiveFootball.Core.Models;
 
-public class ExtendedTeamModel : TeamModel
+/// <summary>
+/// Represents an extended team model including additional properties like goals.
+/// </summary>
+public class ExtendedTeamModel: TeamModel
 {
-    /* public List<string> RedCards { get; set; }
-     public List<string> YellowCards { get; set; }*/
+    /// <summary>
+    /// Gets or sets the number of goals scored by the team.
+    /// </summary>
     public int Goals { get; set; }
 }

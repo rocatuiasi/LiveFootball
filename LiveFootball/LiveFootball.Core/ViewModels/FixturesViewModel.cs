@@ -4,6 +4,9 @@ using LiveFootball.Core.Models;
 
 namespace LiveFootball.Core.ViewModels;
 
+/// <summary>
+/// ViewModel for managing fixtures data and related functionality.
+/// </summary>
 public partial class FixturesViewModel : ObservableObject
 {
     [ObservableProperty] 
