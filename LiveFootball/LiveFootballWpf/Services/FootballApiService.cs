@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Globalization;
+using System.IO;
 using System.Net.Http;
 
 using LiveFootball.Core.Services;
@@ -11,7 +12,7 @@ public sealed class FootballApiService : IFootballApiService
     private const string ApiGetLeaguesFileName = "get-leagues.json";
 
     private readonly HttpClient _client;
-    private string _apiKey = "bug";
+    private string _apiKey = "daa3074446mshfbd2b9311fcfc28p11f586jsn7f03347fcef0";
     private int _currentSeason = 2023;
 
     public FootballApiService()
@@ -161,7 +162,7 @@ public sealed class FootballApiService : IFootballApiService
         var request = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
-            RequestUri = new Uri($"{BaseRequestUri}standings?season=2023&league={leagueParam}"),
+            RequestUri = new Uri($"{BaseRequestUri}standings?season={_currentSeason}&league={leagueParam}"),
             Headers =
             {
                 { "X-RapidAPI-Key", _apiKey },

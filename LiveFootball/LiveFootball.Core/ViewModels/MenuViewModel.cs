@@ -6,12 +6,15 @@ using System.Net.Http;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
+
 using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Services;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -27,18 +30,18 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     private CancellationTokenSource _fetchLiveGamesDataCancellationTokenSource;
     private CancellationTokenSource _filteringCancellationTokenSource;
 
-    [ObservableProperty]
+    [ObservableProperty] 
     private List<MenuItemViewModel> _leagues;
-    
-    [ObservableProperty]
+
+    [ObservableProperty] 
     private ObservableCollection<MenuItemViewModel> _filteredLeagues;
 
     public ObservableCollection<MenuItemViewModel> FavouriteLeagues { get; }
-    
-    [ObservableProperty] 
-    private bool _isLoading;
 
     [ObservableProperty]
+    private bool _isLoading;
+
+    [ObservableProperty] 
     private string _statusMessage;
 
     [ObservableProperty]
@@ -54,32 +57,34 @@ public partial class MenuViewModel : ObservableObject, IDisposable
 
     #region Constructors
 
-    public MenuViewModel(IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
+    public MenuViewModel(IFootballApiService? footballApiService = null,
+                         IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
-        _fetchLiveGamesDataCancellationTokenSource = null!;
+        _fetchLiveGamesDataCancellationTokenSource = new CancellationTokenSource();
         _filteringCancellationTokenSource = new CancellationTokenSource();
         _leagues = new List<MenuItemViewModel>();
         _filteredLeagues = new ObservableCollection<MenuItemViewModel>();
         FavouriteLeagues = new ObservableCollection<MenuItemViewModel>();
         _statusMessage = string.Empty;
         _searchText = string.Empty;
-       
+
         PropertyChanged += OnPropertyChanged;
         FavouriteLeagues.CollectionChanged += FavouriteLeaguesOnCollectionChanged;
-        
+
         InitializeComponentAsync();
     }
 
     #endregion
 
     /// <summary>
-    ///    Initializes the component asynchronously by fetching and deserializing the leagues data
+    ///     Initializes the component asynchronously by fetching and deserializing the leagues data
     /// </summary>
     private async void InitializeComponentAsync()
     {
         IsLoading = true;
+
         try
         {
             // Fetch Leagues data
@@ -88,7 +93,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
             // Deserialize Leagues data
             var jsonData = JObject.Parse(leaguesData);
             var leaguesModel = await _deserializeDataService.DeserializeLeaguesData(jsonData);
-            
+
             // Create MenuItemViewModel instances from the deserialized data
             var leagues = new List<MenuItemViewModel>();
             foreach (var model in leaguesModel)
@@ -101,23 +106,23 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         }
         catch (DeserializationException)
         {
-            Leagues = [];
+            Leagues =  [];
             StatusMessage = "No standing data available...";
-        } 
+        }
         catch (HttpRequestException)
         {
-            Leagues = [];
+            Leagues =  [];
             StatusMessage = "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
-            Leagues = [];
+            Leagues =  [];
             StatusMessage = "Oops, something went wrong";
         }
     }
 
     #region IDisposable Method Implementation
-    
+
     public void Dispose()
     {
         Dispose(true);
@@ -136,16 +141,17 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     #endregion
 
     #region Event Handlers
+
     private void OnPropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
-        if(e.PropertyName == nameof(SearchText))
+        if (e.PropertyName == nameof(SearchText))
             OnSearchTextChanged();
         else if (e.PropertyName == nameof(Leagues))
             OnSearchTextChanged();
     }
-    
+
     /// <summary>
-    ///   Filters the leagues when the search text changes
+    ///     Filters the leagues when the search text changes
     /// </summary>
     private async void OnSearchTextChanged()
     {
@@ -162,7 +168,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     }
 
     /// <summary>
-    ///   Saves the favourite leagues data when the FavouriteLeagues collection changes
+    ///     Saves the favourite leagues data when the FavouriteLeagues collection changes
     /// </summary>
     private async void FavouriteLeaguesOnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
     {
@@ -170,7 +176,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         var favouriteLeaguesData = FavouriteLeagues.Select(league => new { league.Name, league.LeagueId });
         await SaveFavouritesLeaguesData(favouriteLeaguesData);
     }
-    
+
     #endregion
 
     #region Commands Execution
@@ -187,32 +193,32 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         HelperFunctions.SetAllGamesLoadingProgressState(true);
 
         // Fetch Results data
-        var resultsData = await _footballService.GetAllGamesResultsDataAsync();
-        await RefreshResults(JObject.Parse(resultsData));
+        await RefreshAllGamesResults();
 
         // Fetch Fixtures data
-        var fixturesData = await _footballService.GetAllGamesFixturesDataAsync();
-        await RefreshFixtures(JObject.Parse(fixturesData));
+        await RefreshAllGamesFixtures();
 
         // Set loading state to false
         HelperFunctions.SetAllGamesLoadingProgressState(false);
     }
 
-    private async Task FetchLiveGamesDataAsync(CancellationToken cancellationToken)
+    private async Task FetchLiveGamesDataAsync()
     {
+        _fetchLiveGamesDataCancellationTokenSource = new CancellationTokenSource();
+        var cancellationToken = _fetchLiveGamesDataCancellationTokenSource.Token;
+
         while (!cancellationToken.IsCancellationRequested)
         {
             try
             {
                 // Set loading state to true
-                HelperFunctions.SetAllGamesLoadingProgressState(true);
+                HelperFunctions.SetLiveGamesLoadingProgressState(true);
 
                 // Fetch Live Games data
-                var liveGamesData = await _footballService.GetLiveGamesDataAsync();
-                await RefreshLiveGames(JObject.Parse(liveGamesData));
+                await RefreshLiveGames();
 
                 // Set loading state to false
-                HelperFunctions.SetAllGamesLoadingProgressState(false);
+                HelperFunctions.SetLiveGamesLoadingProgressState(false);
 
                 // Wait for the next interval
                 await Task.Delay(60000, cancellationToken);
@@ -229,37 +235,116 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         }
     }
 
-    private async Task RefreshLiveGames(JObject jsonData)
+    private async Task RefreshLiveGames()
     {
-        var matchesCollection = await _deserializeDataService.DeserializeLiveGamesData(jsonData);
-
         var liveGamesViewModel = Ioc.Default.GetRequiredService<LiveGamesViewModel>();
-        liveGamesViewModel.MatchesCollection = matchesCollection;
+
+        try
+        {
+            var liveGamesData = await _footballService.GetLiveGamesDataAsync();
+            var jsonData = JObject.Parse(liveGamesData);
+            // Deserialize Results data
+            var matchesCollection = await _deserializeDataService.DeserializeLiveGamesData(jsonData);
+
+            liveGamesViewModel.MatchesCollection = matchesCollection;
+            liveGamesViewModel.StatusMessage = string.Empty;
+        }
+        catch (DeserializationException)
+        {
+            liveGamesViewModel.MatchesCollection =  [];
+            liveGamesViewModel.StatusMessage = "No results data available...";
+        }
+        catch (HttpRequestException)
+        {
+            liveGamesViewModel.MatchesCollection =  [];
+            liveGamesViewModel.StatusMessage =
+                "Network error: either a connection problem or the API-Football is unavailable.";
+        }
+        catch (Exception)
+        {
+            liveGamesViewModel.MatchesCollection =  [];
+            liveGamesViewModel.StatusMessage = "Oops, something went wrong";
+        }
     }
 
-    private async Task RefreshFixtures(JObject jsonData)
+    private async Task RefreshAllGamesResults()
     {
-        var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
-
-        var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
-        fixturesViewModel.MatchesCollection = matchesCollection;
-    }
-
-    private async Task RefreshResults(JObject jsonData)
-    {
-        var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
-
         var resultsViewModel = Ioc.Default.GetRequiredService<ResultsViewModel>();
-        resultsViewModel.MatchesCollection = matchesCollection;
+        try
+        {
+            // Fetch Results data
+            var resultsData = await _footballService.GetAllGamesResultsDataAsync();
+            var jsonData = JObject.Parse(resultsData);
+            // Deserialize Results data
+            var matchesCollection = await _deserializeDataService.DeserializeResultsData(jsonData);
+
+            resultsViewModel.MatchesCollection = matchesCollection;
+            resultsViewModel.StatusMessage = string.Empty;
+        }
+        catch (DeserializationException)
+        {
+            resultsViewModel.MatchesCollection =  [];
+            resultsViewModel.StatusMessage = "No results data available...";
+        }
+        catch (HttpRequestException)
+        {
+            resultsViewModel.MatchesCollection =  [];
+            resultsViewModel.StatusMessage =
+                "Network error: either a connection problem or the API-Football is unavailable.";
+        }
+        catch (Exception)
+        {
+            resultsViewModel.MatchesCollection =  [];
+            resultsViewModel.StatusMessage = "Oops, something went wrong";
+        }
+    }
+
+    private async Task RefreshAllGamesFixtures()
+    {
+        var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
+
+        try
+        {
+            // Fetch Fixtures data
+            var fixturesData = await _footballService.GetAllGamesFixturesDataAsync();
+            var jsonData = JObject.Parse(fixturesData);
+            // Deserialize Fixtures data
+            var matchesCollection = await _deserializeDataService.DeserializeFixturesData(jsonData);
+
+            fixturesViewModel.MatchesCollection = matchesCollection;
+            fixturesViewModel.StatusMessage = string.Empty;
+        }
+        catch (DeserializationException)
+        {
+            fixturesViewModel.MatchesCollection =  [];
+            fixturesViewModel.StatusMessage = "No more fixtures this season...";
+        }
+        catch (HttpRequestException)
+        {
+            fixturesViewModel.MatchesCollection =  [];
+            fixturesViewModel.StatusMessage =
+                "Network error: either a connection problem or the API-Football is unavailable.";
+        }
+        catch (Exception)
+        {
+            fixturesViewModel.MatchesCollection =  [];
+            fixturesViewModel.StatusMessage = "Oops, something went wrong";
+        }
     }
 
     #endregion
 
     public async Task StartFetchingLiveGamesData()
     {
-        _fetchLiveGamesDataCancellationTokenSource = new CancellationTokenSource();
+        if (Ioc.Default.GetRequiredService<AllGamesTabViewModel>().SelectedTabIndex == 0)
+        {
+            if (!_fetchLiveGamesDataCancellationTokenSource.Token.IsCancellationRequested)
+            {
+                StopFetchingLiveGamesData();
+            }
 
-        await FetchLiveGamesDataAsync(_fetchLiveGamesDataCancellationTokenSource.Token);
+            await FetchLiveGamesDataAsync();
+        }
     }
 
     public void StopFetchingLiveGamesData()
@@ -270,7 +355,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     #region Favourite Leagues Reading/Writing
 
     /// <summary>
-    ///  Saves the favourite leagues data asynchronously
+    ///     Saves the favourite leagues data asynchronously
     /// </summary>
     /// <param name="favouriteLeaguesData">The favourite leagues data to save</param>
     /// <returns>A task that represents the asynchronous save operation</returns>
@@ -284,7 +369,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     }
 
     /// <summary>
-    ///   Reads the favourite leagues data asynchronously
+    ///     Reads the favourite leagues data asynchronously
     /// </summary>
     /// <returns>A task that represents the asynchronous read operation</returns>
     private async Task ReadFavouritesLeaguesDataAsync()
@@ -320,9 +405,9 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     #endregion
 
     #region Filtering Operation Methods
-    
+
     /// <summary>
-    ///    Filters the leagues asynchronously
+    ///     Filters the leagues asynchronously
     /// </summary>
     /// <param name="searchText">Search text used to filter the leagues</param>
     /// <param name="cancellationToken">Cancellation token</param>
@@ -331,16 +416,17 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     {
         try
         {
-            await Application.Current.Dispatcher.InvokeAsync(FilteredLeagues.Clear, DispatcherPriority.Background, cancellationToken);
+            await Application.Current.Dispatcher.InvokeAsync(FilteredLeagues.Clear, DispatcherPriority.Background,
+                cancellationToken);
 
             var filtered = string.IsNullOrWhiteSpace(searchText)
-                ? Leagues
-                : await Task.Run(() => FilterLeagues(searchText, Leagues, cancellationToken), cancellationToken);
+                               ? Leagues
+                               : await Task.Run(() => FilterLeagues(searchText, Leagues, cancellationToken),
+                                     cancellationToken);
 
-            await Application.Current.Dispatcher.InvokeAsync(() =>
-            {
-                FilteredLeagues = new ObservableCollection<MenuItemViewModel>(filtered);
-            }, DispatcherPriority.Background, cancellationToken);
+            await Application.Current.Dispatcher.InvokeAsync(
+                () => { FilteredLeagues = new ObservableCollection<MenuItemViewModel>(filtered); },
+                DispatcherPriority.Background, cancellationToken);
         }
         catch (OperationCanceledException)
         {
@@ -349,13 +435,14 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     }
 
     /// <summary>
-    ///    Filters the leagues
+    ///     Filters the leagues
     /// </summary>
     /// <param name="searchText">Search text used to filter the leagues</param>
     /// <param name="leagues">The leagues to filter</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>An enumerable of filtered leagues</returns>
-    private IEnumerable<MenuItemViewModel> FilterLeagues(string searchText, IEnumerable<MenuItemViewModel> leagues, CancellationToken cancellationToken)
+    private IEnumerable<MenuItemViewModel> FilterLeagues(string searchText, IEnumerable<MenuItemViewModel> leagues,
+                                                         CancellationToken cancellationToken)
     {
         var words = searchText.Split(' ');
         var filtered = new List<MenuItemViewModel>();
@@ -372,7 +459,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     }
 
     /// <summary>
-    ///   Determines whether the league name contains all the words
+    ///     Determines whether the league name contains all the words
     /// </summary>
     /// <param name="league">The league to check</param>
     /// <param name="words">The words to check</param>
@@ -383,11 +470,12 @@ public partial class MenuViewModel : ObservableObject, IDisposable
             return true;
 
         var lowercaseName = (league.Name?.ToLower() ?? string.Empty).Replace(" ", "");
-        int startIndex = 0;
+        var startIndex = 0;
 
         foreach (var word in words)
         {
-            int index = lowercaseName.IndexOf(word, startIndex, StringComparison.CurrentCultureIgnoreCase);
+            var index = lowercaseName.IndexOf(word, startIndex, StringComparison.CurrentCultureIgnoreCase);
+
             if (index == -1)
                 return false;
 
