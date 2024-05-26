@@ -1,11 +1,27 @@
-﻿using LiveFootball.Core.Helpers;
+﻿/**************************************************************************
+ *                                                                        * 
+ *  File:        LiveGamesDeserializer.cs                                 *
+ *  Description: ApiFootballDeserializer Library                          *
+ *               Deserializes JSON data into live match models            *
+ *  Copyright:   (c) 2024, LiveFootball Team                              *
+ *                                                                        *
+ *  This code and information is provided "as is" without warranty of     *
+ *  any kind, either expressed or implied, including but not limited      *
+ *  to the implied warranties of merchantability or fitness for a         *
+ *  particular purpose. You are free to use this source code in your      *
+ *  applications as long as the original copyright notice is included.    *
+ *                                                                        *
+ **************************************************************************/
+using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Models;
 using Newtonsoft.Json.Linq;
 
 namespace ApiFootballDeserializer;
 
+/// <inheridoc/>
 public class LiveGamesDeserializer : ILiveGamesDeserializer
 {
+    /// <inheridoc/>
     public async Task<List<LiveMatchModel>> Deserialize(JToken jsonData)
     {
         var matchesList = new List<LiveMatchModel>();
@@ -23,6 +39,12 @@ public class LiveGamesDeserializer : ILiveGamesDeserializer
         return matchesList;
     }
 
+    /// <summary>
+    /// Deserializes a single live match JSON token with semaphore control.
+    /// </summary>
+    /// <param name="jsonLiveMatchData">The JSON data of a single live match.</param>
+    /// <param name="semaphore">Semaphore to control concurrency.</param>
+    /// <returns>A task representing the asynchronous operation, with a <see cref="LiveMatchModel"/> as the result.</returns>
     private async Task<LiveMatchModel> DeserializeLiveMatchWithSemaphore(
         JToken jsonLiveMatchData, SemaphoreSlim semaphore)
     {
@@ -37,6 +59,11 @@ public class LiveGamesDeserializer : ILiveGamesDeserializer
         }
     }
 
+    /// <summary>
+    /// Deserializes a single live match JSON token.
+    /// </summary>
+    /// <param name="jsonLiveMatchData">The JSON data of a single live match.</param>
+    /// <returns>A task representing the asynchronous operation, with a <see cref="LiveMatchModel"/> as the result.</returns>
     private async Task<LiveMatchModel> DeserializeMatch(JToken jsonLiveMatchData)
     {
         var matchStatusJson = jsonLiveMatchData["fixture"]!["status"]!;

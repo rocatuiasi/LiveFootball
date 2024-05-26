@@ -1,11 +1,27 @@
-﻿using LiveFootball.Core.Helpers;
+﻿/**************************************************************************
+ *                                                                        * 
+ *  File:        StandingDeserializer.cs                                  *
+ *  Description: ApiFootballDeserializer Library                          *
+ *               Deserializes JSON data into league standing team models  *
+ *  Copyright:   (c) 2024, LiveFootball Team                              *
+ *                                                                        *
+ *  This code and information is provided "as is" without warranty of     *
+ *  any kind, either expressed or implied, including but not limited      *
+ *  to the implied warranties of merchantability or fitness for a         *
+ *  particular purpose. You are free to use this source code in your      *
+ *  applications as long as the original copyright notice is included.    *
+ *                                                                        *
+ **************************************************************************/
+using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Models;
 using Newtonsoft.Json.Linq;
 
 namespace ApiFootballDeserializer;
 
+/// <inheridoc/>
 public class StandingDeserializer : IStandingDeserializer
 {
+    /// <inheridoc/>
     public async Task<List<LeagueStandingTeamModel>> Deserialize(JToken jsonData)
     {
         var standingTeamList = new List<LeagueStandingTeamModel>();
@@ -23,6 +39,12 @@ public class StandingDeserializer : IStandingDeserializer
         return standingTeamList;
     }
 
+    // <summary>
+    /// Deserializes a single standing JSON token with semaphore control.
+    /// </summary>
+    /// <param name="jsonStandingData">The JSON data of a single standing entry.</param>
+    /// <param name="semaphore">Semaphore to control concurrency.</param>
+    /// <returns>A task representing the asynchronous operation, with a <see cref="LeagueStandingTeamModel"/> as the result.</returns>
     private async Task<LeagueStandingTeamModel> DeserializeStandingWithSemaphore(
         JToken jsonStandingData, SemaphoreSlim semaphore)
     {
@@ -37,6 +59,11 @@ public class StandingDeserializer : IStandingDeserializer
         }
     }
 
+    /// <summary>
+    /// Deserializes a single standing JSON token.
+    /// </summary>
+    /// <param name="jsonStandingData">The JSON data of a single standing entry.</param>
+    /// <returns>A task representing the asynchronous operation, with a <see cref="LeagueStandingTeamModel"/> as the result.</returns>
     private async Task<LeagueStandingTeamModel> DeserializeStanding(JToken jsonStandingData)
     {
         var teamLogo = await HelperFunctions.GetTeamLogoFromUrl(jsonStandingData["team"]!["logo"]!.ToString());
