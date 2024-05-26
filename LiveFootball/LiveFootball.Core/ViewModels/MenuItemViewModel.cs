@@ -63,7 +63,7 @@ public class MenuItemViewModel
         Ioc.Default.GetRequiredService<MenuViewModel>().StopFetchingLiveGamesData();
 
         // Switch current TabView to LeagueTabView
-        Ioc.Default.GetRequiredService<LeagueTabViewModel>().Title = $"{Name} - Football matches";
+        Ioc.Default.GetRequiredService<MainViewModel>().Title = $"{Name} - Football matches";
         Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
             Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 

@@ -11,7 +11,8 @@
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" 
-                      HorizontalScrollBarVisibility="Hidden">
+                      HorizontalScrollBarVisibility="Hidden"
+                      materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True">
             <ItemsControl ItemsSource="{Binding MatchesCollection}"
                           Padding="20 0"
                           ItemTemplate="{StaticResource ResultsItemTemplate}" />

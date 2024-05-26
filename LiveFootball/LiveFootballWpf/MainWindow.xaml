@@ -5,19 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:LiveFootballWpf.Views"
         xmlns:viewModels="clr-namespace:LiveFootball.Core.ViewModels;assembly=LiveFootball.Core"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         Title="LiveFootball" Height="650" Width="1000" MinWidth="600"
         Style="{StaticResource MaterialDesignWindow}"
         d:DataContext="{d:DesignInstance viewModels:MainViewModel}"
         mc:Ignorable="d">
+    <materialDesign:DialogHost DialogTheme="Inherit"
+                               Identifier="RootDialog">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" MinWidth="150" MaxWidth="500"/>
+            <ColumnDefinition Width="1*" MinWidth="150" MaxWidth="500" />
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
-        <views:MenuView Grid.Column="0" Margin="20 20 20 20" />
-        <GridSplitter Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="6" Margin="0 0 8 0" />
-        <ContentControl Grid.Column="1" Content="{Binding CurrentTabView}" Margin="0 0 20 20" />
+        <views:MenuView Grid.Column="0" Margin="20" />
+        <GridSplitter Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="6"
+                      Margin="0 0 8 0" />
+
+        <Grid Grid.Column="1" Margin="0 10 20 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Title, current date and menu -->
+            <Grid Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{Binding Title}" 
+                           VerticalAlignment="Center" Margin="10 0 0 0"
+                           FontSize="18" FontWeight="Bold" Foreground="SlateGray" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="CalendarMonthOutline" Foreground="SlateGray"
+                                             Height="18" Width="18" VerticalAlignment="Center"
+                                             Margin="0 2 2 0" />
+                    <TextBlock Text="{Binding CurrentDate}" FontSize="14" FontWeight="DemiBold" Foreground="SlateGray"
+                               VerticalAlignment="Center" />
+                </StackPanel>
+                
+                <!-- Menu -->
+                <materialDesign:PopupBox Grid.Column="2" VerticalAlignment="Center" Margin="10 0 0 0"
+                                         PlacementMode="BottomAndAlignRightEdges"
+                                         StaysOpen="False">
+                    <StackPanel>
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Margin="0,0,10,0"
+                                       Text="Light"
+                                       VerticalAlignment="Center" />
+                            <ToggleButton x:Name="DarkModeToggleButton"
+                                          Grid.Column="1"
+                                          Click="MenuDarkModeButton_Click" 
+                                          Style="{StaticResource MaterialDesignSwitchSecondaryToggleButton}"
+                                          materialDesign:ToggleButtonAssist.SwitchTrackOnBackground="{DynamicResource MaterialDesign.Brush.Secondary.Light}">
+                            </ToggleButton>
+                            <TextBlock Grid.Column="2"
+                                       Margin="10,0,0,0"
+                                       Text="Dark"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+
+                        <Separator />
+
+                        <Button Click="MenuHelpButton_OnClick" Content="Help" />
+                        <Button Click="MenuAboutButton_OnClick" Content="About" />
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </Grid>
+
+            <ContentControl Grid.Row="1" Content="{Binding CurrentTabView}" />
+        </Grid>
     </Grid>
+        </materialDesign:DialogHost>
 </Window>

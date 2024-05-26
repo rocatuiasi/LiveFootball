@@ -183,6 +183,8 @@ public partial class MenuViewModel : ObservableObject, IDisposable
 
     private async Task AllGamesFetchData()
     {
+        Ioc.Default.GetRequiredService<MainViewModel>().Title = "Today's football matches";
+
         // Switch current TabView to AllGamesTabView
         Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
             Ioc.Default.GetRequiredService<AllGamesTabViewModel>();

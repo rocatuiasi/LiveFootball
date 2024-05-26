@@ -56,7 +56,8 @@
                                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
                                  materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource MaterialDesign.Brush.Primary.Dark}"
                                  VerticalAlignment="Center" Visibility="Collapsed"
-                                 Background="White" Padding="5 5" Margin="10">
+                                 Padding="5 5" Margin="10"
+                                 Background="White" Foreground="Black">
                         </TextBox>
                     </Grid>
                 </StackPanel>
