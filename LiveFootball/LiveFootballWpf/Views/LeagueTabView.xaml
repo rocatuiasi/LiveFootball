@@ -9,41 +9,17 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance viewModels:LeagueTabViewModel}">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        
-        <Grid Margin="10 0" Height="50">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            
-            <TextBlock Text="{Binding Title}" VerticalAlignment="Center" 
-                       FontSize="18" FontWeight="Bold" Foreground="DimGray" />
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <materialDesign:PackIcon Kind="CalendarMonthOutline" Foreground="SlateGray" 
-                                         Height="18" Width="18" VerticalAlignment="Center"
-                                         Margin="0 2 2 0"/>
-                <TextBlock Text="{Binding CurrentDate}" FontSize="14" FontWeight="DemiBold" Foreground="DimGray" VerticalAlignment="Center"/>
-            </StackPanel>
-        </Grid>
-        
-        <materialDesign:Card Grid.Row="1" UniformCornerRadius="10">
-            <TabControl Style="{StaticResource MaterialDesignFilledTabControl}"
-                        materialDesign:ElevationAssist.Elevation="Dp0">
-                <TabItem Header="Results">
-                    <views:ResultsView />
-                </TabItem>
-                <TabItem Header="Fixtures">
-                    <views:FixturesView />
-                </TabItem>
-                <TabItem Header="Standing">
-                    <views:LeagueStandingView />
-                </TabItem>
-            </TabControl>
-        </materialDesign:Card>
-    </Grid>
+    <materialDesign:Card UniformCornerRadius="10">
+        <TabControl Style="{StaticResource MaterialDesignFilledTabControl}">
+            <TabItem Header="Results">
+                <views:ResultsView />
+            </TabItem>
+            <TabItem Header="Fixtures">
+                <views:FixturesView />
+            </TabItem>
+            <TabItem Header="Standing">
+                <views:LeagueStandingView />
+            </TabItem>
+        </TabControl>
+    </materialDesign:Card>
 </UserControl>

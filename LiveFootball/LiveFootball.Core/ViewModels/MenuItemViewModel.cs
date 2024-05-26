@@ -60,7 +60,7 @@ public partial class MenuItemViewModel : ObservableObject
     private async Task FetchData()
     {
         // Switch current TabView to LeagueTabView
-        Ioc.Default.GetRequiredService<LeagueTabViewModel>().Title = $"{Name} - Football matches";
+        Ioc.Default.GetRequiredService<MainViewModel>().Title = $"{Name} - Football matches";
         Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView = Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 
         // Set loading state to true
