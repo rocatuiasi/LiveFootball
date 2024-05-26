@@ -25,6 +25,21 @@ public static class HelperFunctions
 
         return bitmapImage;
     }
+    
+    public static async Task<BitmapImage> GetLeagueLogoFromUrl(string url)
+    {
+        var fileName = Path.GetFileName(url);
+        var filePath = $"leagues/{fileName}";
+
+        if (File.Exists(filePath))
+            return await ReadBitmap(filePath);
+
+        var bitmapImage = await GetImageFromInternet(url);
+        if (bitmapImage != null)
+            await WriteBitmapAsync(bitmapImage, filePath);
+
+        return bitmapImage;
+    }
 
     private static async Task<BitmapImage?> GetImageFromInternet(string url)
     {
@@ -70,8 +85,8 @@ public static class HelperFunctions
             catch (HttpRequestException e)
             {
                 if (e.StatusCode == HttpStatusCode.TooManyRequests)
-                    // await Task.Delay(1000); // Wait 1 second before retrying
-                    Console.WriteLine($"Error fetching image from URL {url}: retry {retry}");
+                    await Task.Delay(300); // Wait 300ms before retrying
+                    // Console.WriteLine($"Error fetching image from URL {url}: retry {retry}");
             }
         }
 
@@ -88,7 +103,7 @@ public static class HelperFunctions
         bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
         bitmapImage.EndInit();
 
-        Console.WriteLine($"Successfully fetched image from file: {filePath}");
+        // Console.WriteLine($"Successfully fetched image from file: {filePath}");
 
         return bitmapImage;
     }

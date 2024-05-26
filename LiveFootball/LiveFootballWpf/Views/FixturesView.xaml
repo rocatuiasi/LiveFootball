@@ -5,19 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:LiveFootball.Core.ViewModels;assembly=LiveFootball.Core"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
-    <d:UserControl.DataContext>
-        <viewModels:FixturesViewModel />
-    </d:UserControl.DataContext>
+             d:DesignHeight="450" d:DesignWidth="800" 
+             d:UserControl.DataContext="{d:DesignInstance viewModels:FixturesViewModel}">
 
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Hidden">
             <ItemsControl ItemsSource="{Binding MatchesCollection}"
                           Padding="20 0"
                           ItemTemplate="{StaticResource FixturesItemTemplate}" />
         </ScrollViewer>
 
+        <TextBlock Text="{Binding StatusMessage}" Style="{StaticResource TabStatusMessageStyle}" />
 
         <Grid Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
               Background="#5000">

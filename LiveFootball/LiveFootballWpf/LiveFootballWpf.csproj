@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\Icon\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +22,9 @@
     <Page Remove="Controls\**" />
     <Page Remove="Models\**" />
     <Page Remove="ViewModels\**" />
+    <None Update="Assets\Icon\icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiFootballDeserializer\ApiFootballDeserializer.csproj" />
     <ProjectReference Include="..\LiveFootball.Core\LiveFootball.Core.csproj" />
   </ItemGroup>
 

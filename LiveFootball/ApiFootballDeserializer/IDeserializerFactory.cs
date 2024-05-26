@@ -1,4 +1,4 @@
-﻿namespace LiveFootball.Core.Deserializers;
+﻿namespace ApiFootballDeserializer;
 
 public interface IDeserializerFactory
 {
@@ -9,4 +9,6 @@ public interface IDeserializerFactory
     IFixturesDeserializer CreateFixturesDeserializer();
 
     IStandingDeserializer CreateStandingDeserializer();
+
+    ILeaguesDeserializer CreateLeaguesDeserializer();
 }
