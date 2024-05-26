@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**************************************************************************
  *                                                                        * 
  *  File:        LeagueTabViewModel.cs                                    *
@@ -13,10 +12,6 @@
  *  applications as long as the original copyright notice is included.    *
  *                                                                        *
  **************************************************************************/
-using CommunityToolkit.Mvvm.ComponentModel;
-
-=======
->>>>>>> develop
 namespace LiveFootball.Core.ViewModels;
 
 /// <summary>
