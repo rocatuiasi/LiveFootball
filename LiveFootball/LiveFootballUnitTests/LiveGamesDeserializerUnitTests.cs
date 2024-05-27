@@ -34,7 +34,7 @@ public class LiveGamesDeserializerUnitTests
         var firstLiveMatchModel = _liveGames.First();
 
         // Act & Assert
-        var areEqual = CheckEqualLiveMatchModel(firstLiveMatchModel, new LiveMatchModel
+        var areEqual = CheckEqual(firstLiveMatchModel, new LiveMatchModel
         {
             HomeTeam = new ExtendedTeamModel { Name = "Radnicki Pirot", Goals = 0 },
             AwayTeam = new ExtendedTeamModel { Name = "Borac Cacak", Goals = 0 },
@@ -48,7 +48,7 @@ public class LiveGamesDeserializerUnitTests
     {
         var lastLiveMatchModel = _liveGames.Last();
 
-        var areEqual = CheckEqualLiveMatchModel(lastLiveMatchModel, new LiveMatchModel
+        var areEqual = CheckEqual(lastLiveMatchModel, new LiveMatchModel
         {
             HomeTeam = new ExtendedTeamModel { Name = "Etoile DU Sahel", Goals = 3 },
             AwayTeam = new ExtendedTeamModel { Name = "JS Kairouanaise", Goals = 1 },
@@ -68,10 +68,10 @@ public class LiveGamesDeserializerUnitTests
             Status = "FT"
         };
 
-        Assert.IsFalse(CheckEqualLiveMatchModel(liveMatchModel, _liveGames.First()));
+        Assert.IsFalse(CheckEqual(liveMatchModel, _liveGames.First()));
     }
 
-    private bool CheckEqualLiveMatchModel(LiveMatchModel expected, LiveMatchModel actual)
+    private bool CheckEqual(LiveMatchModel expected, LiveMatchModel actual)
     {
         return expected.HomeTeam.Name == actual.HomeTeam.Name &&
                expected.HomeTeam.Goals == actual.HomeTeam.Goals &&

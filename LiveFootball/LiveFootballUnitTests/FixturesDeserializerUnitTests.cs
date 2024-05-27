@@ -36,7 +36,7 @@ public class FixturesDeserializerUnitTests
         var firstFixtureMatchModel = _fixtures.First();
 
         // Act & Assert
-        var areEqual = CheckEqualFixtureMatchModel(firstFixtureMatchModel, new FixtureMatchModel
+        var areEqual = CheckEqual(firstFixtureMatchModel, new FixtureMatchModel
         {
             HomeTeam = new TeamModel { Name = "Burnley" },
             AwayTeam = new TeamModel { Name = "Manchester City" },
@@ -50,7 +50,7 @@ public class FixturesDeserializerUnitTests
     {
         var lastFixtureMatchModel = _fixtures.Last();
 
-        var areEqual = CheckEqualFixtureMatchModel(lastFixtureMatchModel, new FixtureMatchModel
+        var areEqual = CheckEqual(lastFixtureMatchModel, new FixtureMatchModel
         {
             HomeTeam = new TeamModel { Name = "Sheffield Utd" },
             AwayTeam = new TeamModel { Name = "Tottenham" },
@@ -70,10 +70,10 @@ public class FixturesDeserializerUnitTests
             Date = Helper.ConvertDateTimeToString(2024, 5, 19, 15, 0, 0)
         };
 
-        Assert.IsFalse(CheckEqualFixtureMatchModel(fixtureMatchModel1, _fixtures.First()));
+        Assert.IsFalse(CheckEqual(fixtureMatchModel1, _fixtures.First()));
     }
 
-    private bool CheckEqualFixtureMatchModel(FixtureMatchModel expected, FixtureMatchModel actual)
+    private bool CheckEqual(FixtureMatchModel expected, FixtureMatchModel actual)
     {
         return expected.HomeTeam.Name == actual.HomeTeam.Name &&
                expected.AwayTeam.Name == actual.AwayTeam.Name &&

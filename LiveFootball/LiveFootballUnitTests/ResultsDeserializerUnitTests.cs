@@ -36,7 +36,7 @@ public class ResultsDeserializerUnitTests
         var firstResultMatchModel = _results.First();
 
         // Act & Assert
-        var areEqual = CheckEqualResultMatchModel(firstResultMatchModel, new ResultMatchModel
+        var areEqual = CheckEqual(firstResultMatchModel, new ResultMatchModel
         {
             HomeTeam = new ExtendedTeamModel { Name = "Manchester City", Goals = 3 },
             AwayTeam = new ExtendedTeamModel { Name = "West Ham", Goals = 1 },
@@ -50,7 +50,7 @@ public class ResultsDeserializerUnitTests
     {
         var lastResultMatchModel = _results.Last();
 
-        var areEqual = CheckEqualResultMatchModel(lastResultMatchModel, new ResultMatchModel
+        var areEqual = CheckEqual(lastResultMatchModel, new ResultMatchModel
         {
             HomeTeam = new ExtendedTeamModel { Name = "Burnley", Goals = 1 },
             AwayTeam = new ExtendedTeamModel { Name = "Newcastle", Goals = 4 },
@@ -70,10 +70,10 @@ public class ResultsDeserializerUnitTests
             Date = Helper.ConvertDateTimeToString(2024, 5, 19, 15, 0, 0)
         };
         
-        Assert.IsFalse(CheckEqualResultMatchModel(matchModel1, _results.First()));
+        Assert.IsFalse(CheckEqual(matchModel1, _results.First()));
     }
 
-    private bool CheckEqualResultMatchModel(ResultMatchModel expected, ResultMatchModel actual)
+    private bool CheckEqual(ResultMatchModel expected, ResultMatchModel actual)
     {
         return expected.HomeTeam.Name == actual.HomeTeam.Name &&
                expected.AwayTeam.Name == actual.AwayTeam.Name &&
