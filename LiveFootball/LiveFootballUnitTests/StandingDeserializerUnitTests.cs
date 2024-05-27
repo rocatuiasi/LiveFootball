@@ -12,6 +12,7 @@ namespace LiveFootballUnitTests;
 
 [TestClass]
 [TestSubject(typeof(StandingDeserializer))]
+[TestCategory("Unit")]
 public class StandingDeserializerUnitTests
 {
     private List<LeagueStandingTeamModel> _standings;
