@@ -1,0 +1,154 @@
+\doxysection{Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service Interface Reference}
+\hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service}{}\label{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service}\index{LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}}
+
+
+Represents a service for interacting with a football API to retrieve data.  
+
+
+Inheritance diagram for Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ string $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a15fb2a9603d503eec0056c626e0d308c}{Get\+Leagues\+Data\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves data for all available leagues. \end{DoxyCompactList}\item 
+Task$<$ string $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a6576197268ac0950d977de1d5a216089}{Get\+Live\+Games\+Data\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves live games data. \end{DoxyCompactList}\item 
+Task$<$ string $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a3f45d2972c1ba9c8ed1fb8acf6b2885f}{Get\+All\+Games\+Results\+Data\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves data for all games results. \end{DoxyCompactList}\item 
+Task$<$ string $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_ae1a9c1f335de4ff51a247f0969cbed24}{Get\+All\+Games\+Fixtures\+Data\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves data for all games fixtures. \end{DoxyCompactList}\item 
+Task$<$ string $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_ae68824fef7b846853f354dc4e711a67b}{Get\+League\+Results\+Data\+Async}} (string league\+Param)
+\begin{DoxyCompactList}\small\item\em Retrieves results data for a specific league. \end{DoxyCompactList}\item 
+Task$<$ string $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_acff7a428d5d7130f57e38bdc30211a39}{Get\+League\+Fixtures\+Data\+Async}} (string league\+Param)
+\begin{DoxyCompactList}\small\item\em Retrieves fixtures data for a specific league. \end{DoxyCompactList}\item 
+Task$<$ string $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a6556d6744f7cab8e490145f8d962c21a}{Get\+League\+Standing\+Data\+Async}} (string league\+Param)
+\begin{DoxyCompactList}\small\item\em Retrieves standing data for a specific league. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a service for interacting with a football API to retrieve data. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_ae1a9c1f335de4ff51a247f0969cbed24}\label{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_ae1a9c1f335de4ff51a247f0969cbed24} 
+\index{LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}!GetAllGamesFixturesDataAsync@{GetAllGamesFixturesDataAsync}}
+\index{GetAllGamesFixturesDataAsync@{GetAllGamesFixturesDataAsync}!LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}}
+\doxysubsubsection{\texorpdfstring{GetAllGamesFixturesDataAsync()}{GetAllGamesFixturesDataAsync()}}
+{\footnotesize\ttfamily Task$<$ string $>$ Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service.\+Get\+All\+Games\+Fixtures\+Data\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves data for all games fixtures. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_football_api_service_a59316bf75120f97f1dca471a7a936f27}{Live\+Football\+Wpf.\+Services.\+Football\+Api\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a3f45d2972c1ba9c8ed1fb8acf6b2885f}\label{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a3f45d2972c1ba9c8ed1fb8acf6b2885f} 
+\index{LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}!GetAllGamesResultsDataAsync@{GetAllGamesResultsDataAsync}}
+\index{GetAllGamesResultsDataAsync@{GetAllGamesResultsDataAsync}!LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}}
+\doxysubsubsection{\texorpdfstring{GetAllGamesResultsDataAsync()}{GetAllGamesResultsDataAsync()}}
+{\footnotesize\ttfamily Task$<$ string $>$ Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service.\+Get\+All\+Games\+Results\+Data\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves data for all games results. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_football_api_service_a3d03a0c815c01280616f8923ab9e591a}{Live\+Football\+Wpf.\+Services.\+Football\+Api\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_acff7a428d5d7130f57e38bdc30211a39}\label{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_acff7a428d5d7130f57e38bdc30211a39} 
+\index{LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}!GetLeagueFixturesDataAsync@{GetLeagueFixturesDataAsync}}
+\index{GetLeagueFixturesDataAsync@{GetLeagueFixturesDataAsync}!LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}}
+\doxysubsubsection{\texorpdfstring{GetLeagueFixturesDataAsync()}{GetLeagueFixturesDataAsync()}}
+{\footnotesize\ttfamily Task$<$ string $>$ Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service.\+Get\+League\+Fixtures\+Data\+Async (\begin{DoxyParamCaption}\item[{string}]{league\+Param }\end{DoxyParamCaption})}
+
+
+
+Retrieves fixtures data for a specific league. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em league\+Param} & The parameter specifying the league.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_football_api_service_aab898094e989d4ef9f561686a4325417}{Live\+Football\+Wpf.\+Services.\+Football\+Api\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_ae68824fef7b846853f354dc4e711a67b}\label{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_ae68824fef7b846853f354dc4e711a67b} 
+\index{LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}!GetLeagueResultsDataAsync@{GetLeagueResultsDataAsync}}
+\index{GetLeagueResultsDataAsync@{GetLeagueResultsDataAsync}!LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}}
+\doxysubsubsection{\texorpdfstring{GetLeagueResultsDataAsync()}{GetLeagueResultsDataAsync()}}
+{\footnotesize\ttfamily Task$<$ string $>$ Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service.\+Get\+League\+Results\+Data\+Async (\begin{DoxyParamCaption}\item[{string}]{league\+Param }\end{DoxyParamCaption})}
+
+
+
+Retrieves results data for a specific league. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em league\+Param} & The parameter specifying the league.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_football_api_service_aec277991dc2c10ac9ef6d3b788446ac6}{Live\+Football\+Wpf.\+Services.\+Football\+Api\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a15fb2a9603d503eec0056c626e0d308c}\label{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a15fb2a9603d503eec0056c626e0d308c} 
+\index{LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}!GetLeaguesDataAsync@{GetLeaguesDataAsync}}
+\index{GetLeaguesDataAsync@{GetLeaguesDataAsync}!LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}}
+\doxysubsubsection{\texorpdfstring{GetLeaguesDataAsync()}{GetLeaguesDataAsync()}}
+{\footnotesize\ttfamily Task$<$ string $>$ Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service.\+Get\+Leagues\+Data\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves data for all available leagues. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_football_api_service_a324a85c3bd04c42298b7f817e143317a}{Live\+Football\+Wpf.\+Services.\+Football\+Api\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a6556d6744f7cab8e490145f8d962c21a}\label{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a6556d6744f7cab8e490145f8d962c21a} 
+\index{LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}!GetLeagueStandingDataAsync@{GetLeagueStandingDataAsync}}
+\index{GetLeagueStandingDataAsync@{GetLeagueStandingDataAsync}!LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}}
+\doxysubsubsection{\texorpdfstring{GetLeagueStandingDataAsync()}{GetLeagueStandingDataAsync()}}
+{\footnotesize\ttfamily Task$<$ string $>$ Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service.\+Get\+League\+Standing\+Data\+Async (\begin{DoxyParamCaption}\item[{string}]{league\+Param }\end{DoxyParamCaption})}
+
+
+
+Retrieves standing data for a specific league. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em league\+Param} & The parameter specifying the league.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_football_api_service_aa61073060fb109834f1db912f4e9f3f1}{Live\+Football\+Wpf.\+Services.\+Football\+Api\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a6576197268ac0950d977de1d5a216089}\label{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service_a6576197268ac0950d977de1d5a216089} 
+\index{LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}!GetLiveGamesDataAsync@{GetLiveGamesDataAsync}}
+\index{GetLiveGamesDataAsync@{GetLiveGamesDataAsync}!LiveFootball.Core.Services.IFootballApiService@{LiveFootball.Core.Services.IFootballApiService}}
+\doxysubsubsection{\texorpdfstring{GetLiveGamesDataAsync()}{GetLiveGamesDataAsync()}}
+{\footnotesize\ttfamily Task$<$ string $>$ Live\+Football.\+Core.\+Services.\+IFootball\+Api\+Service.\+Get\+Live\+Games\+Data\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves live games data. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_football_api_service_a100fe1981ed4dc7b2e72923948f49aa9}{Live\+Football\+Wpf.\+Services.\+Football\+Api\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+IP-\/\+Proiect/\+Live\+Football/\+Live\+Football.\+Core/\+Services/IFootball\+Api\+Service.\+cs\end{DoxyCompactItemize}

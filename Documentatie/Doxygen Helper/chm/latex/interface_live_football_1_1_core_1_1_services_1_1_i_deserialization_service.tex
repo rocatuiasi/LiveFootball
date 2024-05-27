@@ -1,0 +1,107 @@
+\doxysection{Live\+Football.\+Core.\+Services.\+IDeserialization\+Service Interface Reference}
+\hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service}{}\label{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service}\index{LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}}
+
+
+Represents a service for deserializing JSON data into various models.  
+
+
+Inheritance diagram for Live\+Football.\+Core.\+Services.\+IDeserialization\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_menu_item_model}{Menu\+Item\+Model}} $>$ $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a890164fe3cd8c9f2be8af69164f34407}{Deserialize\+Leagues\+Data}} (JObject json\+Data)
+\begin{DoxyCompactList}\small\item\em Deserialize JSON data into a list of menu item models representing leagues. \end{DoxyCompactList}\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_live_match_model}{Live\+Match\+Model}} $>$ $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a09e9b438726567b42319d4b331de17bd}{Deserialize\+Live\+Games\+Data}} (JObject json\+Data)
+\begin{DoxyCompactList}\small\item\em Deserialize JSON data into a list of live match models. \end{DoxyCompactList}\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_result_match_model}{Result\+Match\+Model}} $>$ $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a2cd75f745e848133f4e9e4402af0acb6}{Deserialize\+Results\+Data}} (JObject json\+Data)
+\begin{DoxyCompactList}\small\item\em Deserialize JSON data into a list of result match models. \end{DoxyCompactList}\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_fixture_match_model}{Fixture\+Match\+Model}} $>$ $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_ac4cdd27b280eaa352a3cd200c66b5597}{Deserialize\+Fixtures\+Data}} (JObject json\+Data)
+\begin{DoxyCompactList}\small\item\em Deserialize JSON data into a list of fixture match models. \end{DoxyCompactList}\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model}{League\+Standing\+Team\+Model}} $>$ $>$ \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_ab1599c26451d453efae5c1edcd77ef39}{Deserialize\+Standing\+Data}} (JObject json\+Data)
+\begin{DoxyCompactList}\small\item\em Deserialize JSON data into a list of league standing team models. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a service for deserializing JSON data into various models. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_ac4cdd27b280eaa352a3cd200c66b5597}\label{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_ac4cdd27b280eaa352a3cd200c66b5597} 
+\index{LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}!DeserializeFixturesData@{DeserializeFixturesData}}
+\index{DeserializeFixturesData@{DeserializeFixturesData}!LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}}
+\doxysubsubsection{\texorpdfstring{DeserializeFixturesData()}{DeserializeFixturesData()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_fixture_match_model}{Fixture\+Match\+Model}} $>$ $>$ Live\+Football.\+Core.\+Services.\+IDeserialization\+Service.\+Deserialize\+Fixtures\+Data (\begin{DoxyParamCaption}\item[{JObject}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+Deserialize JSON data into a list of fixture match models. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_deserialization_service_a810983741e74683e177bf64ca7f38f05}{Live\+Football\+Wpf.\+Services.\+Deserialization\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a890164fe3cd8c9f2be8af69164f34407}\label{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a890164fe3cd8c9f2be8af69164f34407} 
+\index{LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}!DeserializeLeaguesData@{DeserializeLeaguesData}}
+\index{DeserializeLeaguesData@{DeserializeLeaguesData}!LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}}
+\doxysubsubsection{\texorpdfstring{DeserializeLeaguesData()}{DeserializeLeaguesData()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_menu_item_model}{Menu\+Item\+Model}} $>$ $>$ Live\+Football.\+Core.\+Services.\+IDeserialization\+Service.\+Deserialize\+Leagues\+Data (\begin{DoxyParamCaption}\item[{JObject}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+Deserialize JSON data into a list of menu item models representing leagues. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_deserialization_service_ad6dbec3f1b46264968c5169c639dad47}{Live\+Football\+Wpf.\+Services.\+Deserialization\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a09e9b438726567b42319d4b331de17bd}\label{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a09e9b438726567b42319d4b331de17bd} 
+\index{LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}!DeserializeLiveGamesData@{DeserializeLiveGamesData}}
+\index{DeserializeLiveGamesData@{DeserializeLiveGamesData}!LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}}
+\doxysubsubsection{\texorpdfstring{DeserializeLiveGamesData()}{DeserializeLiveGamesData()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_live_match_model}{Live\+Match\+Model}} $>$ $>$ Live\+Football.\+Core.\+Services.\+IDeserialization\+Service.\+Deserialize\+Live\+Games\+Data (\begin{DoxyParamCaption}\item[{JObject}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+Deserialize JSON data into a list of live match models. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_deserialization_service_aa07bb1ba8d4e8cfe926524d7f6e5df04}{Live\+Football\+Wpf.\+Services.\+Deserialization\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a2cd75f745e848133f4e9e4402af0acb6}\label{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_a2cd75f745e848133f4e9e4402af0acb6} 
+\index{LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}!DeserializeResultsData@{DeserializeResultsData}}
+\index{DeserializeResultsData@{DeserializeResultsData}!LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}}
+\doxysubsubsection{\texorpdfstring{DeserializeResultsData()}{DeserializeResultsData()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_result_match_model}{Result\+Match\+Model}} $>$ $>$ Live\+Football.\+Core.\+Services.\+IDeserialization\+Service.\+Deserialize\+Results\+Data (\begin{DoxyParamCaption}\item[{JObject}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+Deserialize JSON data into a list of result match models. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_deserialization_service_af2e0bd78046c15872a2e80028ddb3d1d}{Live\+Football\+Wpf.\+Services.\+Deserialization\+Service}}.
+
+\Hypertarget{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_ab1599c26451d453efae5c1edcd77ef39}\label{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service_ab1599c26451d453efae5c1edcd77ef39} 
+\index{LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}!DeserializeStandingData@{DeserializeStandingData}}
+\index{DeserializeStandingData@{DeserializeStandingData}!LiveFootball.Core.Services.IDeserializationService@{LiveFootball.Core.Services.IDeserializationService}}
+\doxysubsubsection{\texorpdfstring{DeserializeStandingData()}{DeserializeStandingData()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model}{League\+Standing\+Team\+Model}} $>$ $>$ Live\+Football.\+Core.\+Services.\+IDeserialization\+Service.\+Deserialize\+Standing\+Data (\begin{DoxyParamCaption}\item[{JObject}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+Deserialize JSON data into a list of league standing team models. 
+
+
+
+Implemented in \mbox{\hyperlink{class_live_football_wpf_1_1_services_1_1_deserialization_service_a2f6c05d41b03e0ab359d674f424535bd}{Live\+Football\+Wpf.\+Services.\+Deserialization\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+IP-\/\+Proiect/\+Live\+Football/\+Live\+Football.\+Core/\+Services/IDeserialization\+Service.\+cs\end{DoxyCompactItemize}

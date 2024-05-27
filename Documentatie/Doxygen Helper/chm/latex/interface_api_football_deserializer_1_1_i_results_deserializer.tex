@@ -1,0 +1,51 @@
+\doxysection{Api\+Football\+Deserializer.\+IResults\+Deserializer Interface Reference}
+\hypertarget{interface_api_football_deserializer_1_1_i_results_deserializer}{}\label{interface_api_football_deserializer_1_1_i_results_deserializer}\index{ApiFootballDeserializer.IResultsDeserializer@{ApiFootballDeserializer.IResultsDeserializer}}
+
+
+Interface for deserializing result data from JSON.  
+
+
+Inheritance diagram for Api\+Football\+Deserializer.\+IResults\+Deserializer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_api_football_deserializer_1_1_i_results_deserializer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_result_match_model}{Result\+Match\+Model}} $>$ $>$ \mbox{\hyperlink{interface_api_football_deserializer_1_1_i_results_deserializer_afab855e4014f2aba6fb74ab739ed8ca9}{Deserialize}} (JToken json\+Data)
+\begin{DoxyCompactList}\small\item\em Deserializes the given JSON token into a list of result match models. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for deserializing result data from JSON. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_api_football_deserializer_1_1_i_results_deserializer_afab855e4014f2aba6fb74ab739ed8ca9}\label{interface_api_football_deserializer_1_1_i_results_deserializer_afab855e4014f2aba6fb74ab739ed8ca9} 
+\index{ApiFootballDeserializer.IResultsDeserializer@{ApiFootballDeserializer.IResultsDeserializer}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!ApiFootballDeserializer.IResultsDeserializer@{ApiFootballDeserializer.IResultsDeserializer}}
+\doxysubsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_result_match_model}{Result\+Match\+Model}} $>$ $>$ Api\+Football\+Deserializer.\+IResults\+Deserializer.\+Deserialize (\begin{DoxyParamCaption}\item[{JToken}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+Deserializes the given JSON token into a list of result match models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Data} & The JSON data to deserialize.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task representing the asynchronous operation, with a list of Result\+Match\+Model as the result.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_api_football_deserializer_1_1_results_deserializer_a24233623c75f6d5cc5928a79dcefbbed}{Api\+Football\+Deserializer.\+Results\+Deserializer}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+IP-\/\+Proiect/\+Live\+Football/\+Api\+Football\+Deserializer/IResults\+Deserializer.\+cs\end{DoxyCompactItemize}

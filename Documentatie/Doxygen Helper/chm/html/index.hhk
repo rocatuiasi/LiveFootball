@@ -1,0 +1,955 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#a73471f4a6d1ca4c4fceec9ad8610f0c8"><param name="Name" value="AddEventHandler(System.Reflection.EventInfo eventInfo, object target, System.Delegate handler)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#af945939b09a9ab98e4df93d0415b1646"><param name="Name" value="AddFavouriteCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html#aff35c22d993ff6686cba9ef432dbb546"><param name="Name" value="AllGamesCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_all_games_tab_view_model.html#a15fbbaee8f1a4d07c310270b3aaf67a3"><param name="Name" value="AllGamesTabViewModel()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_api_football_deserializer.html"><param name="Name" value="ApiFootballDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#ad277155ea6e8833c5c830bfc88ca772a"><param name="Name" value="CreateFixturesDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#abbddd9795da35c23ba71d9dc9e603b3b"><param name="Name" value="CreateLeaguesDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#a322f0563e663bbc41476d22eaa22f425"><param name="Name" value="CreateLiveGamesDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#aec76966dedf20f64071b35b991d6165c"><param name="Name" value="CreateResultsDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#a41b3df4c5c57ccc951f2945139e95ed7"><param name="Name" value="CreateStandingDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_fixtures_deserializer.html"><param name="Name" value="ApiFootballDeserializer::FixturesDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_fixtures_deserializer.html"><param name="Name" value="ApiFootballDeserializer::FixturesDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_fixtures_deserializer.html#a3fa63177df8d7ac2e849b5820df1f126"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#aac3e4a6a92ac6b83d861748acbc2397d"><param name="Name" value="CreateFixturesDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#ac9362e2918ccc260f701229990970d09"><param name="Name" value="CreateLeaguesDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#ab747830fc9d1e7b50493459fed165f8b"><param name="Name" value="CreateLiveGamesDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#aba771552878f9b0b4f25766612291d7c"><param name="Name" value="CreateResultsDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#a60e67bcdff02268edcf3ee84324b6587"><param name="Name" value="CreateStandingDeserializer()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_fixtures_deserializer.html"><param name="Name" value="ApiFootballDeserializer::IFixturesDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_fixtures_deserializer.html"><param name="Name" value="ApiFootballDeserializer::IFixturesDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_fixtures_deserializer.html#aeafdd16179d198f5c6586f5a6f5cf58d"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_leagues_deserializer.html"><param name="Name" value="ApiFootballDeserializer::ILeaguesDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_leagues_deserializer.html"><param name="Name" value="ApiFootballDeserializer::ILeaguesDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_leagues_deserializer.html#ae03d26d14e0f95b5bb4aefec46823854"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_live_games_deserializer.html"><param name="Name" value="ApiFootballDeserializer::ILiveGamesDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_live_games_deserializer.html"><param name="Name" value="ApiFootballDeserializer::ILiveGamesDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_live_games_deserializer.html#a3fef78166cbea30bdb1137168eee31fc"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_results_deserializer.html"><param name="Name" value="ApiFootballDeserializer::IResultsDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_results_deserializer.html"><param name="Name" value="ApiFootballDeserializer::IResultsDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_results_deserializer.html#afab855e4014f2aba6fb74ab739ed8ca9"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_standing_deserializer.html"><param name="Name" value="ApiFootballDeserializer::IStandingDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_standing_deserializer.html"><param name="Name" value="ApiFootballDeserializer::IStandingDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_standing_deserializer.html#aeae2e29750bf7b2f52f6623b3f6781ea"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_leagues_deserializer.html"><param name="Name" value="ApiFootballDeserializer::LeaguesDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_leagues_deserializer.html"><param name="Name" value="ApiFootballDeserializer::LeaguesDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_leagues_deserializer.html#a8f2ad7a9599146fde81d4b60d1cab038"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_live_games_deserializer.html"><param name="Name" value="ApiFootballDeserializer::LiveGamesDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_live_games_deserializer.html"><param name="Name" value="ApiFootballDeserializer::LiveGamesDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_live_games_deserializer.html#aa2c9d6987e6d1499b1da7eb5fe52c6a7"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_results_deserializer.html"><param name="Name" value="ApiFootballDeserializer::ResultsDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_results_deserializer.html"><param name="Name" value="ApiFootballDeserializer::ResultsDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_results_deserializer.html#a24233623c75f6d5cc5928a79dcefbbed"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_standing_deserializer.html"><param name="Name" value="ApiFootballDeserializer::StandingDeserializer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_standing_deserializer.html"><param name="Name" value="ApiFootballDeserializer::StandingDeserializer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_standing_deserializer.html#aac8f8244cb38a3323bbbd01190ffdad4"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#a434364c760cf7fb1b5ce878428ba12c5"><param name="Name" value="App()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#ae92f57c3bbeac0b0b9d574ded8d2ce02"><param name="Name" value="AwayTeam"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#ae92f57c3bbeac0b0b9d574ded8d2ce02"><param name="Name" value="LiveFootball::Core::Models::FixtureMatchModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html#a6f0f2625d6100e7649e8fde5c9f411ed"><param name="Name" value="AwayTeam"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html#a6f0f2625d6100e7649e8fde5c9f411ed"><param name="Name" value="LiveFootball::Core::Models::LiveMatchModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#ad3bdaed8d2b10e140281e21c2e5e7168"><param name="Name" value="AwayTeam"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#ad3bdaed8d2b10e140281e21c2e5e7168"><param name="Name" value="LiveFootball::Core::Models::ResultMatchModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a555860bf45792c4b52da14f967722676"><param name="Name" value="Club"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#a8ec4c37e82d9f4e867e9655f4eac3a78"><param name="Name" value="CreateDelegate(System.Type delegateType, object target, string handler)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#ad277155ea6e8833c5c830bfc88ca772a"><param name="Name" value="CreateFixturesDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#ad277155ea6e8833c5c830bfc88ca772a"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#aac3e4a6a92ac6b83d861748acbc2397d"><param name="Name" value="CreateFixturesDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#aac3e4a6a92ac6b83d861748acbc2397d"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#aefb7a98fceb9c287cef4756942f441d1"><param name="Name" value="CreateInstance(System.Type type, System.Globalization.CultureInfo culture)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#abbddd9795da35c23ba71d9dc9e603b3b"><param name="Name" value="CreateLeaguesDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#abbddd9795da35c23ba71d9dc9e603b3b"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#ac9362e2918ccc260f701229990970d09"><param name="Name" value="CreateLeaguesDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#ac9362e2918ccc260f701229990970d09"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#a322f0563e663bbc41476d22eaa22f425"><param name="Name" value="CreateLiveGamesDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#a322f0563e663bbc41476d22eaa22f425"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#ab747830fc9d1e7b50493459fed165f8b"><param name="Name" value="CreateLiveGamesDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#ab747830fc9d1e7b50493459fed165f8b"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#aec76966dedf20f64071b35b991d6165c"><param name="Name" value="CreateResultsDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#aec76966dedf20f64071b35b991d6165c"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#aba771552878f9b0b4f25766612291d7c"><param name="Name" value="CreateResultsDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#aba771552878f9b0b4f25766612291d7c"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#a41b3df4c5c57ccc951f2945139e95ed7"><param name="Name" value="CreateStandingDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_deserializer_factory.html#a41b3df4c5c57ccc951f2945139e95ed7"><param name="Name" value="ApiFootballDeserializer::DeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#a60e67bcdff02268edcf3ee84324b6587"><param name="Name" value="CreateStandingDeserializer()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_deserializer_factory.html#a60e67bcdff02268edcf3ee84324b6587"><param name="Name" value="ApiFootballDeserializer::IDeserializerFactory"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_main_view_model.html#a659f140d727ece0bc813390d38344799"><param name="Name" value="CurrentDate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#aca950c2682e88288ea932925d0fa5816"><param name="Name" value="Date"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#aca950c2682e88288ea932925d0fa5816"><param name="Name" value="LiveFootball::Core::Models::FixtureMatchModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#a79ec8b6e7819c8646d8c1bbaa81dd444"><param name="Name" value="Date"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#a79ec8b6e7819c8646d8c1bbaa81dd444"><param name="Name" value="LiveFootball::Core::Models::ResultMatchModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html#a10140bb8a4ccca7d5ffb9e7928be16bd"><param name="Name" value="DeserializationException()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html#aa042e7d1e3a34253653f9f9b38db4367"><param name="Name" value="DeserializationException(string message)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html#acd9305e1d075c73ce8516fb99806b004"><param name="Name" value="DeserializationException(string message, Exception innerException)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#a932ee479cad9a5c22c917969e0ab87fc"><param name="Name" value="DeserializationService(IDeserializerFactory deserializerFactory)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_fixtures_deserializer.html#a3fa63177df8d7ac2e849b5820df1f126"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_fixtures_deserializer.html#a3fa63177df8d7ac2e849b5820df1f126"><param name="Name" value="ApiFootballDeserializer::FixturesDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_fixtures_deserializer.html#aeafdd16179d198f5c6586f5a6f5cf58d"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_fixtures_deserializer.html#aeafdd16179d198f5c6586f5a6f5cf58d"><param name="Name" value="ApiFootballDeserializer::IFixturesDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_leagues_deserializer.html#ae03d26d14e0f95b5bb4aefec46823854"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_leagues_deserializer.html#ae03d26d14e0f95b5bb4aefec46823854"><param name="Name" value="ApiFootballDeserializer::ILeaguesDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_live_games_deserializer.html#a3fef78166cbea30bdb1137168eee31fc"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_live_games_deserializer.html#a3fef78166cbea30bdb1137168eee31fc"><param name="Name" value="ApiFootballDeserializer::ILiveGamesDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_results_deserializer.html#afab855e4014f2aba6fb74ab739ed8ca9"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_results_deserializer.html#afab855e4014f2aba6fb74ab739ed8ca9"><param name="Name" value="ApiFootballDeserializer::IResultsDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_standing_deserializer.html#aeae2e29750bf7b2f52f6623b3f6781ea"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_api_football_deserializer_1_1_i_standing_deserializer.html#aeae2e29750bf7b2f52f6623b3f6781ea"><param name="Name" value="ApiFootballDeserializer::IStandingDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_leagues_deserializer.html#a8f2ad7a9599146fde81d4b60d1cab038"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_leagues_deserializer.html#a8f2ad7a9599146fde81d4b60d1cab038"><param name="Name" value="ApiFootballDeserializer::LeaguesDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_live_games_deserializer.html#aa2c9d6987e6d1499b1da7eb5fe52c6a7"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_live_games_deserializer.html#aa2c9d6987e6d1499b1da7eb5fe52c6a7"><param name="Name" value="ApiFootballDeserializer::LiveGamesDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_results_deserializer.html#a24233623c75f6d5cc5928a79dcefbbed"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_results_deserializer.html#a24233623c75f6d5cc5928a79dcefbbed"><param name="Name" value="ApiFootballDeserializer::ResultsDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_standing_deserializer.html#aac8f8244cb38a3323bbbd01190ffdad4"><param name="Name" value="Deserialize(JToken jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_api_football_deserializer_1_1_standing_deserializer.html#aac8f8244cb38a3323bbbd01190ffdad4"><param name="Name" value="ApiFootballDeserializer::StandingDeserializer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#ac4cdd27b280eaa352a3cd200c66b5597"><param name="Name" value="DeserializeFixturesData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#ac4cdd27b280eaa352a3cd200c66b5597"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#a810983741e74683e177bf64ca7f38f05"><param name="Name" value="DeserializeFixturesData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#a810983741e74683e177bf64ca7f38f05"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a890164fe3cd8c9f2be8af69164f34407"><param name="Name" value="DeserializeLeaguesData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a890164fe3cd8c9f2be8af69164f34407"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#ad6dbec3f1b46264968c5169c639dad47"><param name="Name" value="DeserializeLeaguesData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#ad6dbec3f1b46264968c5169c639dad47"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a09e9b438726567b42319d4b331de17bd"><param name="Name" value="DeserializeLiveGamesData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a09e9b438726567b42319d4b331de17bd"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#aa07bb1ba8d4e8cfe926524d7f6e5df04"><param name="Name" value="DeserializeLiveGamesData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#aa07bb1ba8d4e8cfe926524d7f6e5df04"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a2cd75f745e848133f4e9e4402af0acb6"><param name="Name" value="DeserializeResultsData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a2cd75f745e848133f4e9e4402af0acb6"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#af2e0bd78046c15872a2e80028ddb3d1d"><param name="Name" value="DeserializeResultsData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#af2e0bd78046c15872a2e80028ddb3d1d"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#ab1599c26451d453efae5c1edcd77ef39"><param name="Name" value="DeserializeStandingData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#ab1599c26451d453efae5c1edcd77ef39"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#a2f6c05d41b03e0ab359d674f424535bd"><param name="Name" value="DeserializeStandingData(JObject jsonData)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#a2f6c05d41b03e0ab359d674f424535bd"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html#a1e34aa91ea7e3f2556d4ef979b88d9a4"><param name="Name" value="Dispose()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html#a279cf0d7323cd53f317e7797e6370fbe"><param name="Name" value="FavouriteLeagues"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a6dab01a2f147404773b5d492c04372d1"><param name="Name" value="FetchDataCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#afcdbb4b4c598fe083ca5ad36634b07b2"><param name="Name" value="FootballApiService()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a7e56bfe6c66faeda2ad412f9c6d22274"><param name="Name" value="Form"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#ae1a9c1f335de4ff51a247f0969cbed24"><param name="Name" value="GetAllGamesFixturesDataAsync()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#ae1a9c1f335de4ff51a247f0969cbed24"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a59316bf75120f97f1dca471a7a936f27"><param name="Name" value="GetAllGamesFixturesDataAsync()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a59316bf75120f97f1dca471a7a936f27"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a3f45d2972c1ba9c8ed1fb8acf6b2885f"><param name="Name" value="GetAllGamesResultsDataAsync()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a3f45d2972c1ba9c8ed1fb8acf6b2885f"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a3d03a0c815c01280616f8923ab9e591a"><param name="Name" value="GetAllGamesResultsDataAsync()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a3d03a0c815c01280616f8923ab9e591a"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#acff7a428d5d7130f57e38bdc30211a39"><param name="Name" value="GetLeagueFixturesDataAsync(string leagueParam)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#acff7a428d5d7130f57e38bdc30211a39"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aab898094e989d4ef9f561686a4325417"><param name="Name" value="GetLeagueFixturesDataAsync(string leagueParam)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aab898094e989d4ef9f561686a4325417"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#ae68824fef7b846853f354dc4e711a67b"><param name="Name" value="GetLeagueResultsDataAsync(string leagueParam)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#ae68824fef7b846853f354dc4e711a67b"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aec277991dc2c10ac9ef6d3b788446ac6"><param name="Name" value="GetLeagueResultsDataAsync(string leagueParam)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aec277991dc2c10ac9ef6d3b788446ac6"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a6556d6744f7cab8e490145f8d962c21a"><param name="Name" value="GetLeagueStandingDataAsync(string leagueParam)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a6556d6744f7cab8e490145f8d962c21a"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aa61073060fb109834f1db912f4e9f3f1"><param name="Name" value="GetLeagueStandingDataAsync(string leagueParam)"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aa61073060fb109834f1db912f4e9f3f1"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a15fb2a9603d503eec0056c626e0d308c"><param name="Name" value="GetLeaguesDataAsync()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a15fb2a9603d503eec0056c626e0d308c"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a324a85c3bd04c42298b7f817e143317a"><param name="Name" value="GetLeaguesDataAsync()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a324a85c3bd04c42298b7f817e143317a"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a6576197268ac0950d977de1d5a216089"><param name="Name" value="GetLiveGamesDataAsync()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a6576197268ac0950d977de1d5a216089"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a100fe1981ed4dc7b2e72923948f49aa9"><param name="Name" value="GetLiveGamesDataAsync()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a100fe1981ed4dc7b2e72923948f49aa9"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#afdc9fe15b56607d02082908d934480c6"><param name="Name" value="GetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, System.Globalization.CultureInfo culture)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#afe314cc193add645bb2069f2aa990f81"><param name="Name" value="GoalDifference"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_extended_team_model.html#abe5f4146c9cb2519c145cd1d2f7fd2ec"><param name="Name" value="Goals"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a891451b1c3e5a5e2c3024066a1d0be2f"><param name="Name" value="GoalsAgainst"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a2fb3e47425cfa69a78ea1edbb03682ad"><param name="Name" value="GoalsFor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#aba7de4eae99375b266f858324afdf94d"><param name="Name" value="HomeTeam"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#aba7de4eae99375b266f858324afdf94d"><param name="Name" value="LiveFootball::Core::Models::FixtureMatchModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html#af98444a0a1610da6bc8462d11ee85265"><param name="Name" value="HomeTeam"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html#af98444a0a1610da6bc8462d11ee85265"><param name="Name" value="LiveFootball::Core::Models::LiveMatchModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#ac39fec6f0e43c28279e46105d70c519f"><param name="Name" value="HomeTeam"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#ac39fec6f0e43c28279e46105d70c519f"><param name="Name" value="LiveFootball::Core::Models::ResultMatchModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_main_view_model.html#ae09cc7872c43ba0e07a2bb9c1957b241"><param name="Name" value="InitializeApp()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html#a04b831ab86d2a258e942527b46fa99c9"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html#a04b831ab86d2a258e942527b46fa99c9"><param name="Name" value="LiveFootball::App"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_main_window.html#acbddaaaba74b14f322fe12a23c73b345"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_main_window.html#acbddaaaba74b14f322fe12a23c73b345"><param name="Name" value="LiveFootball::MainWindow"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_all_games_tab_view.html#aebe71874e6e350ebd2715166dec2fb63"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_all_games_tab_view.html#aebe71874e6e350ebd2715166dec2fb63"><param name="Name" value="LiveFootball::Views::AllGamesTabView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_fixtures_view.html#a054d16a5b44b6af634e1c9c07ebb1ab8"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_fixtures_view.html#a054d16a5b44b6af634e1c9c07ebb1ab8"><param name="Name" value="LiveFootball::Views::FixturesView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_expander_view.html#a6f190cee3def13fd6bb51dd0635207f5"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_expander_view.html#a6f190cee3def13fd6bb51dd0635207f5"><param name="Name" value="LiveFootball::Views::LeagueExpanderView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_standing_view.html#a63a746b9ab865aa4e539e735b536b9c8"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_standing_view.html#a63a746b9ab865aa4e539e735b536b9c8"><param name="Name" value="LiveFootball::Views::LeagueStandingView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_tab_view.html#ad283815e26c83ac4746cc6ae6a07bb79"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_tab_view.html#ad283815e26c83ac4746cc6ae6a07bb79"><param name="Name" value="LiveFootball::Views::LeagueTabView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues.html#a6cb4ccc9743d23f7f4ab041739cd5531"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues.html#a6cb4ccc9743d23f7f4ab041739cd5531"><param name="Name" value="LiveFootball::Views::Leagues"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues_view.html#afefbd10e172669c23f27d52f1bd4cfe9"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues_view.html#afefbd10e172669c23f27d52f1bd4cfe9"><param name="Name" value="LiveFootball::Views::LeaguesView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_menu_view.html#a712c32ef28a02fb801a46423b2b19691"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_menu_view.html#a712c32ef28a02fb801a46423b2b19691"><param name="Name" value="LiveFootball::Views::MenuView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#aec3bf134bcaef4cf2adf268b0dd35119"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#aec3bf134bcaef4cf2adf268b0dd35119"><param name="Name" value="LiveFootballWpf::App"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_league_expander_control.html#abb193257ffdf3f3a3d4e9a1318931fa0"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_league_expander_control.html#abb193257ffdf3f3a3d4e9a1318931fa0"><param name="Name" value="LiveFootballWpf::Controls::LeagueExpanderControl"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_sample_message_dialog.html#ac5c1a81cac6adf759c3d4340dd1ef8cb"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_sample_message_dialog.html#ac5c1a81cac6adf759c3d4340dd1ef8cb"><param name="Name" value="LiveFootballWpf::Controls::SampleMessageDialog"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_main_window.html#ad7a1dd008cc25fae4d7d860915c1e6ae"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_main_window.html#ad7a1dd008cc25fae4d7d860915c1e6ae"><param name="Name" value="LiveFootballWpf::MainWindow"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_all_games_tab_view.html#aea5055808d3c693e9e024dfcf457136e"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_all_games_tab_view.html#aea5055808d3c693e9e024dfcf457136e"><param name="Name" value="LiveFootballWpf::Views::AllGamesTabView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_fixtures_view.html#a566ec35339727fbd8c5e714894bc3f10"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_fixtures_view.html#a566ec35339727fbd8c5e714894bc3f10"><param name="Name" value="LiveFootballWpf::Views::FixturesView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_standing_view.html#a5c4325905a42c30e9f5c368448af274d"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_standing_view.html#a5c4325905a42c30e9f5c368448af274d"><param name="Name" value="LiveFootballWpf::Views::LeagueStandingView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_tab_view.html#ac3a212dfeae4e7c59e9141bc6a2a1c11"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_tab_view.html#ac3a212dfeae4e7c59e9141bc6a2a1c11"><param name="Name" value="LiveFootballWpf::Views::LeagueTabView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_live_games_view.html#a69b609d141947b8bee44b07c0322f374"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_live_games_view.html#a69b609d141947b8bee44b07c0322f374"><param name="Name" value="LiveFootballWpf::Views::LiveGamesView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_menu_view.html#a8b90872156c72c4443c0413e9acbc613"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_menu_view.html#a8b90872156c72c4443c0413e9acbc613"><param name="Name" value="LiveFootballWpf::Views::MenuView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_results_view.html#ac7f3fd591a677dc0e41be55b985a5777"><param name="Name" value="InitializeComponent()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_results_view.html#ac7f3fd591a677dc0e41be55b985a5777"><param name="Name" value="LiveFootballWpf::Views::ResultsView"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#ac190c4395fb567b9ebe297cce8da491f"><param name="Name" value="LeagueId"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#ac190c4395fb567b9ebe297cce8da491f"><param name="Name" value="LiveFootball::Core::Models::MenuItemModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a6b67942d609c821a3c8c9acb6548f98c"><param name="Name" value="LeagueId"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a6b67942d609c821a3c8c9acb6548f98c"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football.html"><param name="Name" value="LiveFootball"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html"><param name="Name" value="LiveFootball::App"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html"><param name="Name" value="LiveFootball::App"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html#a04b831ab86d2a258e942527b46fa99c9"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html"><param name="Name" value="LiveFootball::App"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html#a595115ce032b875eaae5f6927a860291"><param name="Name" value="Main()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_1_1_core.html"><param name="Name" value="LiveFootball::Core"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_1_1_core_1_1_exceptions.html"><param name="Name" value="LiveFootball::Core::Exceptions"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html"><param name="Name" value="LiveFootball::Core::Exceptions::DeserializationException"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html"><param name="Name" value="LiveFootball::Core::Exceptions::DeserializationException"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html#a10140bb8a4ccca7d5ffb9e7928be16bd"><param name="Name" value="DeserializationException()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html"><param name="Name" value="LiveFootball::Core::Exceptions::DeserializationException"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html#aa042e7d1e3a34253653f9f9b38db4367"><param name="Name" value="DeserializationException(string message)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html"><param name="Name" value="LiveFootball::Core::Exceptions::DeserializationException"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_exceptions_1_1_deserialization_exception.html#acd9305e1d075c73ce8516fb99806b004"><param name="Name" value="DeserializationException(string message, Exception innerException)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_1_1_core_1_1_helpers.html"><param name="Name" value="LiveFootball::Core::Helpers"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_1_1_core_1_1_models.html"><param name="Name" value="LiveFootball::Core::Models"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_extended_team_model.html"><param name="Name" value="LiveFootball::Core::Models::ExtendedTeamModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_extended_team_model.html"><param name="Name" value="LiveFootball::Core::Models::ExtendedTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_extended_team_model.html#abe5f4146c9cb2519c145cd1d2f7fd2ec"><param name="Name" value="Goals"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html"><param name="Name" value="LiveFootball::Core::Models::FixtureMatchModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html"><param name="Name" value="LiveFootball::Core::Models::FixtureMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#ae92f57c3bbeac0b0b9d574ded8d2ce02"><param name="Name" value="AwayTeam"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html"><param name="Name" value="LiveFootball::Core::Models::FixtureMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#aca950c2682e88288ea932925d0fa5816"><param name="Name" value="Date"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html"><param name="Name" value="LiveFootball::Core::Models::FixtureMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_fixture_match_model.html#aba7de4eae99375b266f858324afdf94d"><param name="Name" value="HomeTeam"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a555860bf45792c4b52da14f967722676"><param name="Name" value="Club"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a7e56bfe6c66faeda2ad412f9c6d22274"><param name="Name" value="Form"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#afe314cc193add645bb2069f2aa990f81"><param name="Name" value="GoalDifference"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a891451b1c3e5a5e2c3024066a1d0be2f"><param name="Name" value="GoalsAgainst"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a2fb3e47425cfa69a78ea1edbb03682ad"><param name="Name" value="GoalsFor"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a896c689124cdd8c404066633cfd96205"><param name="Name" value="Logo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a6513efd1f244e36ae4ace3a986e74835"><param name="Name" value="MatchesDrawn"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#af044cbae369d979d138e24348f155fc7"><param name="Name" value="MatchesLost"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a71a7805614df3fbf5e98ec635ff856cc"><param name="Name" value="MatchesPlayed"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#af9b890034615d871190a62f61e97cac0"><param name="Name" value="MatchesWon"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#aa3e0a32279ebdee92bd63f5ecf51b39e"><param name="Name" value="Points"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a47dec11086cc989835f538f00bf81189"><param name="Name" value="Position"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html"><param name="Name" value="LiveFootball::Core::Models::LiveMatchModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html"><param name="Name" value="LiveFootball::Core::Models::LiveMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html#a6f0f2625d6100e7649e8fde5c9f411ed"><param name="Name" value="AwayTeam"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html"><param name="Name" value="LiveFootball::Core::Models::LiveMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html#af98444a0a1610da6bc8462d11ee85265"><param name="Name" value="HomeTeam"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html"><param name="Name" value="LiveFootball::Core::Models::LiveMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html#ae210c5f29510c9aba1ec3ff686eaf66d"><param name="Name" value="Status"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html"><param name="Name" value="LiveFootball::Core::Models::MenuItemModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html"><param name="Name" value="LiveFootball::Core::Models::MenuItemModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#ac190c4395fb567b9ebe297cce8da491f"><param name="Name" value="LeagueId"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html"><param name="Name" value="LiveFootball::Core::Models::MenuItemModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#a67974585dcc1862317fa16a65d004a81"><param name="Name" value="Logo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html"><param name="Name" value="LiveFootball::Core::Models::MenuItemModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#aef3e9381d0ad62586a734cdf30e62b03"><param name="Name" value="MenuItemModel(string leagueName, string leagueId, BitmapImage leagueLogo)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html"><param name="Name" value="LiveFootball::Core::Models::MenuItemModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#a0392cbd665095503dcc43a5a9d1ce9f8"><param name="Name" value="Name"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html"><param name="Name" value="LiveFootball::Core::Models::ResultMatchModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html"><param name="Name" value="LiveFootball::Core::Models::ResultMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#ad3bdaed8d2b10e140281e21c2e5e7168"><param name="Name" value="AwayTeam"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html"><param name="Name" value="LiveFootball::Core::Models::ResultMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#a79ec8b6e7819c8646d8c1bbaa81dd444"><param name="Name" value="Date"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html"><param name="Name" value="LiveFootball::Core::Models::ResultMatchModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_result_match_model.html#ac39fec6f0e43c28279e46105d70c519f"><param name="Name" value="HomeTeam"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html"><param name="Name" value="LiveFootball::Core::Models::TeamModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html"><param name="Name" value="LiveFootball::Core::Models::TeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html#ae5edaa3250677cda36ebf804cfd0db12"><param name="Name" value="Logo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html"><param name="Name" value="LiveFootball::Core::Models::TeamModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html#a96ddd9a9ceb1bd434192d22d6cccd4c0"><param name="Name" value="Name"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_1_1_core_1_1_services.html"><param name="Name" value="LiveFootball::Core::Services"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#ac4cdd27b280eaa352a3cd200c66b5597"><param name="Name" value="DeserializeFixturesData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a890164fe3cd8c9f2be8af69164f34407"><param name="Name" value="DeserializeLeaguesData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a09e9b438726567b42319d4b331de17bd"><param name="Name" value="DeserializeLiveGamesData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#a2cd75f745e848133f4e9e4402af0acb6"><param name="Name" value="DeserializeResultsData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html"><param name="Name" value="LiveFootball::Core::Services::IDeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service.html#ab1599c26451d453efae5c1edcd77ef39"><param name="Name" value="DeserializeStandingData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#ae1a9c1f335de4ff51a247f0969cbed24"><param name="Name" value="GetAllGamesFixturesDataAsync()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a3f45d2972c1ba9c8ed1fb8acf6b2885f"><param name="Name" value="GetAllGamesResultsDataAsync()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#acff7a428d5d7130f57e38bdc30211a39"><param name="Name" value="GetLeagueFixturesDataAsync(string leagueParam)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#ae68824fef7b846853f354dc4e711a67b"><param name="Name" value="GetLeagueResultsDataAsync(string leagueParam)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a6556d6744f7cab8e490145f8d962c21a"><param name="Name" value="GetLeagueStandingDataAsync(string leagueParam)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a15fb2a9603d503eec0056c626e0d308c"><param name="Name" value="GetLeaguesDataAsync()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html"><param name="Name" value="LiveFootball::Core::Services::IFootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service.html#a6576197268ac0950d977de1d5a216089"><param name="Name" value="GetLiveGamesDataAsync()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_1_1_core_1_1_view_models.html"><param name="Name" value="LiveFootball::Core::ViewModels"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_all_games_tab_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::AllGamesTabViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_all_games_tab_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::AllGamesTabViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_all_games_tab_view_model.html#a15fbbaee8f1a4d07c310270b3aaf67a3"><param name="Name" value="AllGamesTabViewModel()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_fixtures_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::FixturesViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_league_expander_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::LeagueExpanderViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_league_standing_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::LeagueStandingViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_live_games_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::LiveGamesViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_main_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MainViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_main_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MainViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_main_view_model.html#a659f140d727ece0bc813390d38344799"><param name="Name" value="CurrentDate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_main_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MainViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_main_view_model.html#ae09cc7872c43ba0e07a2bb9c1957b241"><param name="Name" value="InitializeApp()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#af945939b09a9ab98e4df93d0415b1646"><param name="Name" value="AddFavouriteCommand"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a6dab01a2f147404773b5d492c04372d1"><param name="Name" value="FetchDataCommand"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a6b67942d609c821a3c8c9acb6548f98c"><param name="Name" value="LeagueId"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#ab3cce563c6882d5ca9703dd767278a4b"><param name="Name" value="Logo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a22d9fba08ac6dcccba76130e66117201"><param name="Name" value="MenuItemViewModel()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a0a5ecff7eb90235528b88fc760a8f23b"><param name="Name" value="MenuItemViewModel(MenuItemModel menuItemModel)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a8bb1433997c104eea6659d530e5215f7"><param name="Name" value="MenuItemViewModel(string name, string leagueId, BitmapSource logo, IFootballApiService? footballApiService=null, IDeserializationService? deserializeDataService=null)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a3c99fe33726bf29eea3af3a849d2f955"><param name="Name" value="Name"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a8ea9c31b73300380cfc03e76ad3ecf5f"><param name="Name" value="RemoveFavouriteCommand"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html#aff35c22d993ff6686cba9ef432dbb546"><param name="Name" value="AllGamesCommand"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html#a1e34aa91ea7e3f2556d4ef979b88d9a4"><param name="Name" value="Dispose()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html#a279cf0d7323cd53f317e7797e6370fbe"><param name="Name" value="FavouriteLeagues"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::MenuViewModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html#a7cc29201bdc91448f2558a6b2c9c8eba"><param name="Name" value="MenuViewModel(IFootballApiService? footballApiService=null, IDeserializationService? deserializeDataService=null)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_results_view_model.html"><param name="Name" value="LiveFootball::Core::ViewModels::ResultsViewModel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_main_window.html"><param name="Name" value="LiveFootball::MainWindow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_main_window.html"><param name="Name" value="LiveFootball::MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_main_window.html#acbddaaaba74b14f322fe12a23c73b345"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_1_1_views.html"><param name="Name" value="LiveFootball::Views"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_all_games_tab_view.html"><param name="Name" value="LiveFootball::Views::AllGamesTabView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_all_games_tab_view.html"><param name="Name" value="LiveFootball::Views::AllGamesTabView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_all_games_tab_view.html#aebe71874e6e350ebd2715166dec2fb63"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_fixtures_view.html"><param name="Name" value="LiveFootball::Views::FixturesView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_fixtures_view.html"><param name="Name" value="LiveFootball::Views::FixturesView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_fixtures_view.html#a054d16a5b44b6af634e1c9c07ebb1ab8"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_expander_view.html"><param name="Name" value="LiveFootball::Views::LeagueExpanderView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_expander_view.html"><param name="Name" value="LiveFootball::Views::LeagueExpanderView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_expander_view.html#a6f190cee3def13fd6bb51dd0635207f5"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_standing_view.html"><param name="Name" value="LiveFootball::Views::LeagueStandingView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_standing_view.html"><param name="Name" value="LiveFootball::Views::LeagueStandingView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_standing_view.html#a63a746b9ab865aa4e539e735b536b9c8"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_tab_view.html"><param name="Name" value="LiveFootball::Views::LeagueTabView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_tab_view.html"><param name="Name" value="LiveFootball::Views::LeagueTabView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_league_tab_view.html#ad283815e26c83ac4746cc6ae6a07bb79"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues.html"><param name="Name" value="LiveFootball::Views::Leagues"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues.html"><param name="Name" value="LiveFootball::Views::Leagues"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues.html#a6cb4ccc9743d23f7f4ab041739cd5531"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues_view.html"><param name="Name" value="LiveFootball::Views::LeaguesView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues_view.html"><param name="Name" value="LiveFootball::Views::LeaguesView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_leagues_view.html#afefbd10e172669c23f27d52f1bd4cfe9"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_menu_view.html"><param name="Name" value="LiveFootball::Views::MenuView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_menu_view.html"><param name="Name" value="LiveFootball::Views::MenuView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_views_1_1_menu_view.html#a712c32ef28a02fb801a46423b2b19691"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_wpf.html"><param name="Name" value="LiveFootballWpf"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html"><param name="Name" value="LiveFootballWpf::App"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html"><param name="Name" value="LiveFootballWpf::App"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#a434364c760cf7fb1b5ce878428ba12c5"><param name="Name" value="App()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html"><param name="Name" value="LiveFootballWpf::App"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#aec3bf134bcaef4cf2adf268b0dd35119"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html"><param name="Name" value="LiveFootballWpf::App"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#a708e6be2f5b5dc5a75d67bc014c2b019"><param name="Name" value="Main()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html"><param name="Name" value="LiveFootballWpf::App"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#abd36931f562f5ba30c9639da1de58aa0"><param name="Name" value="OnStartup(StartupEventArgs e)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_wpf_1_1_controls.html"><param name="Name" value="LiveFootballWpf::Controls"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_league_expander_control.html"><param name="Name" value="LiveFootballWpf::Controls::LeagueExpanderControl"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_league_expander_control.html"><param name="Name" value="LiveFootballWpf::Controls::LeagueExpanderControl"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_league_expander_control.html#abb193257ffdf3f3a3d4e9a1318931fa0"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_sample_message_dialog.html"><param name="Name" value="LiveFootballWpf::Controls::SampleMessageDialog"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_sample_message_dialog.html"><param name="Name" value="LiveFootballWpf::Controls::SampleMessageDialog"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_controls_1_1_sample_message_dialog.html#ac5c1a81cac6adf759c3d4340dd1ef8cb"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_main_window.html"><param name="Name" value="LiveFootballWpf::MainWindow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_main_window.html"><param name="Name" value="LiveFootballWpf::MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_main_window.html#ad7a1dd008cc25fae4d7d860915c1e6ae"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_main_window.html"><param name="Name" value="LiveFootballWpf::MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_main_window.html#a9709dbb890d120e1827b40140530a91e"><param name="Name" value="MainWindow()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_wpf_1_1_services.html"><param name="Name" value="LiveFootballWpf::Services"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#a932ee479cad9a5c22c917969e0ab87fc"><param name="Name" value="DeserializationService(IDeserializerFactory deserializerFactory)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#a810983741e74683e177bf64ca7f38f05"><param name="Name" value="DeserializeFixturesData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#ad6dbec3f1b46264968c5169c639dad47"><param name="Name" value="DeserializeLeaguesData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#aa07bb1ba8d4e8cfe926524d7f6e5df04"><param name="Name" value="DeserializeLiveGamesData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#af2e0bd78046c15872a2e80028ddb3d1d"><param name="Name" value="DeserializeResultsData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html"><param name="Name" value="LiveFootballWpf::Services::DeserializationService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_deserialization_service.html#a2f6c05d41b03e0ab359d674f424535bd"><param name="Name" value="DeserializeStandingData(JObject jsonData)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#afcdbb4b4c598fe083ca5ad36634b07b2"><param name="Name" value="FootballApiService()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a59316bf75120f97f1dca471a7a936f27"><param name="Name" value="GetAllGamesFixturesDataAsync()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a3d03a0c815c01280616f8923ab9e591a"><param name="Name" value="GetAllGamesResultsDataAsync()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aab898094e989d4ef9f561686a4325417"><param name="Name" value="GetLeagueFixturesDataAsync(string leagueParam)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aec277991dc2c10ac9ef6d3b788446ac6"><param name="Name" value="GetLeagueResultsDataAsync(string leagueParam)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#aa61073060fb109834f1db912f4e9f3f1"><param name="Name" value="GetLeagueStandingDataAsync(string leagueParam)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a324a85c3bd04c42298b7f817e143317a"><param name="Name" value="GetLeaguesDataAsync()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html"><param name="Name" value="LiveFootballWpf::Services::FootballApiService"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_services_1_1_football_api_service.html#a100fe1981ed4dc7b2e72923948f49aa9"><param name="Name" value="GetLiveGamesDataAsync()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_live_football_wpf_1_1_views.html"><param name="Name" value="LiveFootballWpf::Views"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_all_games_tab_view.html"><param name="Name" value="LiveFootballWpf::Views::AllGamesTabView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_all_games_tab_view.html"><param name="Name" value="LiveFootballWpf::Views::AllGamesTabView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_all_games_tab_view.html#aea5055808d3c693e9e024dfcf457136e"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_fixtures_view.html"><param name="Name" value="LiveFootballWpf::Views::FixturesView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_fixtures_view.html"><param name="Name" value="LiveFootballWpf::Views::FixturesView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_fixtures_view.html#a566ec35339727fbd8c5e714894bc3f10"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_standing_view.html"><param name="Name" value="LiveFootballWpf::Views::LeagueStandingView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_standing_view.html"><param name="Name" value="LiveFootballWpf::Views::LeagueStandingView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_standing_view.html#a5c4325905a42c30e9f5c368448af274d"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_tab_view.html"><param name="Name" value="LiveFootballWpf::Views::LeagueTabView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_tab_view.html"><param name="Name" value="LiveFootballWpf::Views::LeagueTabView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_league_tab_view.html#ac3a212dfeae4e7c59e9141bc6a2a1c11"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_live_games_view.html"><param name="Name" value="LiveFootballWpf::Views::LiveGamesView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_live_games_view.html"><param name="Name" value="LiveFootballWpf::Views::LiveGamesView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_live_games_view.html#a69b609d141947b8bee44b07c0322f374"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_menu_view.html"><param name="Name" value="LiveFootballWpf::Views::MenuView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_menu_view.html"><param name="Name" value="LiveFootballWpf::Views::MenuView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_menu_view.html#a8b90872156c72c4443c0413e9acbc613"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_menu_view.html"><param name="Name" value="LiveFootballWpf::Views::MenuView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_menu_view.html#af9d3beee08fb96b275237866b305a682"><param name="Name" value="MenuView()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_results_view.html"><param name="Name" value="LiveFootballWpf::Views::ResultsView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_results_view.html"><param name="Name" value="LiveFootballWpf::Views::ResultsView"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_results_view.html#ac7f3fd591a677dc0e41be55b985a5777"><param name="Name" value="InitializeComponent()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a896c689124cdd8c404066633cfd96205"><param name="Name" value="Logo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a896c689124cdd8c404066633cfd96205"><param name="Name" value="LiveFootball::Core::Models::LeagueStandingTeamModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#a67974585dcc1862317fa16a65d004a81"><param name="Name" value="Logo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#a67974585dcc1862317fa16a65d004a81"><param name="Name" value="LiveFootball::Core::Models::MenuItemModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html#ae5edaa3250677cda36ebf804cfd0db12"><param name="Name" value="Logo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html#ae5edaa3250677cda36ebf804cfd0db12"><param name="Name" value="LiveFootball::Core::Models::TeamModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#ab3cce563c6882d5ca9703dd767278a4b"><param name="Name" value="Logo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#ab3cce563c6882d5ca9703dd767278a4b"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html#a595115ce032b875eaae5f6927a860291"><param name="Name" value="Main()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_app.html#a595115ce032b875eaae5f6927a860291"><param name="Name" value="LiveFootball::App"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#a708e6be2f5b5dc5a75d67bc014c2b019"><param name="Name" value="Main()"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#a708e6be2f5b5dc5a75d67bc014c2b019"><param name="Name" value="LiveFootballWpf::App"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_main_window.html#a9709dbb890d120e1827b40140530a91e"><param name="Name" value="MainWindow()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a6513efd1f244e36ae4ace3a986e74835"><param name="Name" value="MatchesDrawn"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#af044cbae369d979d138e24348f155fc7"><param name="Name" value="MatchesLost"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a71a7805614df3fbf5e98ec635ff856cc"><param name="Name" value="MatchesPlayed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#af9b890034615d871190a62f61e97cac0"><param name="Name" value="MatchesWon"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#aef3e9381d0ad62586a734cdf30e62b03"><param name="Name" value="MenuItemModel(string leagueName, string leagueId, BitmapImage leagueLogo)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a22d9fba08ac6dcccba76130e66117201"><param name="Name" value="MenuItemViewModel()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a0a5ecff7eb90235528b88fc760a8f23b"><param name="Name" value="MenuItemViewModel(MenuItemModel menuItemModel)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a8bb1433997c104eea6659d530e5215f7"><param name="Name" value="MenuItemViewModel(string name, string leagueId, BitmapSource logo, IFootballApiService"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_views_1_1_menu_view.html#af9d3beee08fb96b275237866b305a682"><param name="Name" value="MenuView()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_view_model.html#a7cc29201bdc91448f2558a6b2c9c8eba"><param name="Name" value="MenuViewModel(IFootballApiService"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#a0392cbd665095503dcc43a5a9d1ce9f8"><param name="Name" value="Name"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_menu_item_model.html#a0392cbd665095503dcc43a5a9d1ce9f8"><param name="Name" value="LiveFootball::Core::Models::MenuItemModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html#a96ddd9a9ceb1bd434192d22d6cccd4c0"><param name="Name" value="Name"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_team_model.html#a96ddd9a9ceb1bd434192d22d6cccd4c0"><param name="Name" value="LiveFootball::Core::Models::TeamModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a3c99fe33726bf29eea3af3a849d2f955"><param name="Name" value="Name"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a3c99fe33726bf29eea3af3a849d2f955"><param name="Name" value="LiveFootball::Core::ViewModels::MenuItemViewModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_wpf_1_1_app.html#abd36931f562f5ba30c9639da1de58aa0"><param name="Name" value="OnStartup(StartupEventArgs e)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#aa3e0a32279ebdee92bd63f5ecf51b39e"><param name="Name" value="Points"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_league_standing_team_model.html#a47dec11086cc989835f538f00bf81189"><param name="Name" value="Position"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model.html#a8ea9c31b73300380cfc03e76ad3ecf5f"><param name="Name" value="RemoveFavouriteCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#ade0f04c0f7b18dd5b170e071d5534d38"><param name="Name" value="SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_live_football_1_1_core_1_1_models_1_1_live_match_model.html#ae210c5f29510c9aba1ec3ff686eaf66d"><param name="Name" value="Status"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_xaml_generated_namespace.html"><param name="Name" value="XamlGeneratedNamespace"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html"><param name="Name" value="XamlGeneratedNamespace::GeneratedInternalTypeHelper"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html"><param name="Name" value="XamlGeneratedNamespace::GeneratedInternalTypeHelper"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#a73471f4a6d1ca4c4fceec9ad8610f0c8"><param name="Name" value="AddEventHandler(System.Reflection.EventInfo eventInfo, object target, System.Delegate handler)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html"><param name="Name" value="XamlGeneratedNamespace::GeneratedInternalTypeHelper"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#a8ec4c37e82d9f4e867e9655f4eac3a78"><param name="Name" value="CreateDelegate(System.Type delegateType, object target, string handler)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html"><param name="Name" value="XamlGeneratedNamespace::GeneratedInternalTypeHelper"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#aefb7a98fceb9c287cef4756942f441d1"><param name="Name" value="CreateInstance(System.Type type, System.Globalization.CultureInfo culture)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html"><param name="Name" value="XamlGeneratedNamespace::GeneratedInternalTypeHelper"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#afdc9fe15b56607d02082908d934480c6"><param name="Name" value="GetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, System.Globalization.CultureInfo culture)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html"><param name="Name" value="XamlGeneratedNamespace::GeneratedInternalTypeHelper"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#ade0f04c0f7b18dd5b170e071d5534d38"><param name="Name" value="SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture)"></OBJECT>
+  </UL>
+</UL>
+</BODY>
+</HTML>

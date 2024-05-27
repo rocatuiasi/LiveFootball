@@ -1,0 +1,51 @@
+\doxysection{Api\+Football\+Deserializer.\+IFixtures\+Deserializer Interface Reference}
+\hypertarget{interface_api_football_deserializer_1_1_i_fixtures_deserializer}{}\label{interface_api_football_deserializer_1_1_i_fixtures_deserializer}\index{ApiFootballDeserializer.IFixturesDeserializer@{ApiFootballDeserializer.IFixturesDeserializer}}
+
+
+Interface for deserializing fixture data from JSON.  
+
+
+Inheritance diagram for Api\+Football\+Deserializer.\+IFixtures\+Deserializer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_api_football_deserializer_1_1_i_fixtures_deserializer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_fixture_match_model}{Fixture\+Match\+Model}} $>$ $>$ \mbox{\hyperlink{interface_api_football_deserializer_1_1_i_fixtures_deserializer_aeafdd16179d198f5c6586f5a6f5cf58d}{Deserialize}} (JToken json\+Data)
+\begin{DoxyCompactList}\small\item\em Deserializes the given JSON token into a list of fixture match models. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for deserializing fixture data from JSON. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_api_football_deserializer_1_1_i_fixtures_deserializer_aeafdd16179d198f5c6586f5a6f5cf58d}\label{interface_api_football_deserializer_1_1_i_fixtures_deserializer_aeafdd16179d198f5c6586f5a6f5cf58d} 
+\index{ApiFootballDeserializer.IFixturesDeserializer@{ApiFootballDeserializer.IFixturesDeserializer}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!ApiFootballDeserializer.IFixturesDeserializer@{ApiFootballDeserializer.IFixturesDeserializer}}
+\doxysubsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_fixture_match_model}{Fixture\+Match\+Model}} $>$ $>$ Api\+Football\+Deserializer.\+IFixtures\+Deserializer.\+Deserialize (\begin{DoxyParamCaption}\item[{JToken}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+Deserializes the given JSON token into a list of fixture match models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Data} & The JSON data to deserialize.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task representing the asynchronous operation, with a list of Fixture\+Match\+Model as the result.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_api_football_deserializer_1_1_fixtures_deserializer_a3fa63177df8d7ac2e849b5820df1f126}{Api\+Football\+Deserializer.\+Fixtures\+Deserializer}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+IP-\/\+Proiect/\+Live\+Football/\+Api\+Football\+Deserializer/IFixtures\+Deserializer.\+cs\end{DoxyCompactItemize}

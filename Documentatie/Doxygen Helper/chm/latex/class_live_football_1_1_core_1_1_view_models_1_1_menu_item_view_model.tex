@@ -1,0 +1,48 @@
+\doxysection{Live\+Football.\+Core.\+View\+Models.\+Menu\+Item\+View\+Model Class Reference}
+\hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model}{}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model}\index{LiveFootball.Core.ViewModels.MenuItemViewModel@{LiveFootball.Core.ViewModels.MenuItemViewModel}}
+
+
+View model for managing the menu items in the application.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a8bb1433997c104eea6659d530e5215f7}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a8bb1433997c104eea6659d530e5215f7} 
+{\bfseries Menu\+Item\+View\+Model} (string name, string league\+Id, Bitmap\+Source logo, \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_football_api_service}{IFootball\+Api\+Service}}? football\+Api\+Service=null, \mbox{\hyperlink{interface_live_football_1_1_core_1_1_services_1_1_i_deserialization_service}{IDeserialization\+Service}}? deserialize\+Data\+Service=null)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Menu\+Item\+View\+Model class. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a0a5ecff7eb90235528b88fc760a8f23b}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a0a5ecff7eb90235528b88fc760a8f23b} 
+{\bfseries Menu\+Item\+View\+Model} (\mbox{\hyperlink{class_live_football_1_1_core_1_1_models_1_1_menu_item_model}{Menu\+Item\+Model}} menu\+Item\+Model)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Menu\+Item\+View\+Model class. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a22d9fba08ac6dcccba76130e66117201}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a22d9fba08ac6dcccba76130e66117201} 
+{\bfseries Menu\+Item\+View\+Model} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Menu\+Item\+View\+Model class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_ab3cce563c6882d5ca9703dd767278a4b}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_ab3cce563c6882d5ca9703dd767278a4b} 
+Bitmap\+Source {\bfseries Logo}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The logo of the menu item. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a3c99fe33726bf29eea3af3a849d2f955}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a3c99fe33726bf29eea3af3a849d2f955} 
+string {\bfseries Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The name of the menu item. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a6b67942d609c821a3c8c9acb6548f98c}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a6b67942d609c821a3c8c9acb6548f98c} 
+string {\bfseries League\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The ID of the league associated with the menu item. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a6dab01a2f147404773b5d492c04372d1}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a6dab01a2f147404773b5d492c04372d1} 
+ICommand {\bfseries Fetch\+Data\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Command to fetch data associated with the menu item. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_af945939b09a9ab98e4df93d0415b1646}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_af945939b09a9ab98e4df93d0415b1646} 
+ICommand {\bfseries Add\+Favourite\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Command to add the league associated with the menu item to favorites. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a8ea9c31b73300380cfc03e76ad3ecf5f}\label{class_live_football_1_1_core_1_1_view_models_1_1_menu_item_view_model_a8ea9c31b73300380cfc03e76ad3ecf5f} 
+ICommand {\bfseries Remove\+Favourite\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Command to remove the league associated with the menu item from favorites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View model for managing the menu items in the application. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+IP-\/\+Proiect/\+Live\+Football/\+Live\+Football.\+Core/\+View\+Models/Menu\+Item\+View\+Model.\+cs\end{DoxyCompactItemize}
