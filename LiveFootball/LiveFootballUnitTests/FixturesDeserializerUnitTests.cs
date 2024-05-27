@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using ApiFootballDeserializer;
 using JetBrains.Annotations;
+using LiveFootball.Core.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
+using Helper = LiveFootballUnitTests.DeserializerUnitTestHelper;
 
 namespace LiveFootballUnitTests;
 
@@ -11,32 +17,66 @@ namespace LiveFootballUnitTests;
 [TestCategory("Unit")]
 public class FixturesDeserializerUnitTests
 {
-    [TestMethod]
-    public async void Deserialize_ValidJson_ReturnsFixtureObject()
+    private List<FixtureMatchModel> _fixtures;
+
+    [TestInitialize]
+    public async Task TestInitialize()
     {
-        // Arrange
-        var json = "{\"id\": 1, \"homeTeam\": \"Team A\", \"awayTeam\": \"Team B\", \"date\": \"2022-01-01\"}";
-        var deserializer = new FixturesDeserializer();
-
-        // Act
-        var fixture = (await deserializer.Deserialize(json)).First();
-
-        // Assert
-        Assert.IsNotNull(fixture);
-        // Assert.AreEqual(1, fixture.);
-        Assert.AreEqual("Team A", fixture.HomeTeam.Name);
-        Assert.AreEqual("Team B", fixture.AwayTeam.Name);
-        // Assert.AreEqual(new DateTime(2022, 01, 01), fixture.Date);
+        var fixturesDeserializer = new FixturesDeserializer();
+        var fileContent = await Helper.ReadFileFromAssetsAsync("get-fixtures-sample-response.json");
+        var jsonData = JObject.Parse(fileContent);
+        var jsonResultsData = jsonData["response"]![0]!;
+        _fixtures = await fixturesDeserializer.Deserialize(jsonResultsData);
     }
 
     [TestMethod]
-    public void Deserialize_InvalidJson_ThrowsException()
+    public void AssertEqualFixtureMatchModel_FirstFixture()
     {
         // Arrange
-        var json = "{\"id\": 1, \"homeTeam\": \"Team A\", \"awayTeam\": \"Team B\"}";
-        var deserializer = new FixturesDeserializer();
+        var firstFixtureMatchModel = _fixtures.First();
 
         // Act & Assert
-        Assert.ThrowsException<Exception>(() => deserializer.Deserialize(json));
+        var areEqual = CheckEqualFixtureMatchModel(firstFixtureMatchModel, new FixtureMatchModel
+        {
+            HomeTeam = new TeamModel { Name = "Burnley" },
+            AwayTeam = new TeamModel { Name = "Manchester City" },
+            Date = Helper.ConvertDateTimeToString(2023, 8, 11, 19, 0, 0)
+        });
+        Assert.IsTrue(areEqual);
+    }
+
+    [TestMethod]
+    public void AssertEqualFixtureMatchModel_LastFixture()
+    {
+        var lastFixtureMatchModel = _fixtures.Last();
+
+        var areEqual = CheckEqualFixtureMatchModel(lastFixtureMatchModel, new FixtureMatchModel
+        {
+            HomeTeam = new TeamModel { Name = "Sheffield Utd" },
+            AwayTeam = new TeamModel { Name = "Tottenham" },
+            Date = Helper.ConvertDateTimeToString(2024, 5, 19, 15, 0, 0)
+        });
+
+        Assert.IsTrue(areEqual);
+    }
+
+    [TestMethod]
+    public void AssertNotEqualFixtureMatchModel()
+    {
+        var fixtureMatchModel1 = new FixtureMatchModel
+        {
+            HomeTeam = new TeamModel { Name = "InvalidHome" },
+            AwayTeam = new TeamModel { Name = "InvalidAway" },
+            Date = Helper.ConvertDateTimeToString(2024, 5, 19, 15, 0, 0)
+        };
+
+        Assert.IsFalse(CheckEqualFixtureMatchModel(fixtureMatchModel1, _fixtures.First()));
+    }
+
+    private bool CheckEqualFixtureMatchModel(FixtureMatchModel expected, FixtureMatchModel actual)
+    {
+        return expected.HomeTeam.Name == actual.HomeTeam.Name &&
+               expected.AwayTeam.Name == actual.AwayTeam.Name &&
+               expected.Date == actual.Date;
     }
 }

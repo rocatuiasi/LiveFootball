@@ -18,7 +18,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <None Remove="Assets\get-fixtures-live-sample-response.json" />
+    <None Remove="Assets\get-fixtures-sample-response.json" />
+    <Content Include="Assets\get-fixtures-sample-response.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Assets\get-leagues-sample-response.json" />
+    <Content Include="Assets\get-leagues-sample-response.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Assets\get-results-sample-response.json" />
+    <Content Include="Assets\get-results-sample-response.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Assets\get-standings-sample-response.json" />
+    <Content Include="Assets\get-fixtures-live-sample-response.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\get-standings-sample-response.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   
 </Project>
