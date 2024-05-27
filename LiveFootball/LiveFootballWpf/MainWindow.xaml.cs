@@ -67,7 +67,15 @@ public partial class MainWindow : Window
     /// <param name="e">The event arguments.</param>
     private async void MenuHelpButton_OnClick(object sender, RoutedEventArgs e)
     {
-        var chmFilePath = @"LiveFootball.chm";
+        var chmFilePath = "Assets/Docs/LiveFootball.chm";
+        var sampleMessageDialog = new SampleMessageDialog { Message = { Text = "An error occurred while opening the help file." } };
+        
+        if (!System.IO.File.Exists(chmFilePath))
+        {
+            await DialogHost.Show(sampleMessageDialog, "RootDialog");
+            return;
+        }
+            
         try
         {
             // Open the help file
@@ -75,12 +83,6 @@ public partial class MainWindow : Window
         }
         catch (Exception)
         {
-            // Display error message if unable to open help file
-            var sampleMessageDialog = new SampleMessageDialog
-            {
-                Message = { Text = "An error occurred while opening the help file." }
-            };
-
             await DialogHost.Show(sampleMessageDialog, "RootDialog");
         }
     }

@@ -22,6 +22,10 @@
     <Page Remove="Converters\**" />
     <Page Remove="Models\**" />
     <Page Remove="ViewModels\**" />
+    <None Remove="Assets\Docs\LiveFootball.chm" />
+    <Content Include="Assets\Docs\LiveFootball.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Update="Assets\Icon\icon.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
