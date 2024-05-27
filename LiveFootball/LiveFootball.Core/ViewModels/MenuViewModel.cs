@@ -413,7 +413,14 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         var json = JsonConvert.SerializeObject(favouriteLeaguesData);
 
         // Write the JSON to the file asynchronously
-        await File.WriteAllTextAsync("favourite-leagues.json", json);
+        try
+        {
+            await File.WriteAllTextAsync("favourite-leagues.json", json);
+        }
+        catch
+        {
+            // ignored
+        }
     }
 
     /// <summary>

@@ -68,7 +68,14 @@ public sealed class FootballApiService : IFootballApiService
             jsonData = await response.Content.ReadAsStringAsync();
 
             // Write to file for future use to avoid API calls
-            await File.WriteAllTextAsync(ApiGetLeaguesFileName, jsonData);
+            try
+            {
+                await File.WriteAllTextAsync(ApiGetLeaguesFileName, jsonData);
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         return jsonData;
