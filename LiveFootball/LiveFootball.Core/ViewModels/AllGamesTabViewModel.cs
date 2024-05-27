@@ -1,8 +1,8 @@
 ﻿/**************************************************************************
  *                                                                        * 
  *  File:        AllGamesTabViewModel.cs                                  *
- *  Description: LiveFootball.Core.ViewModels Library                      *
- *               View model for managing the All Games tab.                *
+ *  Description: LiveFootball.Core.ViewModels Library                     *
+ *               View model for managing the All Games tab.               *
  *  Copyright:   (c) 2024, LiveFootball Team                              *
  *                                                                        *
  *  This code and information is provided "as is" without warranty of     *

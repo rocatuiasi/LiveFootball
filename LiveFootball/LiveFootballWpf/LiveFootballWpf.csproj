@@ -10,12 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Converters\**" />
     <Compile Remove="Models\**" />
     <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Converters\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="Converters\**" />
     <None Remove="Models\**" />
     <None Remove="ViewModels\**" />
+    <Page Remove="Converters\**" />
     <Page Remove="Models\**" />
     <Page Remove="ViewModels\**" />
     <None Remove="Assets\Docs\LiveFootball.chm" />
@@ -39,7 +43,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Icon\" />
-    <Folder Include="Converters\" />
   </ItemGroup>
 
 </Project>

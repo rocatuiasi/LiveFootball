@@ -1,4 +1,20 @@
-﻿using System.IO;
+﻿/**************************************************************************
+ *                                                                        * 
+ *  File:        HelperFunctions.cs                                       *
+ *  Description: LiveFootball Core Library                                *
+ *               Helper class providing various utility methods           *
+ *               for handling images, loading progress states, etc.       *
+ *               Implements static methods for these utilities.           *
+ *  Copyright:   (c) 2024, LiveFootball Team                              *
+ *                                                                        *
+ *  This code and information is provided "as is" without warranty of     *
+ *  any kind, either expressed or implied, including but not limited      *
+ *  to the implied warranties of merchantability or fitness for a         *
+ *  particular purpose. You are free to use this source code in your      *
+ *  applications as long as the original copyright notice is included.    *
+ *                                                                        *
+ **************************************************************************/
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Windows.Media.Imaging;

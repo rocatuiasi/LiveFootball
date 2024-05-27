@@ -1,8 +1,8 @@
 ﻿/**************************************************************************
  *                                                                        * 
  *  File:        MainViewModel.cs                                         *
- *  Description: LiveFootball.Core.ViewModels Library                      *
- *               View model for managing the main application view.        *
+ *  Description: LiveFootball.Core.ViewModels Library                     *
+ *               View model for managing the main application view.       *
  *  Copyright:   (c) 2024, LiveFootball Team                              *
  *                                                                        *
  *  This code and information is provided "as is" without warranty of     *
