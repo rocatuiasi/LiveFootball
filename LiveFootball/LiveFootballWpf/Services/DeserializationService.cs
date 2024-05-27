@@ -96,6 +96,13 @@ public class DeserializationService : IDeserializationService
     /// <inheritdoc/>
     public async Task<List<MenuItemModel>> DeserializeLeaguesData(JObject jsonData)
     {
-        return await _deserializerFactory.CreateLeaguesDeserializer().Deserialize(jsonData);
+        try
+        {
+            return await _deserializerFactory.CreateLeaguesDeserializer().Deserialize(jsonData);
+        }
+        catch (Exception)
+        {
+            throw new DeserializationException();
+        }
     }
 }

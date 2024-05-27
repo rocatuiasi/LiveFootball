@@ -91,7 +91,9 @@
                                            Height="5"/>
                             </StackPanel>
                         </Expander>
-                        <ItemsControl ItemsSource="{Binding FilteredLeagues}">
+                        <ItemsControl ItemsSource="{Binding FilteredLeagues}"
+                                      VirtualizingStackPanel.IsVirtualizing="True"
+                                      VirtualizingStackPanel.VirtualizationMode="Recycling">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Button Command="{Binding FetchDataCommand}"
