@@ -117,16 +117,10 @@ public class MenuItemViewModel
         Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
             Ioc.Default.GetRequiredService<LeagueTabViewModel>();
 
-        // Set loading state to true
-        HelperFunctions.SetLeagueLoadingProgressState(true);
-
         // Fetch and Deserialize data
         await RefreshResults();
         await RefreshFixtures();
         await RefreshLeagueStanding();
-
-        // Set loading state to false
-        HelperFunctions.SetLeagueLoadingProgressState(false);
     }
 
     private void AddFavourite(string? leagueId)
@@ -155,6 +149,8 @@ public class MenuItemViewModel
     private async Task RefreshLeagueStanding()
     {
         var leagueStandingViewModel = Ioc.Default.GetRequiredService<LeagueStandingViewModel>();
+        leagueStandingViewModel.IsLoading = true;
+        
         try
         {
             // Fetch Standing data
@@ -182,11 +178,15 @@ public class MenuItemViewModel
             leagueStandingViewModel.StandingTeams = [];
             leagueStandingViewModel.StatusMessage = "Oops, something went wrong";
         }
+        
+        leagueStandingViewModel.IsLoading = false;
     }
 
     private async Task RefreshFixtures()
     {
         var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
+        fixturesViewModel.IsLoading = true;
+
         try
         {
             // Fetch Fixtures data
@@ -213,11 +213,15 @@ public class MenuItemViewModel
             fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "Oops, something went wrong";
         }
+
+        fixturesViewModel.IsLoading = false;
     }
 
     private async Task RefreshResults()
     {
         var resultsViewModel = Ioc.Default.GetRequiredService<ResultsViewModel>();
+        resultsViewModel.IsLoading = true;
+        
         try
         {
             // Fetch Results data
@@ -244,5 +248,7 @@ public class MenuItemViewModel
             resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "Oops, something went wrong";
         }
+    
+        resultsViewModel.IsLoading = false;
     }
 }

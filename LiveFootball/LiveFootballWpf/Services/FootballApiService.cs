@@ -39,38 +39,43 @@ public sealed class FootballApiService : IFootballApiService
         _client = new HttpClient();
     }
 
+    private async Task<string> BasicGetRequest(Uri requestUri)
+    {
+        var request = new HttpRequestMessage
+        {
+            Method = HttpMethod.Get,
+            RequestUri = requestUri,
+            Headers =
+            {
+                { "X-RapidAPI-Key", _apiKey },
+                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
+            }
+        };
+
+        using var response = await _client.SendAsync(request);
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadAsStringAsync();
+    }
+
     /// <inheritdoc/>
     public async Task<string> GetLeaguesDataAsync()
     {
-        string jsonData;
+        string body;
         try
         {
             // Read from file
-            jsonData = await File.ReadAllTextAsync(ApiGetLeaguesFileName);
+            body = await File.ReadAllTextAsync(ApiGetLeaguesFileName);
             Console.WriteLine($"Successfully read from file {ApiGetLeaguesFileName}");
         }
         catch (Exception)
         {
             // If file is corrupted, fetch from API
-            var request = new HttpRequestMessage
-            {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/leagues?season={_currentSeason}"),
-                Headers =
-                {
-                    { "X-RapidAPI-Key", _apiKey },
-                    { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
-                }
-            };
-
-            using var response = await _client.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-            jsonData = await response.Content.ReadAsStringAsync();
+            body = await BasicGetRequest(new Uri($"https://api-football-v1.p.rapidapi.com/v3/leagues?season={_currentSeason}"));
 
             // Write to file for future use to avoid API calls
             try
             {
-                await File.WriteAllTextAsync(ApiGetLeaguesFileName, jsonData);
+                await File.WriteAllTextAsync(ApiGetLeaguesFileName, body);
             }
             catch
             {
@@ -78,136 +83,44 @@ public sealed class FootballApiService : IFootballApiService
             }
         }
 
-        return jsonData;
+        return body;
     }
 
     /// <inheritdoc/>
     public async Task<string> GetLiveGamesDataAsync()
     {
-        var request = new HttpRequestMessage
-        {
-            Method = HttpMethod.Get,
-            RequestUri = new Uri("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all"),
-            Headers =
-            {
-                { "X-RapidAPI-Key", _apiKey },
-                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
-            }
-        };
-
-        using var response = await _client.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var body = await response.Content.ReadAsStringAsync();
-
-        return body;
+        return await BasicGetRequest(new Uri("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all"));
     }
 
     /// <inheritdoc/>
     public async Task<string> GetAllGamesResultsDataAsync()
     {
         var currentDate = DateTime.Now.ToString("yyyy-MM-dd");
-
-        var request = new HttpRequestMessage
-        {
-            Method = HttpMethod.Get,
-            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?date={currentDate}&status=FT"),
-            Headers =
-            {
-                { "X-RapidAPI-Key", _apiKey },
-                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
-            }
-        };
-
-        using var response = await _client.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var body = await response.Content.ReadAsStringAsync();
-
-        return body;
+        return await BasicGetRequest(new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?date={currentDate}&status=FT"));
     }
 
     /// <inheritdoc/>
     public async Task<string> GetAllGamesFixturesDataAsync()
     {
         var currentDate = DateTime.Now.ToString("yyyy-MM-dd");
-
-        var request = new HttpRequestMessage
-        {
-            Method = HttpMethod.Get,
-            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?date={currentDate}&status=NS"),
-            Headers =
-            {
-                { "X-RapidAPI-Key", _apiKey },
-                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
-            }
-        };
-
-        using var response = await _client.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var body = await response.Content.ReadAsStringAsync();
-
-        return body;
+        return await BasicGetRequest(new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?date={currentDate}&status=NS"));
     }
 
     /// <inheritdoc/>
     public async Task<string> GetLeagueResultsDataAsync(string leagueParam)
     {
-        var request = new HttpRequestMessage
-        {
-            Method = HttpMethod.Get,
-            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?league={leagueParam}&last=30"),
-            Headers =
-            {
-                { "X-RapidAPI-Key", _apiKey },
-                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
-            }
-        };
-
-        using var response = await _client.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var body = await response.Content.ReadAsStringAsync();
-
-        return body;
+        return await BasicGetRequest(new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?league={leagueParam}&last=30"));
     }
 
     /// <inheritdoc/>
     public async Task<string> GetLeagueFixturesDataAsync(string leagueParam)
     {
-        var request = new HttpRequestMessage
-        {
-            Method = HttpMethod.Get,
-            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?league={leagueParam}&next=99"),
-            Headers =
-            {
-                { "X-RapidAPI-Key", _apiKey },
-                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
-            }
-        };
-
-        using var response = await _client.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var body = await response.Content.ReadAsStringAsync();
-
-        return body;
+        return await BasicGetRequest(new Uri($"https://api-football-v1.p.rapidapi.com/v3/fixtures?league={leagueParam}&next=99"));
     }
 
     /// <inheritdoc/>
     public async Task<string> GetLeagueStandingDataAsync(string leagueParam)
     {
-        var request = new HttpRequestMessage
-        {
-            Method = HttpMethod.Get,
-            RequestUri = new Uri($"{BaseRequestUri}standings?season={_currentSeason}&league={leagueParam}"),
-            Headers =
-            {
-                { "X-RapidAPI-Key", _apiKey },
-                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" }
-            }
-        };
-
-        using var response = await _client.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var body = await response.Content.ReadAsStringAsync();
-
-        return body;
+        return await BasicGetRequest(new Uri($"{BaseRequestUri}standings?season={_currentSeason}&league={leagueParam}"));
     }
 }

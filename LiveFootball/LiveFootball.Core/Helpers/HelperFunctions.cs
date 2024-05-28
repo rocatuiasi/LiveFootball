@@ -181,32 +181,11 @@ public static class HelperFunctions
     }
 
     /// <summary>
-    /// Sets the loading progress state for league-related views.
-    /// </summary>
-    /// <param name="state">The loading state to set.</param>
-    public static void SetLeagueLoadingProgressState(bool state)
-    {
-        Ioc.Default.GetRequiredService<ResultsViewModel>().IsLoading = state;
-        Ioc.Default.GetRequiredService<FixturesViewModel>().IsLoading = state;
-        Ioc.Default.GetRequiredService<LeagueStandingViewModel>().IsLoading = state;
-    }
-
-    /// <summary>
     /// Sets the loading progress state for live games view.
     /// </summary>
     /// <param name="state">The loading state to set.</param>
     public static void SetLiveGamesLoadingProgressState(bool state)
     {
         Ioc.Default.GetRequiredService<LiveGamesViewModel>().IsLoading = state;
-    }
-
-    /// <summary>
-    /// Sets the loading progress state for all games-related views.
-    /// </summary>
-    /// <param name="state">The loading state to set.</param>
-    public static void SetAllGamesLoadingProgressState(bool state)
-    {
-        Ioc.Default.GetRequiredService<ResultsViewModel>().IsLoading = state;
-        Ioc.Default.GetRequiredService<FixturesViewModel>().IsLoading = state;
     }
 }

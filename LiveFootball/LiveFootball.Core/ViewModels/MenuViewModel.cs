@@ -1,5 +1,5 @@
 ﻿/**************************************************************************
- *                                                                        * 
+ *                                                                        *
  *  File:        MenuViewModel.cs                                         *
  *  Description: LiveFootball.Core.ViewModels Library                     *
  *               View model for managing the menu items and fetching      *
@@ -22,15 +22,12 @@ using System.Net.Http;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
-
 using LiveFootball.Core.Exceptions;
 using LiveFootball.Core.Helpers;
 using LiveFootball.Core.Services;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -52,14 +49,12 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     /// <summary>
     /// The list of leagues.
     /// </summary>
-    [ObservableProperty]
-    private List<MenuItemViewModel> _leagues;
+    [ObservableProperty] private List<MenuItemViewModel> _leagues;
 
     /// <summary>
     /// The filtered list of leagues based on the search text.
     /// </summary>
-    [ObservableProperty]
-    private ObservableCollection<MenuItemViewModel> _filteredLeagues;
+    [ObservableProperty] private ObservableCollection<MenuItemViewModel> _filteredLeagues;
 
     /// <summary>
     /// The collection of favourite leagues.
@@ -69,20 +64,17 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     /// <summary>
     /// Indicates whether data is loading.
     /// </summary>
-    [ObservableProperty]
-    private bool _isLoading;
+    [ObservableProperty] private bool _isLoading;
 
     /// <summary>
     /// The status message.
     /// </summary>
-    [ObservableProperty]
-    private string _statusMessage;
+    [ObservableProperty] private string _statusMessage;
 
     /// <summary>
     /// The search text.
     /// </summary>
-    [ObservableProperty]
-    private string _searchText;
+    [ObservableProperty] private string _searchText;
 
     #endregion
 
@@ -91,7 +83,8 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     /// <summary>
     /// Command to fetch all games.
     /// </summary>
-    public ICommand AllGamesCommand => new AsyncRelayCommand(AllGamesFetchData);
+    public ICommand AllGamesCommand =>
+        new RelayCommand(async () => await AllGamesFetchData().ConfigureAwait(false)); // avoid deadlock on main thread with ConfigureAwait(false)
 
     #endregion
 
@@ -100,8 +93,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     /// <summary>
     /// Initializes a new instance of the <see cref="MenuViewModel"/> class.
     /// </summary>
-    public MenuViewModel(IFootballApiService? footballApiService = null,
-                         IDeserializationService? deserializeDataService = null)
+    public MenuViewModel(IFootballApiService? footballApiService = null, IDeserializationService? deserializeDataService = null)
     {
         _footballService = footballApiService ?? Ioc.Default.GetRequiredService<IFootballApiService>();
         _deserializeDataService = deserializeDataService ?? Ioc.Default.GetRequiredService<IDeserializationService>();
@@ -229,25 +221,18 @@ public partial class MenuViewModel : ObservableObject, IDisposable
 
     private async Task AllGamesFetchData()
     {
-        Ioc.Default.GetRequiredService<MainViewModel>().Title = "Today's football matches";
-
+        var mainViewModel = Ioc.Default.GetRequiredService<MainViewModel>();
+        mainViewModel.Title = "Today's football matches";
         // Switch current TabView to AllGamesTabView
-        Ioc.Default.GetRequiredService<MainViewModel>().CurrentTabView =
-            Ioc.Default.GetRequiredService<AllGamesTabViewModel>();
+        mainViewModel.CurrentTabView = Ioc.Default.GetRequiredService<AllGamesTabViewModel>();
 
         await StartFetchingLiveGamesData();
-
-        // Set loading state to true
-        HelperFunctions.SetAllGamesLoadingProgressState(true);
 
         // Fetch Results data
         await RefreshAllGamesResults();
 
         // Fetch Fixtures data
         await RefreshAllGamesFixtures();
-
-        // Set loading state to false
-        HelperFunctions.SetAllGamesLoadingProgressState(false);
     }
 
     private async Task FetchLiveGamesDataAsync()
@@ -299,18 +284,18 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         }
         catch (DeserializationException)
         {
-            liveGamesViewModel.MatchesCollection =  [];
+            liveGamesViewModel.MatchesCollection = [];
             liveGamesViewModel.StatusMessage = "No results data available...";
         }
         catch (HttpRequestException)
         {
-            liveGamesViewModel.MatchesCollection =  [];
+            liveGamesViewModel.MatchesCollection = [];
             liveGamesViewModel.StatusMessage =
                 "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
-            liveGamesViewModel.MatchesCollection =  [];
+            liveGamesViewModel.MatchesCollection = [];
             liveGamesViewModel.StatusMessage = "Oops, something went wrong";
         }
     }
@@ -318,6 +303,8 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     private async Task RefreshAllGamesResults()
     {
         var resultsViewModel = Ioc.Default.GetRequiredService<ResultsViewModel>();
+        resultsViewModel.IsLoading = true;
+
         try
         {
             // Fetch Results data
@@ -331,25 +318,28 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         }
         catch (DeserializationException)
         {
-            resultsViewModel.MatchesCollection =  [];
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "No results data available...";
         }
         catch (HttpRequestException)
         {
-            resultsViewModel.MatchesCollection =  [];
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage =
                 "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
-            resultsViewModel.MatchesCollection =  [];
+            resultsViewModel.MatchesCollection = [];
             resultsViewModel.StatusMessage = "Oops, something went wrong";
         }
+
+        resultsViewModel.IsLoading = false;
     }
 
     private async Task RefreshAllGamesFixtures()
     {
         var fixturesViewModel = Ioc.Default.GetRequiredService<FixturesViewModel>();
+        fixturesViewModel.IsLoading = true;
 
         try
         {
@@ -364,20 +354,22 @@ public partial class MenuViewModel : ObservableObject, IDisposable
         }
         catch (DeserializationException)
         {
-            fixturesViewModel.MatchesCollection =  [];
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "No more fixtures this season...";
         }
         catch (HttpRequestException)
         {
-            fixturesViewModel.MatchesCollection =  [];
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage =
                 "Network error: either a connection problem or the API-Football is unavailable.";
         }
         catch (Exception)
         {
-            fixturesViewModel.MatchesCollection =  [];
+            fixturesViewModel.MatchesCollection = [];
             fixturesViewModel.StatusMessage = "Oops, something went wrong";
         }
+
+        fixturesViewModel.IsLoading = false;
     }
 
     #endregion
@@ -475,9 +467,9 @@ public partial class MenuViewModel : ObservableObject, IDisposable
                 cancellationToken);
 
             var filtered = string.IsNullOrWhiteSpace(searchText)
-                               ? Leagues
-                               : await Task.Run(() => FilterLeagues(searchText, Leagues, cancellationToken),
-                                     cancellationToken);
+                ? Leagues
+                : await Task.Run(() => FilterLeagues(searchText, Leagues, cancellationToken),
+                    cancellationToken);
 
             await Application.Current.Dispatcher.InvokeAsync(
                 () => { FilteredLeagues = new ObservableCollection<MenuItemViewModel>(filtered); },
@@ -497,7 +489,7 @@ public partial class MenuViewModel : ObservableObject, IDisposable
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>An enumerable of filtered leagues</returns>
     private IEnumerable<MenuItemViewModel> FilterLeagues(string searchText, IEnumerable<MenuItemViewModel> leagues,
-                                                         CancellationToken cancellationToken)
+        CancellationToken cancellationToken)
     {
         var words = searchText.Split(' ');
         var filtered = new List<MenuItemViewModel>();
